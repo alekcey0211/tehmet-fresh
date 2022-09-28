@@ -14,7 +14,7 @@ export function HeadElement({
   return (
     <Head>
       <title>{`${title} - Техмет`}</title>
-      <link rel="icon" href="/favicon.ico" sizes="32x32" />
+      {/* <link rel="icon" href="/favicon.ico" sizes="32x32" /> */}
       <meta name="description" content={description} />
       <meta charSet="UTF-8" />
       <meta

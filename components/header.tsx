@@ -1,3 +1,4 @@
+import CatalogSearch from "../islands/CatalogSearch.tsx";
 import { contacts } from "../shared/contacts.ts";
 import { Button } from "./button.tsx";
 import { icons } from "./icons.tsx";
@@ -21,7 +22,7 @@ export function Header() {
             />
           </a>
           <div class="hidden md:grid gap-1 lg:gap-0">
-            {contacts({isPage: true}).map((item) => (
+            {contacts({ isPage: true }).map((item) => (
               <div class="flex items-center gap-2 text-xl lg:text-2xl">
                 <icons.locationGradient />
                 <span class="gradient-text">{item.city}</span>
@@ -41,7 +42,11 @@ export function Header() {
               КОМЛЕКТАЦИЯ ОБЪЕКТОВ ЛЮБОЙ
             </span>
             <div class="grid max-w-[140px] sm:max-w-[228px] md:w-[228px]">
-              <Button text="Обратная связь" view="gradient" dialogId="form-effb7861-5ab1-469e-8091-fca64e21430b" />
+              <Button
+                text="Обратная связь"
+                view="gradient"
+                dialogId="form-effb7861-5ab1-469e-8091-fca64e21430b"
+              />
             </div>
           </div>
           <div class="md:flex justify-between items-center">
@@ -49,7 +54,11 @@ export function Header() {
               СЛОЖНОСТИ ПО ВСЕЙ РОССИИ
             </span>
             <div class="grid max-w-[140px] sm:max-w-[228px] md:w-[228px]">
-              <Button text="Заказать звонок" view="gradient" dialogId="a74b73421fe794532bd3f7cb4f430e750" />
+              <Button
+                text="Заказать звонок"
+                view="gradient"
+                dialogId="a74b73421fe794532bd3f7cb4f430e750"
+              />
             </div>
           </div>
         </div>
@@ -70,7 +79,7 @@ export function Header() {
             <icons.menuHamburger />
           </button>
           <div class="grid w-full lg:max-w-[674px]">
-            {/* {% include "shared/catalog-search.njk" %} */}
+            <CatalogSearch />
           </div>
         </div>
         <div class="hidden md:flex absolute bottom-0 left-0 right-0 -z-10 justify-center pr-[130px]">

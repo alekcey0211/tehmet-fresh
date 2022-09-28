@@ -1,8 +1,12 @@
-import { Options } from "$fresh/plugins/twind.ts";
+import { Configuration } from "twind";
 
 export default {
-  selfURL: import.meta.url,
-  hash: true,
+  plugins: {
+    "header-nav-shadow": {
+      "box-shadow": `0px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 0px 1px 1px rgba(0, 0, 0, 0.25)`,
+    },
+  },
   theme: {
     extend: {
       fontSize: {
@@ -43,4 +47,4 @@ export default {
       },
     },
   },
-} as Options;
+} as Configuration;

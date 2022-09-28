@@ -41,7 +41,7 @@ export function Button({
           {text}
         </span>
       ) : (
-        { text }
+        <>{text}</>
       )}
     </Tag>
   );
