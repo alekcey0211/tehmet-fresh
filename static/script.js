@@ -294,113 +294,113 @@ const screens = {
   "2xl": 1536,
 };
 
-new Swiper("#swiper-47b71397b2cc4df69b420a003b5477aa", {
-  // modules: [Navigation, Autoplay],
-  slidesPerView: 1,
-  loop: true,
-  navigation: {
-    nextEl: "#swiper-47b71397b2cc4df69b420a003b5477aa-button-next",
-    prevEl: "#swiper-47b71397b2cc4df69b420a003b5477aa-button-prev",
-  },
-  autoplay: {
-    delay: 10000,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  },
-});
+// new Swiper("#swiper-47b71397b2cc4df69b420a003b5477aa", {
+//   // modules: [Navigation, Autoplay],
+//   slidesPerView: 1,
+//   loop: true,
+//   navigation: {
+//     nextEl: "#swiper-47b71397b2cc4df69b420a003b5477aa-button-next",
+//     prevEl: "#swiper-47b71397b2cc4df69b420a003b5477aa-button-prev",
+//   },
+//   autoplay: {
+//     delay: 10000,
+//     disableOnInteraction: false,
+//     pauseOnMouseEnter: true,
+//   },
+// });
 
-new Swiper("#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3", {
-  // modules: [Navigation],
-  spaceBetween: 20,
-  slidesPerView: 3,
-  breakpoints: {
-    [screens.lg]: {
-      slidesPerView: 5,
-    },
-    [screens["2xl"]]: {
-      slidesPerView: 6,
-      slidesPerGroup: 6,
-    },
-  },
-  loop: true,
-  navigation: {
-    nextEl: "#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-next",
-    prevEl: "#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-prev",
-  },
-});
+// new Swiper("#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3", {
+//   // modules: [Navigation],
+//   spaceBetween: 20,
+//   slidesPerView: 3,
+//   breakpoints: {
+//     [screens.lg]: {
+//       slidesPerView: 5,
+//     },
+//     [screens["2xl"]]: {
+//       slidesPerView: 6,
+//       slidesPerGroup: 6,
+//     },
+//   },
+//   loop: true,
+//   navigation: {
+//     nextEl: "#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-next",
+//     prevEl: "#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-prev",
+//   },
+// });
 
-new Swiper("#swiper-aef69157f3874b3d8911be4c51d5741b", {
-  // modules: [Navigation],
-  spaceBetween: 20,
-  slidesPerView: 2,
-  breakpoints: {
-    [screens.md]: {
-      slidesPerView: 3,
-    },
-    [screens.lg]: {
-      slidesPerView: 5,
-    },
-  },
-  loop: true,
-  navigation: {
-    nextEl: "#swiper-aef69157f3874b3d8911be4c51d5741b-button-next",
-    prevEl: "#swiper-aef69157f3874b3d8911be4c51d5741b-button-prev",
-  },
-  on: {
-    click: (swiper) => {
-      document
-        .getElementById(swiper.clickedSlide.dataset["galleryItemId"])
-        ?.click();
-    },
-  },
-});
+// new Swiper("#swiper-aef69157f3874b3d8911be4c51d5741b", {
+//   // modules: [Navigation],
+//   spaceBetween: 20,
+//   slidesPerView: 2,
+//   breakpoints: {
+//     [screens.md]: {
+//       slidesPerView: 3,
+//     },
+//     [screens.lg]: {
+//       slidesPerView: 5,
+//     },
+//   },
+//   loop: true,
+//   navigation: {
+//     nextEl: "#swiper-aef69157f3874b3d8911be4c51d5741b-button-next",
+//     prevEl: "#swiper-aef69157f3874b3d8911be4c51d5741b-button-prev",
+//   },
+//   on: {
+//     click: (swiper) => {
+//       document
+//         .getElementById(swiper.clickedSlide.dataset["galleryItemId"])
+//         ?.click();
+//     },
+//   },
+// });
 
-new Swiper("#swiper-67233994a168456eb9db9ba8c425f2b5", {
-  // modules: [Navigation],
-  spaceBetween: 50,
-  slidesPerView: 1,
-  breakpoints: {
-    [screens.sm]: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    [screens.lg]: {
-      slidesPerView: 3,
-      navigation: false,
-    },
-  },
-  loop: true,
-  navigation: {
-    nextEl: "#swiper-67233994a168456eb9db9ba8c425f2b5-button-next",
-    prevEl: "#swiper-67233994a168456eb9db9ba8c425f2b5-button-prev",
-  },
-});
+// new Swiper("#swiper-67233994a168456eb9db9ba8c425f2b5", {
+//   // modules: [Navigation],
+//   spaceBetween: 50,
+//   slidesPerView: 1,
+//   breakpoints: {
+//     [screens.sm]: {
+//       slidesPerView: 2,
+//       spaceBetween: 20,
+//     },
+//     [screens.lg]: {
+//       slidesPerView: 3,
+//       navigation: false,
+//     },
+//   },
+//   loop: true,
+//   navigation: {
+//     nextEl: "#swiper-67233994a168456eb9db9ba8c425f2b5-button-next",
+//     prevEl: "#swiper-67233994a168456eb9db9ba8c425f2b5-button-prev",
+//   },
+// });
 
-new Swiper("#swiper-9a3e8ea9-7faf-486e-957f-de3a1795479f", {
-  // modules: [Pagination],
-  pagination: {
-    el: ".swiper-pagination-9a3e8ea9-7faf-486e-957f-de3a1795479f",
-    clickable: true,
-  },
-  autoplay: {
-    delay: 5_000,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  },
-});
+// new Swiper("#swiper-9a3e8ea9-7faf-486e-957f-de3a1795479f", {
+//   // modules: [Pagination],
+//   pagination: {
+//     el: ".swiper-pagination-9a3e8ea9-7faf-486e-957f-de3a1795479f",
+//     clickable: true,
+//   },
+//   autoplay: {
+//     delay: 5_000,
+//     disableOnInteraction: false,
+//     pauseOnMouseEnter: true,
+//   },
+// });
 
-new Swiper("#swiper-bbf7c73f-0433-40a2-945b-8708ba9dfbc4", {
-  // modules: [Pagination],
-  pagination: {
-    el: ".swiper-pagination-bbf7c73f-0433-40a2-945b-8708ba9dfbc4",
-    clickable: true,
-  },
-  autoplay: {
-    delay: 5_000,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  },
-});
+// new Swiper("#swiper-bbf7c73f-0433-40a2-945b-8708ba9dfbc4", {
+//   // modules: [Pagination],
+//   pagination: {
+//     el: ".swiper-pagination-bbf7c73f-0433-40a2-945b-8708ba9dfbc4",
+//     clickable: true,
+//   },
+//   autoplay: {
+//     delay: 5_000,
+//     disableOnInteraction: false,
+//     pauseOnMouseEnter: true,
+//   },
+// });
 
 if (!window.HTMLDialogElement) {
   const dialogs = document.querySelectorAll("dialog");

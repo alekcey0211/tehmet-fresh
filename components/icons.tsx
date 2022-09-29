@@ -1,6 +1,6 @@
 import { JSX } from "preact";
 
-function address(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function address(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="24" height="19" viewBox="0 0 24 19" fill="none" {...props}>
       <path
@@ -19,7 +19,7 @@ function address(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function approveUser(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function approveUser(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="100" height="90" viewBox="0 0 100 90" fill="none" {...props}>
       <path
@@ -43,7 +43,7 @@ function approveUser(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function arrowLeft(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function arrowLeft(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="15" height="16" fill="none" viewBox="0 0 15 16" {...props}>
       <path
@@ -54,7 +54,7 @@ function arrowLeft(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function arrowRight(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function arrowRight(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="24" height="24" fill="none" viewBox="0 0 24 24" {...props}>
       <path
@@ -65,7 +65,7 @@ function arrowRight(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function arrowUp(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function arrowUp(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" {...props}>
       <path
@@ -76,7 +76,7 @@ function arrowUp(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function award(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function award(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="134" height="134" viewBox="0 0 134 134" fill="none" {...props}>
       <path
@@ -117,7 +117,7 @@ function award(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function calendar(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function calendar(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="100" height="90" viewBox="0 0 100 90" fill="none" {...props}>
       <path
@@ -141,7 +141,7 @@ function calendar(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function documentTransfer(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function documentTransfer(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="24" height="23" viewBox="0 0 24 23" fill="none" {...props}>
       <path
@@ -160,7 +160,7 @@ function documentTransfer(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function doubleCaretDown(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function doubleCaretDown(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="37" height="42" viewBox="0 0 37 42" fill="none" {...props}>
       <path
@@ -179,7 +179,7 @@ function doubleCaretDown(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function eye(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function eye(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="41" height="38" viewBox="0 0 41 38" fill="none" {...props}>
       <path
@@ -202,7 +202,7 @@ function eye(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function fileArrowDown(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function fileArrowDown(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="20" height="22" fill="none" viewBox="0 0 20 22" {...props}>
       <path
@@ -243,7 +243,7 @@ function fileArrowDown(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function happySmileHappy(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function happySmileHappy(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="100" height="90" viewBox="0 0 100 90" fill="none" {...props}>
       <path
@@ -267,7 +267,7 @@ function happySmileHappy(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function layout(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function layout(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" {...props}>
       <path
@@ -336,7 +336,7 @@ function layout(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function locationGradientMini(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function locationGradientMini(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="12" height="15" viewBox="0 0 12 15" fill="none" {...props}>
       <path
@@ -379,7 +379,7 @@ function locationGradientMini(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function locationGradient(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function locationGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="28" height="29" viewBox="0 0 28 29" fill="none" {...props}>
       <path
@@ -422,7 +422,7 @@ function locationGradient(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function location(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function location(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="28" height="29" viewBox="0 0 28 29" fill="none" {...props}>
       <path
@@ -441,7 +441,7 @@ function location(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function logoColor(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function logoColor(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 101 88" fill="none" {...props}>
       <path
@@ -485,7 +485,7 @@ function logoColor(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function logoGrey(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function logoGrey(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 101 88" fill="none" {...props}>
       <g opacity="0.2">
@@ -531,7 +531,7 @@ function logoGrey(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function menuHamburger(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function menuHamburger(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="40" height="19" viewBox="0 0 40 19" fill="none" {...props}>
       <path
@@ -585,7 +585,7 @@ function menuHamburger(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function mortarboard(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function mortarboard(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="100" height="90" viewBox="0 0 100 90" fill="none" {...props}>
       <path
@@ -609,7 +609,7 @@ function mortarboard(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function orderAsc(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function orderAsc(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="15" height="16" viewBox="0 0 15 16" fill="none" {...props}>
       <path
@@ -633,7 +633,7 @@ function orderAsc(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function orderDesc(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function orderDesc(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="15" height="16" fill="none" viewBox="0 0 15 16" {...props}>
       <g clip-path="url(#a-bd80e62a-60b4-4e4f-8dc8-9857b0c65efe)">
@@ -666,7 +666,7 @@ function orderDesc(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function phone(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function phone(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="24" height="23" viewBox="0 0 24 23" fill="none" {...props}>
       <path
@@ -685,7 +685,7 @@ function phone(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function rows(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function rows(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" {...props}>
       <path
@@ -724,7 +724,7 @@ function rows(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function search(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function search(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="34" height="38" viewBox="0 0 34 38" fill="none" {...props}>
       <path
@@ -737,7 +737,7 @@ function search(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function tablet(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function tablet(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="18" height="23" viewBox="0 0 18 23" fill="none" {...props}>
       <path
@@ -750,7 +750,7 @@ function tablet(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function titleSeparator(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function titleSeparator(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="1284" viewBox="0 0 1284 32" fill="none" {...props}>
       <path
@@ -776,7 +776,7 @@ function titleSeparator(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function triangleRightGradient(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function triangleRightGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="31" height="35" viewBox="0 0 31 35" fill="none" {...props}>
       <path
@@ -800,7 +800,7 @@ function triangleRightGradient(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function volumeUp(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function volumeUp(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="70" height="66" viewBox="0 0 70 66" fill="none" {...props}>
       <path
@@ -854,7 +854,7 @@ function volumeUp(props: JSX.HTMLAttributes<SVGSVGElement>) {
   );
 }
 
-function youtube(props: JSX.HTMLAttributes<SVGSVGElement>) {
+function youtube(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="74" height="68" viewBox="0 0 74 68" fill="none" {...props}>
       <path
@@ -874,6 +874,24 @@ function youtube(props: JSX.HTMLAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
       </defs>
+    </svg>
+  );
+}
+
+function x(props: JSX.SVGAttributes<SVGSVGElement>) {
+  return (
+    <svg
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path d="M18 6 6 18M6 6l12 12" />
     </svg>
   );
 }
@@ -909,4 +927,5 @@ export const icons = {
   triangleRightGradient,
   volumeUp,
   youtube,
+  x,
 };

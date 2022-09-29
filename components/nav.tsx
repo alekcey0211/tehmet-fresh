@@ -1,4 +1,3 @@
-import { tw } from "twind";
 import { navItems } from "../shared/nav-items.ts";
 
 export function Nav({ route }: { route: string }) {
@@ -11,12 +10,13 @@ export function Nav({ route }: { route: string }) {
           >
             <a
               href={item.link}
-              class={[
-                "!grid place-content-center px-4 nav-item-link",
-                route === item.link ? "gradient-text" : undefined,
-              ]
-                .filter(Boolean)
-                .join(" ")}
+              class={`!grid place-content-center px-4 nav-item-link ${route === item.link && "gradient-text"}`}
+              // [
+              //   ,
+              //   route === item.link ? "gradient-text" : undefined,
+              // ]
+              //   .filter(Boolean)
+              //   .join(" ")}
             >
               {item.text}
             </a>

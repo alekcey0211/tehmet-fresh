@@ -1,4 +1,5 @@
 import { Button } from "./button.tsx";
+import { icons } from "./icons.tsx";
 
 export function Dialogs() {
   return (
@@ -13,7 +14,7 @@ export function Dialogs() {
             data-close
             class="absolute top-0 right-0 md:top-10 md:right-10 rounded-2xl grid place-content-center w-10 h-10 sm:w-16 sm:h-16"
           >
-            x
+            <icons.x stroke="#fff" strokeWidth={1} width={40} height={40} />
           </button>
           <span class="block mb-4 sm:mb-10 md:mb-16 text-2xl sm:text-4xl md:text-5xl text-center text-white">
             Свяжитесь с ТЕХМЕТ
@@ -69,10 +70,10 @@ export function Dialogs() {
                 name="agreement"
                 class="checkbox opacity-0 cursor-pointer absolute z-10"
               />
-              <div class="form-check-input shrink-0 mt-2"></div>
+              <div class="form-check-input flex-shrink-0 mt-2"></div>
               <span class="text-white cursor-pointer select-none text-xs sm:text-lg">
                 Нажимая на кнопку, я даю согласие на обработку персональных
-                данных, согласно
+                данных, согласно&nbsp;
                 <a
                   href="https://tehmet.su/politika-o-zaschite-personalnyh-dannyh"
                   class="underline"
@@ -105,7 +106,7 @@ export function Dialogs() {
             data-close
             class="absolute top-0 right-0 md:top-10 md:right-10 rounded-2xl grid place-content-center w-10 h-10 sm:w-16 sm:h-16"
           >
-            x
+            <icons.x stroke="#fff" strokeWidth={1} width={40} height={40} />
           </button>
           <span class="block mb-4 sm:mb-10 md:mb-16 text-2xl sm:text-4xl md:text-5xl text-center text-white">
             Свяжитесь с ТЕХМЕТ
@@ -161,10 +162,10 @@ export function Dialogs() {
                 name="agreement"
                 class="checkbox opacity-0 cursor-pointer absolute z-10"
               />
-              <div class="form-check-input shrink-0 mt-2"></div>
+              <div class="form-check-input flex-shrink-0 mt-2"></div>
               <span class="text-white cursor-pointer select-none text-xs sm:text-lg">
                 Нажимая на кнопку, я даю согласие на обработку персональных
-                данных, согласно
+                данных, согласно&nbsp;
                 <a
                   href="https://tehmet.su/politika-o-zaschite-personalnyh-dannyh"
                   class="underline"
@@ -197,7 +198,7 @@ export function Dialogs() {
             data-close
             class="absolute top-0 right-0 md:top-10 md:right-10 rounded-2xl grid place-content-center w-10 h-10 sm:w-16 sm:h-16"
           >
-            x
+            <icons.x stroke="#fff" strokeWidth={1} width={40} height={40} />
           </button>
           <span class="block mb-4 sm:mb-10 md:mb-16 text-2xl sm:text-4xl md:text-5xl text-center text-white">
             Обратная связь
@@ -251,10 +252,10 @@ export function Dialogs() {
                 name="agreement"
                 class="checkbox opacity-0 cursor-pointer absolute z-10"
               />
-              <div class="form-check-input shrink-0 mt-2"></div>
+              <div class="form-check-input flex-shrink-0 mt-2"></div>
               <span class="text-white cursor-pointer select-none text-xs sm:text-lg">
                 Нажимая на кнопку, я даю согласие на обработку персональных
-                данных, согласно
+                данных, согласно&nbsp;
                 <a
                   href="https://tehmet.su/politika-o-zaschite-personalnyh-dannyh"
                   class="underline"
@@ -264,7 +265,7 @@ export function Dialogs() {
                 .
               </span>
             </label>
-            <div class="border-b-[1px] border-b-[#DADADA] my-6"></div>
+            <div class="border-b-[1px] border-[#DADADA] my-6"></div>
             <div class="grid md:flex gap-1 sm:gap-4 md:gap-12 mb-4 sm:mb-12">
               <div class="flex items-center">
                 <input
@@ -326,7 +327,6 @@ export function Dialogs() {
             class="grid justify-center text-white grid-cols-[228px] h-10 sm:h-14"
             data-button-container
           >
-			
             <Button text="Отправить" view="blue" />
           </div>
           <p class="m-0 text-center hidden text-white text-xl" data-success>
@@ -337,13 +337,13 @@ export function Dialogs() {
 
       {/* <dialog id="form-3b57f227-2967-466b-baf7-51d758ec184b" class="nav-dialog p-0 !max-h-full !w-auto !h-auto !ml-0 !mt-0 !mb-0 top-0 bottom-0 right-16 sm:right-20">
 	<button type="button" data-close class="fixed top-3 right-3 rounded-2xl grid place-content-center w-10 h-10 sm:w-16 sm:h-16">
-		x
+		<icons.x stroke="#fff" strokeWidth={1} width={40} height={40} />
 	</button>
 	<div class="py-4 pl-8">
 		<div class="mb-4 grid gap-1">
 			{% for item in contacts | contactsForAllPages %}
 				<div class="flex items-center gap-x-1 text-xs sm:text-lg">
-					<div class="shrink-0">
+					<div class="flex-shrink-0">
 						{{ "/src/_icons/location-gradient-mini.svg" | svgContents | safe }}
 					</div>
 					<span class="gradient-text">{{ item.city }}</span>
@@ -404,6 +404,7 @@ export function Dialogs() {
 			width: 40,
 			height: 40
 		} %}
+    <icons.x stroke="#fff" strokeWidth={1} width={40} height={40} />
 	</button>
 	<div class="min-h-32 bg-light-blue xs:pr-24 grid gap-4 relative pt-8 pl-4 pb-3">
 		<div class="absolute bottom-0 right-0 w-20 grid">

@@ -2,18 +2,18 @@
 @tailwind components;
 @tailwind utilities; */
 
-:root {
+/* :root {
   --swiper-navigation-color: #9c9ea8;
-}
+} */
 
-svg,
+/* svg,
 img {
   max-height: 100%;
   max-width: 100%;
-}
-.pswp img {
+} */
+/* .pswp img {
   max-height: none;
-}
+} */
 
 /* :where(a, button, input, textarea, summary, [tabindex="0"]) {
 	--outline-thickness: 0, 1875rem;
@@ -28,7 +28,7 @@ img {
 	outline: none;
 } */
 
-.hover-gradient:hover {
+/* .hover-gradient:hover {
   background-image: linear-gradient(
     90deg,
     #0089cc 39.7%,
@@ -40,20 +40,19 @@ img {
   -webkit-background-clip: initial;
   background: transparent;
   color: white;
-}
+} */
 
-.gradient {
+/* .gradient {
   background-image: linear-gradient(
     90deg,
     #0089cc 39.7%,
     rgba(10, 82, 154, 0.96) 70.33%
   );
-}
+} */
 
-.nav-item-link:hover,
+/* .nav-item-link:hover,
 .nav-item-button:hover > span,
-.nav-item-button:hover .nav-item-span,
-.gradient-text {
+.nav-item-button:hover .nav-item-span {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -62,12 +61,12 @@ img {
     #0089cc 39.7%,
     rgba(10, 82, 154, 0.96) 70.33%
   );
-}
-a.gradient-text {
+} */
+/* a.gradient-text {
   display: inline-block;
-}
+} */
 
-.gradient-light-text {
+/* .gradient-light-text {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -76,7 +75,7 @@ a.gradient-text {
     rgba(0, 137, 204, 0.5) 39.7%,
     rgba(10, 82, 154, 0.48) 70.33%
   );
-}
+} */
 
 /* .header-nav-shadow {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
@@ -102,13 +101,13 @@ dialog {
   display: block;
 }
 
-dialog.form-dialog {
+/* dialog.form-dialog {
   background-image: linear-gradient(
     213.83deg,
     #0089cc 32.57%,
     rgba(10, 82, 154) 66.08%
   );
-}
+} */
 
 dialog:not([open]) {
   display: none;
@@ -149,7 +148,7 @@ dialog.fixed {
   transform: translate(0, -50%);
 }
 
-.form-check-input {
+/* .form-check-input {
   width: 1.23rem;
   height: 1.23rem;
   background-color: #fff;
@@ -165,7 +164,7 @@ dialog.fixed {
   transition: background-color 0.25s ease, border-color 0.25s ease,
     background-position 0.15s ease-in-out, opacity 0.15s ease-out,
     box-shadow 0.15s ease-in-out;
-}
+} */
 
 /* @layer components { */
 /* .checkbox:checked + .form-check-input {
@@ -204,10 +203,7 @@ dialog.fixed {
   align-items: center;
   font-size: 0.67rem;
 }
-
-.c-prav h2 {
-  /* @apply text-xl; */
-}
+/* 
 .c-prav p {
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -219,23 +215,7 @@ dialog.fixed {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 40px;
-}
-.c-prav table {
-  /* @apply table-auto w-full flex overflow-auto; */
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-}
-.c-prav thead {
-  /* @apply border; */
-}
-.c-prav th,
-.c-prav td {
-  /* @apply p-1 border-r; */
-}
-.c-prav tr {
-  /* @apply border; */
-}
-/* } */
+} */
 
 .visually-hidden {
   border: 0;
@@ -247,7 +227,7 @@ dialog.fixed {
   padding: 0;
   position: absolute;
   width: 1px;
-  white-space: nowrap; /* 1 */
+  white-space: nowrap;
 }
 
 .visually-hidden.focusable:active,
