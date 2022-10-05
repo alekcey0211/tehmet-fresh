@@ -95,7 +95,7 @@ export default function CatalogSearch() {
         type="text"
         autocomplete="off"
         placeholder="Поиск по каталогу"
-        class="text-base sm:text-lg md:text-xl py-1 md:py-3 pl-4 md:pl-8 pr-12 md:pr-16 border-blue1 focus-visible:outline-blue border-2 rounded-2xl col-span-full row-span-full leading-none font-light"
+        class="text-base sm:text-lg md:text-xl py-1 md:py-3 pl-4 md:pl-8 pr-12 md:pr-16 border-blue1 outline-blue focus-visible:outline-blue border-2 rounded-2xl col-span-full row-span-full leading-none font-light"
         onInput={(event) =>
           setSearchTerm((event.target as HTMLInputElement).value)
         }

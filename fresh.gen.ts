@@ -8,6 +8,9 @@ import * as $1 from "./routes/about.tsx";
 import * as $2 from "./routes/api/joke.ts";
 import * as $3 from "./routes/index.tsx";
 import * as $$0 from "./islands/CatalogSearch.tsx";
+import * as $$1 from "./islands/CategoriesNavDropdown.tsx";
+import * as $$2 from "./islands/Container.tsx";
+import * as $$3 from "./islands/Dropdown.tsx";
 
 const manifest = {
   routes: {
@@ -18,6 +21,9 @@ const manifest = {
   },
   islands: {
     "./islands/CatalogSearch.tsx": $$0,
+    "./islands/CategoriesNavDropdown.tsx": $$1,
+    "./islands/Container.tsx": $$2,
+    "./islands/Dropdown.tsx": $$3,
   },
   baseUrl: import.meta.url,
   config,

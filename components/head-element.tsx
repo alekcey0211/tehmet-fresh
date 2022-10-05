@@ -1,16 +1,18 @@
 import { Head } from "$fresh/runtime.ts";
+import { useContext } from "preact/hooks";
+import { Page } from "../context/page-context.tsx";
 
 export function HeadElement({
   description = "Группа Компаний Техмет - ведущий поставщик в России в области комплексных поставок продукции для монтажа нефтегазопроводов Цель компании создавать уверенность у потребителей в бесперебойности производства",
-  image = "/assets/img/logo-color.png",
+  image = "logo-color.png",
   title,
-  url,
 }: {
-  url: URL;
   title: string;
   description?: string;
   image?: string;
 }) {
+  const { url } = useContext(Page);
+
   return (
     <Head>
       <title>{`${title} - Техмет`}</title>
@@ -40,50 +42,41 @@ export function HeadElement({
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="/assets/img/apple-touch-icon.png"
+        href="apple-touch-icon.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="/assets/img/favicon-32x32.png"
+        href="favicon-32x32.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="/assets/img/favicon-16x16.png"
+        href="favicon-16x16.png"
       />
-      <link rel="manifest" href="/assets/img/site.webmanifest" />
-      <link
-        rel="mask-icon"
-        href="/assets/img/safari-pinned-tab.svg"
-        color="#5bbad5"
-      />
-      <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+      <link rel="manifest" href="site.webmanifest" />
+      <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+      <link rel="shortcut icon" href="favicon.ico" />
       <meta name="apple-mobile-web-app-title" content="Tehmet" />
       <meta name="application-name" content="Tehmet" />
       <meta name="msapplication-TileColor" content="#da532c" />
-      <meta
-        name="msapplication-config"
-        content="/assets/img/browserconfig.xml"
-      />
+      <meta name="msapplication-config" content="browserconfig.xml" />
       <meta name="theme-color" content="#ffffff" />
 
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"
-      />
 
-      <link rel="stylesheet" type="text/css" href="swiper-bundle.min.css" />
-      <link rel="stylesheet" type="text/css" href="dialog-polyfill.css" />
+      <link rel="stylesheet" href="photoswipe/photoswipe.css" />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="swiper/swiper-bundle.min.css"
+      />
       <link rel="stylesheet" type="text/css" href="style.css" />
 
-      <script src="swiper-bundle.min.js" async defer></script>
-      <script src="dialog-polyfill.js" async defer></script>
-      <script src="script.js" async defer></script>
+      <script type="module" src="script.js" async defer></script>
 
       {/* {% if site.production %}
 	{# <!-- Yandex.Metrika counter --> #}
@@ -226,54 +219,6 @@ export function HeadElement({
 	</script>
 	{# <!-- calltouch --> #}
 {% endif %} */}
-
-      {/* <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/assets/img/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/assets/img/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/assets/img/favicon-16x16.png"
-      />
-      <link rel="manifest" href="/assets/img/site.webmanifest" />
-      <link
-        rel="mask-icon"
-        href="/assets/img/safari-pinned-tab.svg"
-        color="#5bbad5"
-      />
-      <link rel="shortcut icon" href="/assets/img/favicon.ico" />
-      <meta name="apple-mobile-web-app-title" content="Tehmet" />
-      <meta name="application-name" content="Tehmet" />
-      <meta name="msapplication-TileColor" content="#da532c" />
-      <meta
-        name="msapplication-config"
-        content="/assets/img/browserconfig.xml"
-      />
-      <meta name="theme-color" content="#ffffff" />
-
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="{{ page.url | url }}" />
-      <meta property="og:title" content="{{ metaTitle | safe }}" />
-      <meta property="og:description" content="{{ metaDescription | safe }}" />
-      <meta property="og:image" content="/assets/img/logo-color.png" />
-
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="{{ page.url | url }}" />
-      <meta property="twitter:title" content="{{ metaTitle | safe }}" />
-      <meta
-        property="twitter:description"
-        content="{{ metaDescription | safe }}"
-      />
-      <meta property="twitter:image" content="/assets/img/logo-color.png" /> */}
     </Head>
   );
 }

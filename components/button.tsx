@@ -1,3 +1,5 @@
+import { IS_BROWSER } from "$fresh/runtime.ts";
+
 export function Button({
   text,
   href,
@@ -25,6 +27,7 @@ export function Button({
 
   return (
     <Tag
+      id="asdasd"
       class={[buttonClass, textClass, borderColorClass, hoverClass]
         .filter(Boolean)
         .join(" ")}

@@ -4,7 +4,7 @@ import { Button } from "./button.tsx";
 import { icons } from "./icons.tsx";
 import { Image } from "./image.tsx";
 
-export function Header() {
+export function HeaderCompact() {
   return (
     <header class="pt-3 md:pt-10 z-40 px-4 md:px-10 sticky top-0 bg-white header-nav-shadow lg:!shadow-none md:relative">
       <div class="max-w-fullhd mx-auto grid md:block -xs:grid-cols-[1fr_auto] grid-cols-[202px_auto] sm:grid-cols-[340px_auto] md:grid-cols-none gap-x-3 justify-between items-start">

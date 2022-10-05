@@ -1,4 +1,5 @@
 import { JSX } from "preact";
+import { useId } from "preact/hooks";
 
 function address(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
@@ -20,15 +21,17 @@ function address(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function approveUser(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="100" height="90" viewBox="0 0 100 90" fill="none" {...props}>
       <path
         d="M55.4 45.8c2.2-1.7 4-3.8 5.2-6.3a17 17 0 0 0 1.9-7.6c0-5-2.2-9.8-6.1-13.3a22 22 0 0 0-14.7-5.5 22 22 0 0 0-14.8 5.5 17.9 17.9 0 0 0-4.1 21c1.2 2.5 3 4.6 5.2 6.3a32.6 32.6 0 0 0-14.2 11 27.9 27.9 0 0 0-5.4 16.3c0 1 .5 2 1.3 2.7.7.7 1.8 1 2.9 1 1.1 0 2.2-.3 3-1a4 4 0 0 0 1.2-2.7c0-6 2.6-11.7 7.3-15.9 4.7-4.2 11-6.6 17.7-6.6 6.6 0 13 2.4 17.6 6.6 4.7 4.2 7.4 10 7.4 16 0 1 .4 1.9 1.2 2.6.8.7 1.8 1 3 1 1 0 2.1-.3 2.9-1C74.6 75 75 74 75 73c0-5.7-1.9-11.4-5.3-16.2a32.6 32.6 0 0 0-14.3-11Zm-13.7-2.7c-2.5 0-5-.6-7-1.9-2-1.2-3.6-3-4.6-5-1-2-1.2-4.3-.7-6.5a11 11 0 0 1 3.4-5.8 13 13 0 0 1 6.4-3 13 13 0 0 1 12.9 4.7 10.7 10.7 0 0 1-1.6 14.2 13.2 13.2 0 0 1-8.8 3.3Zm48.8-8.9-1.4-.8a4.6 4.6 0 0 0-4.6.8l-8.3 7.5-2.6-2.3c-.4-.4-.8-.7-1.3-.8a4.6 4.6 0 0 0-4.6.8c-.8.7-1.2 1.6-1.2 2.6s.4 2 1.2 2.7l5.6 5c.8.7 1.8 1 3 1 1 0 2-.3 2.9-1l11-10c.5-.4.9-.8 1-1.2a3.4 3.4 0 0 0-.7-4.3Z"
-        fill="url(#a-890c13b5-f3df-4b8c-be3c-5f9d5d41a3ad)"
+        fill={`url(#a-${id})`}
       />
       <defs>
         <linearGradient
-          id="a-890c13b5-f3df-4b8c-be3c-5f9d5d41a3ad"
+          id={`a-${id}`}
           x1="41.9198"
           y1="81.8439"
           x2="67.8303"
@@ -77,11 +80,13 @@ function arrowUp(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function award(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="134" height="134" viewBox="0 0 134 134" fill="none" {...props}>
       <path
         d="M57.2291 53.0416C57.2291 47.6453 61.6036 43.2708 66.9999 43.2708C72.3962 43.2708 76.7707 47.6453 76.7707 53.0416C76.7707 58.4379 72.3962 62.8124 66.9999 62.8124C61.6036 62.8124 57.2291 58.4379 57.2291 53.0416Z"
-        fill="url(#8f087e891edc4c45800a5ef0b3ca05f2)"
+        fill={`url(#a-${id})`}
       />
       <path
         fill-rule="evenodd"
@@ -91,7 +96,7 @@ function award(props: JSX.SVGAttributes<SVGSVGElement>) {
       />
       <defs>
         <linearGradient
-          id="8f087e891edc4c45800a5ef0b3ca05f2"
+          id={`a-${id}`}
           x1="57.5259"
           y1="119.557"
           x2="87.9089"
@@ -118,15 +123,17 @@ function award(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function calendar(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="100" height="90" viewBox="0 0 100 90" fill="none" {...props}>
       <path
         d="M50 52.5c.8 0 1.6-.2 2.3-.6.7-.4 1.2-1 1.5-1.7.4-.7.4-1.5.3-2.2-.2-.7-.6-1.4-1.2-1.9-.5-.5-1.3-.9-2-1-.9-.2-1.7-.1-2.5.2a3.8 3.8 0 0 0-2.6 3.4c0 1 .5 2 1.3 2.7.7.7 1.8 1.1 2.9 1.1Zm20.8 0c.9 0 1.7-.2 2.3-.6.7-.4 1.3-1 1.6-1.7a3.7 3.7 0 0 0-.9-4c-.6-.6-1.3-1-2.2-1.1a4 4 0 0 0-2.4.2c-.7.3-1.4.7-1.8 1.4a3 3 0 0 0-.7 2c0 1 .4 2 1.2 2.7.8.7 1.8 1.1 3 1.1ZM50 67.5c.8 0 1.6-.2 2.3-.6.7-.4 1.2-1 1.5-1.7.4-.7.4-1.5.3-2.2-.2-.7-.6-1.4-1.2-1.9-.5-.5-1.3-.9-2-1-.9-.2-1.7-.1-2.5.2a3.8 3.8 0 0 0-2.6 3.4c0 1 .5 2 1.3 2.7.7.7 1.8 1.1 2.9 1.1Zm20.8 0c.9 0 1.7-.2 2.3-.6.7-.4 1.3-1 1.6-1.7a3.7 3.7 0 0 0-.9-4c-.6-.6-1.3-1-2.2-1.1a4 4 0 0 0-2.4.2c-.7.3-1.4.7-1.8 1.4a3 3 0 0 0-.7 2c0 1 .4 2 1.2 2.7.8.7 1.8 1.1 3 1.1Zm-41.6-15c.8 0 1.6-.2 2.3-.6.7-.4 1.2-1 1.5-1.7.3-.7.4-1.5.3-2.2a4.1 4.1 0 0 0-3.3-2.9 4 4 0 0 0-2.4.2c-.8.3-1.4.7-1.9 1.4a3 3 0 0 0-.7 2c0 1 .4 2 1.2 2.7.8.7 1.9 1.1 3 1.1Zm50-37.5H75v-3.8c0-1-.4-1.9-1.2-2.6a4.4 4.4 0 0 0-3-1.1 5 5 0 0 0-3 1.1c-.7.7-1.1 1.7-1.1 2.7V15H33.3v-3.8c0-1-.4-1.9-1.2-2.6a4.4 4.4 0 0 0-3-1.1c-1 0-2.1.4-2.9 1.1-.8.7-1.2 1.7-1.2 2.7V15h-4.2c-3.3 0-6.5 1.2-8.8 3.3a11 11 0 0 0-3.7 8v45c0 3 1.4 5.8 3.7 8 2.3 2 5.5 3.2 8.8 3.2h58.4c3.3 0 6.5-1.2 8.8-3.3a11 11 0 0 0 3.7-8v-45c0-3-1.4-5.8-3.7-7.9a13.2 13.2 0 0 0-8.8-3.3Zm4.1 56.3c0 1-.4 1.9-1.2 2.6-.8.7-1.8 1.1-3 1.1H20.9a5 5 0 0 1-3-1.1 3.6 3.6 0 0 1-1.1-2.7V37.5h66.6v33.8Zm0-41.3H16.7v-3.8c0-1 .4-1.9 1.2-2.6.8-.7 1.8-1.1 3-1.1h58.3c1 0 2.1.4 3 1.1.7.7 1.1 1.7 1.1 2.6V30ZM29.2 67.5c.8 0 1.6-.2 2.3-.6.7-.4 1.2-1 1.5-1.7.3-.7.4-1.5.3-2.2a4.1 4.1 0 0 0-3.3-2.9 4 4 0 0 0-2.4.2c-.8.3-1.4.7-1.9 1.4a3 3 0 0 0-.7 2c0 1 .4 2 1.2 2.7.8.7 1.9 1.1 3 1.1Z"
-        fill="url(#a-e7b28010-acd5-4f8f-b63e-7c357153a59d)"
+        fill={`url(#a-${id})`}
       />
       <defs>
         <linearGradient
-          id="a-e7b28010-acd5-4f8f-b63e-7c357153a59d"
+          id={`a-${id}`}
           x1="41.9198"
           y1="81.8439"
           x2="67.8303"
@@ -203,21 +210,23 @@ function eye(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function fileArrowDown(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="20" height="22" fill="none" viewBox="0 0 20 22" {...props}>
       <path
-        fill="url(#a-9911b13c-ae97-4633-b833-e24cacd406eb)"
+        fill={`url(#a-${id})`}
         fill-rule="evenodd"
         d="M12.9.28c0-.15-.14-.28-.32-.28H3.55C1.59 0 0 1.39 0 3.1v15.8C0 20.6 1.59 22 3.55 22h12.9c1.96 0 3.55-1.39 3.55-3.1V7.78c0-.15-.14-.28-.32-.28h-5.8c-.54 0-.98-.38-.98-.85V.28Zm-.28 12.03a1.06 1.06 0 0 1 1.36.14c.34.36.27.9-.15 1.19l-3.22 2.25a1.1 1.1 0 0 1-.6.19H10a.92.92 0 0 1-.6-.2l-3.23-2.24c-.42-.3-.49-.83-.15-1.2.33-.36.94-.42 1.36-.13l1.65 1.16V9.59c0-.47.44-.85.97-.85s.97.38.97.85v3.88l1.65-1.16Z"
         clip-rule="evenodd"
       />
       <path
-        fill="url(#b-9911b13c-ae97-4633-b833-e24cacd406eb)"
+        fill={`url(#b-${id})`}
         d="M14.84.65c0-.21.25-.34.43-.21.16.1.3.24.42.38l3.89 4.74c.08.1-.01.25-.16.25h-4.26c-.18 0-.32-.13-.32-.29V.65Z"
       />
       <defs>
         <linearGradient
-          id="a-9911b13c-ae97-4633-b833-e24cacd406eb"
+          id={`a-${id}`}
           x1="8.06"
           x2="14.28"
           y1="21.81"
@@ -228,7 +237,7 @@ function fileArrowDown(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
         <linearGradient
-          id="b-9911b13c-ae97-4633-b833-e24cacd406eb"
+          id={`b-${id}`}
           x1="8.06"
           x2="14.28"
           y1="21.81"
@@ -244,15 +253,17 @@ function fileArrowDown(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function happySmileHappy(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="100" height="90" viewBox="0 0 100 90" fill="none" {...props}>
       <path
         d="M37.5 41.3c.8 0 1.6-.3 2.3-.7.7-.4 1.2-1 1.5-1.7.4-.7.4-1.4.3-2.1-.2-.8-.6-1.4-1.2-2-.5-.5-1.3-.8-2-1-.9-.1-1.7 0-2.5.2-.8.3-1.4.8-1.9 1.4a4 4 0 0 0-.7 2.1c0 1 .5 2 1.3 2.7.7.7 1.8 1 2.9 1ZM50 7.5a45 45 0 0 0-23.1 6.3 38.7 38.7 0 0 0-15.4 16.8 34 34 0 0 0-2.4 21.7c1.6 7.3 5.6 14 11.4 19.2A43.3 43.3 0 0 0 42 81.8a46 46 0 0 0 24-2.2 41 41 0 0 0 18.7-13.8 34.9 34.9 0 0 0 3.9-35.2 39 39 0 0 0-9-12.1A45.7 45.7 0 0 0 50 7.5ZM50 75a36 36 0 0 1-18.5-5 31 31 0 0 1-12.3-13.5A27.2 27.2 0 0 1 17.3 39a29.2 29.2 0 0 1 9.1-15.3 36.8 36.8 0 0 1 36.3-6.5 33 33 0 0 1 15 11A28 28 0 0 1 83.3 45c0 8-3.5 15.6-9.7 21.2A35.3 35.3 0 0 1 50 75Zm12.5-26.3h-25c-1.1 0-2.2.4-3 1.1-.7.8-1.2 1.7-1.2 2.7 0 4 1.8 7.8 5 10.6 3 2.8 7.3 4.4 11.7 4.4 4.4 0 8.7-1.6 11.8-4.4 3.1-2.8 4.9-6.6 4.9-10.6 0-1-.5-2-1.3-2.7a4.4 4.4 0 0 0-2.9-1ZM50 60a9 9 0 0 1-4.2-1 8 8 0 0 1-3-2.8h14.4a8 8 0 0 1-3 2.8 9 9 0 0 1-4.2 1Zm12.5-26.3c-.8 0-1.6.3-2.3.7-.7.4-1.2 1-1.5 1.7-.4.7-.4 1.4-.3 2.1.2.8.6 1.4 1.2 2 .5.5 1.3.8 2 1 .9.1 1.7 0 2.5-.2.8-.3 1.4-.8 1.9-1.4a4 4 0 0 0 .7-2.1c0-1-.5-2-1.3-2.7a4.4 4.4 0 0 0-2.9-1Z"
-        fill="url(#a-7fd226cb-b2c4-46a5-8c40-70accdeb5b54)"
+        fill={`url(#a-${id})`}
       />
       <defs>
         <linearGradient
-          id="a-7fd226cb-b2c4-46a5-8c40-70accdeb5b54"
+          id={`a-${id}`}
           x1="41.9198"
           y1="81.8439"
           x2="67.8303"
@@ -268,27 +279,29 @@ function happySmileHappy(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function layout(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" {...props}>
       <path
         d="M9.07 3.23a18.77 18.77 0 0 0-4.14 0c-.88.1-1.58.79-1.69 1.67-.16 1.4-.16 2.8 0 4.2.1.88.81 1.57 1.7 1.67a19 19 0 0 0 4.13 0c.88-.1 1.58-.79 1.69-1.67.16-1.4.16-2.8 0-4.2a1.92 1.92 0 0 0-1.7-1.67Z"
-        fill="url(#a-8420ad40-5fae-4d51-93fe-2afc9aa47866)"
+        fill={`url(#a-${id})`}
       />
       <path
         d="M9.07 13.23a18.77 18.77 0 0 0-4.14 0c-.88.1-1.58.79-1.69 1.67-.16 1.4-.16 2.8 0 4.2.1.88.81 1.57 1.7 1.67a19 19 0 0 0 4.13 0c.88-.1 1.58-.79 1.69-1.67.16-1.4.16-2.8 0-4.2a1.92 1.92 0 0 0-1.7-1.67Z"
-        fill="url(#b-8420ad40-5fae-4d51-93fe-2afc9aa47866)"
+        fill={`url(#b-${id})`}
       />
       <path
         d="M19.07 3.23a18.77 18.77 0 0 0-4.14 0c-.88.1-1.58.79-1.69 1.67-.16 1.4-.16 2.8 0 4.2.1.88.81 1.57 1.7 1.67a19 19 0 0 0 4.13 0c.88-.1 1.58-.79 1.69-1.67.16-1.4.16-2.8 0-4.2a1.92 1.92 0 0 0-1.7-1.67Z"
-        fill="url(#c-8420ad40-5fae-4d51-93fe-2afc9aa47866)"
+        fill={`url(#c-${id})`}
       />
       <path
         d="M19.07 13.23a18.77 18.77 0 0 0-4.14 0c-.88.1-1.58.79-1.69 1.67-.16 1.4-.16 2.8 0 4.2.1.88.81 1.57 1.7 1.67a19 19 0 0 0 4.13 0c.88-.1 1.58-.79 1.69-1.67.16-1.4.16-2.8 0-4.2a1.92 1.92 0 0 0-1.7-1.67Z"
-        fill="url(#d-8420ad40-5fae-4d51-93fe-2afc9aa47866)"
+        fill={`url(#d-${id})`}
       />
       <defs>
         <linearGradient
-          id="a-8420ad40-5fae-4d51-93fe-2afc9aa47866"
+          id={`a-${id}`}
           x1="10.28"
           y1="20.73"
           x2="15.8"
@@ -299,7 +312,7 @@ function layout(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
         <linearGradient
-          id="b-8420ad40-5fae-4d51-93fe-2afc9aa47866"
+          id={`b-${id}`}
           x1="10.28"
           y1="20.73"
           x2="15.8"
@@ -310,7 +323,7 @@ function layout(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
         <linearGradient
-          id="c-8420ad40-5fae-4d51-93fe-2afc9aa47866"
+          id={`c-${id}`}
           x1="10.28"
           y1="20.73"
           x2="15.8"
@@ -321,7 +334,7 @@ function layout(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
         <linearGradient
-          id="d-8420ad40-5fae-4d51-93fe-2afc9aa47866"
+          id={`d-${id}`}
           x1="10.28"
           y1="20.73"
           x2="15.8"
@@ -337,23 +350,25 @@ function layout(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function locationGradientMini(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="12" height="15" viewBox="0 0 12 15" fill="none" {...props}>
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M2.5 6.2c0-1.9 1.4-3.4 3.2-3.4 1.7 0 3.1 1.5 3.1 3.4S7.4 9.6 5.7 9.6C3.9 9.6 2.5 8 2.5 6.2Zm3.2-2.3c-1.2 0-2.2 1-2.2 2.3 0 1.3 1 2.3 2.2 2.3 1.2 0 2.1-1 2.1-2.3 0-1.3-1-2.3-2.1-2.3Z"
-        fill="url(#a-1289e46c-0d19-4144-8e3c-24e8eae40ede)"
+        fill={`url(#a-${id})`}
       />
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M0 5.4C.3 2.4 2.7 0 5.5 0h.3c2.9 0 5.3 2.3 5.5 5.4.1 1.6-.3 3.2-1.3 4.5l-3.2 4.2c-.6.7-1.7.7-2.3 0L1.3 9.9A6.6 6.6 0 0 1 0 5.4ZM5.5 1C3.2 1 1.2 3 1 5.5a6 6 0 0 0 1.1 3.7l3.2 4.2c.2.2.5.2.7 0l3.2-4.2c.8-1 1.2-2.4 1.1-3.7A4.6 4.6 0 0 0 5.8 1h-.3Z"
-        fill="url(#b-1289e46c-0d19-4144-8e3c-24e8eae40ede)"
+        fill={`url(#b-${id})`}
       />
       <defs>
         <linearGradient
-          id="a-1289e46c-0d19-4144-8e3c-24e8eae40ede"
+          id={`a-${id}`}
           x1="4.6"
           y1="14.5"
           x2="8.1"
@@ -364,7 +379,7 @@ function locationGradientMini(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" />
         </linearGradient>
         <linearGradient
-          id="b-1289e46c-0d19-4144-8e3c-24e8eae40ede"
+          id={`b-${id}`}
           x1="4.6"
           y1="14.5"
           x2="8.1"
@@ -380,23 +395,25 @@ function locationGradientMini(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function locationGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="28" height="29" viewBox="0 0 28 29" fill="none" {...props}>
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M8.458 12.083c0-3.17 2.481-5.74 5.542-5.74 3.06 0 5.542 2.57 5.542 5.74 0 3.17-2.482 5.74-5.542 5.74-3.06 0-5.542-2.57-5.542-5.74ZM14 8.156c-2.094 0-3.792 1.758-3.792 3.927S11.906 16.01 14 16.01s3.792-1.758 3.792-3.927S16.094 8.156 14 8.156Z"
-        fill="url(#a-5c41a772-05c1-4ec5-a8d0-8b9765589235)"
+        fill={`url(#a-${id})`}
       />
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M4.112 10.702c.413-5.194 4.604-9.192 9.636-9.192h.504c5.032 0 9.223 3.998 9.636 9.192.222 2.79-.61 5.56-2.321 7.728l-5.592 7.083a2.496 2.496 0 0 1-3.95 0L6.433 18.43a11.069 11.069 0 0 1-2.321-7.728Zm9.636-7.38c-4.121 0-7.554 3.275-7.892 7.529a9.212 9.212 0 0 0 1.932 6.432l5.592 7.083c.32.406.92.406 1.24 0l5.592-7.083a9.212 9.212 0 0 0 1.932-6.432c-.338-4.254-3.77-7.528-7.892-7.528h-.504Z"
-        fill="url(#b-5c41a772-05c1-4ec5-a8d0-8b9765589235)"
+        fill={`url(#b-${id})`}
       />
       <defs>
         <linearGradient
-          id="a-5c41a772-05c1-4ec5-a8d0-8b9765589235"
+          id={`a-${id}`}
           x1="12.075"
           y1="26.264"
           x2="18.247"
@@ -407,7 +424,7 @@ function locationGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
         <linearGradient
-          id="b-5c41a772-05c1-4ec5-a8d0-8b9765589235"
+          id={`b-${id}`}
           x1="12.075"
           y1="26.264"
           x2="18.247"
@@ -442,13 +459,15 @@ function location(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function logoColor(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg viewBox="0 0 101 88" fill="none" {...props}>
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M39.1791 0H70.7493L100.584 0.200234L94.3769 59.0023C92.6415 74.8207 77.7575 87.8359 61.3383 87.8359H29.8349L0 87.9694L6.20725 28.9004C7.87587 13.0152 22.7599 0 39.1791 0Z"
-        fill="url(#a26d4ac3106d42538e7e86b15c388874)"
+        fill={`url(#a-${id})`}
       />
       <path
         fill-rule="evenodd"
@@ -470,7 +489,7 @@ function logoColor(props: JSX.SVGAttributes<SVGSVGElement>) {
       />
       <defs>
         <linearGradient
-          id="a26d4ac3106d42538e7e86b15c388874"
+          id={`a-${id}`}
           x1="31.5002"
           y1="9.33257e-05"
           x2="11.4091"
@@ -486,6 +505,8 @@ function logoColor(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function logoGrey(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg viewBox="0 0 101 88" fill="none" {...props}>
       <g opacity="0.2">
@@ -493,7 +514,7 @@ function logoGrey(props: JSX.SVGAttributes<SVGSVGElement>) {
           fill-rule="evenodd"
           clip-rule="evenodd"
           d="M39.1791 0H70.7493L100.584 0.200234L94.3769 59.0022C92.6416 74.8207 77.7575 87.8359 61.3383 87.8359H29.8349L0 87.9694L6.20725 28.9004C7.87587 13.0152 22.7599 0 39.1791 0Z"
-          fill="url(#c328b93fa0484d26bf6ffac254239a40)"
+          fill={`url(#a-${id})`}
         />
         <path
           fill-rule="evenodd"
@@ -516,7 +537,7 @@ function logoGrey(props: JSX.SVGAttributes<SVGSVGElement>) {
       </g>
       <defs>
         <linearGradient
-          id="c328b93fa0484d26bf6ffac254239a40"
+          id={`a-${id}`}
           x1="31.5002"
           y1="9.33257e-05"
           x2="11.4091"
@@ -532,23 +553,16 @@ function logoGrey(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function menuHamburger(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="40" height="19" viewBox="0 0 40 19" fill="none" {...props}>
-      <path
-        fill="url(#a-ee84f8a9-fb6f-455f-be5c-960bbf21ad1c)"
-        d="M0 0h40v3H0z"
-      />
-      <path
-        fill="url(#b-ee84f8a9-fb6f-455f-be5c-960bbf21ad1c)"
-        d="M0 8h40v3H0z"
-      />
-      <path
-        fill="url(#c-ee84f8a9-fb6f-455f-be5c-960bbf21ad1c)"
-        d="M0 16h40v3H0z"
-      />
+      <path fill={`url(#a-${id})`} d="M0 0h40v3H0z" />
+      <path fill={`url(#b-${id})`} d="M0 8h40v3H0z" />
+      <path fill={`url(#c-${id})`} d="M0 16h40v3H0z" />
       <defs>
         <linearGradient
-          id="a-ee84f8a9-fb6f-455f-be5c-960bbf21ad1c"
+          id={`a-${id}`}
           x1="16.122"
           y1="2.974"
           x2="28.05"
@@ -559,7 +573,7 @@ function menuHamburger(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
         <linearGradient
-          id="b-ee84f8a9-fb6f-455f-be5c-960bbf21ad1c"
+          id={`b-${id}`}
           x1="16.122"
           y1="10.974"
           x2="28.05"
@@ -570,7 +584,7 @@ function menuHamburger(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
         <linearGradient
-          id="c-ee84f8a9-fb6f-455f-be5c-960bbf21ad1c"
+          id={`c-${id}`}
           x1="16.122"
           y1="18.974"
           x2="28.05"
@@ -586,15 +600,17 @@ function menuHamburger(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function mortarboard(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="100" height="90" viewBox="0 0 100 90" fill="none" {...props}>
       <path
         d="m89.5 38.2-4.1-2-37.5-18.8h-.5l-.8-.2h-1.5l-.9.2h-.4L6.3 36.1a4 4 0 0 0-1.6 1.4 3.5 3.5 0 0 0 0 3.8c.4.6 1 1 1.6 1.4l10.4 5.1v17.8c0 3 1.3 5.9 3.6 8 2.4 2 5.6 3.3 8.9 3.3h33.3c3.3 0 6.5-1.2 8.8-3.3 2.4-2.1 3.7-5 3.7-8V47.8l8.3-4.2v10.8c0 1 .5 2 1.3 2.6.7.7 1.8 1.1 2.9 1.1 1.1 0 2.2-.4 3-1 .7-.8 1.2-1.7 1.2-2.7v-13c0-.6-.2-1.2-.6-1.8a4 4 0 0 0-1.6-1.4ZM66.7 65.6c0 1-.5 2-1.3 2.7-.7.7-1.8 1-2.9 1H29.2c-1.1 0-2.2-.3-3-1a3.6 3.6 0 0 1-1.2-2.7V52l18.8 9.4.6.2h2.9l.6-.2L66.7 52v13.6ZM45.8 53.8 17 39.4l29-14.5 28.9 14.5-29 14.4Z"
-        fill="url(#a-3a6cc91f-ac33-4fe5-8c36-937b3ecfa5c9)"
+        fill={`url(#a-${id})`}
       />
       <defs>
         <linearGradient
-          id="a-3a6cc91f-ac33-4fe5-8c36-937b3ecfa5c9"
+          id={`a-${id}`}
           x1="41.9198"
           y1="81.8439"
           x2="67.8303"
@@ -610,15 +626,17 @@ function mortarboard(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function orderAsc(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="15" height="16" viewBox="0 0 15 16" fill="none" {...props}>
       <path
         d="M9.38 9.25v-2.5a.62.62 0 0 0-.63-.63h-7.5a.63.63 0 0 0-.62.63v2.5a.62.62 0 0 0 .62.63h7.5a.62.62 0 0 0 .63-.63Zm-7.5-.63V7.38h6.25v1.25H1.88Zm12.5 5.63v-2.5a.62.62 0 0 0-.63-.63H1.25a.62.62 0 0 0-.62.63v2.5a.62.62 0 0 0 .62.63h12.5a.62.62 0 0 0 .63-.63Zm-12.5-.63v-1.24h11.25v1.24H1.88Zm3.75-9.37v-2.5A.62.62 0 0 0 5 1.12H1.25a.63.63 0 0 0-.62.63v2.5a.62.62 0 0 0 .62.63H5a.62.62 0 0 0 .63-.63Zm-3.75-.63V2.38h2.5v1.25h-2.5Z"
-        fill="url(#a-325adb91-bf85-42cf-9d91-ea2cd8388915)"
+        fill={`url(#a-${id})`}
       />
       <defs>
         <linearGradient
-          id="a-325adb91-bf85-42cf-9d91-ea2cd8388915"
+          id={`a-${id}`}
           x1=".75"
           y1="6.67"
           x2=".81"
@@ -634,17 +652,19 @@ function orderAsc(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function orderDesc(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="15" height="16" fill="none" viewBox="0 0 15 16" {...props}>
-      <g clip-path="url(#a-bd80e62a-60b4-4e4f-8dc8-9857b0c65efe)">
+      <g clip-path={`url(#a-${id})`}>
         <path
-          fill="url(#b-bd80e62a-60b4-4e4f-8dc8-9857b0c65efe)"
+          fill={`url(#b-${id})`}
           d="M9.38 6.75v2.5a.62.62 0 0 1-.63.63h-7.5a.63.63 0 0 1-.62-.63v-2.5a.62.62 0 0 1 .62-.63h7.5a.62.62 0 0 1 .63.63Zm-7.5.63v1.25h6.25V7.37H1.88Zm12.5-5.63v2.5a.62.62 0 0 1-.63.63H1.25a.63.63 0 0 1-.62-.63v-2.5a.62.62 0 0 1 .62-.63h12.5a.62.62 0 0 1 .63.63Zm-12.5.63v1.25h11.25V2.38H1.88Zm3.75 9.37v2.5a.62.62 0 0 1-.63.63H1.25a.62.62 0 0 1-.62-.63v-2.5a.62.62 0 0 1 .62-.63H5a.62.62 0 0 1 .63.63Zm-3.75.63v1.24h2.5v-1.24h-2.5Z"
         />
       </g>
       <defs>
         <linearGradient
-          id="b-bd80e62a-60b4-4e4f-8dc8-9857b0c65efe"
+          id={`b-${id}`}
           x1=".75"
           x2=".81"
           y1="9.33"
@@ -654,7 +674,7 @@ function orderDesc(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop stop-color="#0089CC" />
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
-        <clipPath id="a-bd80e62a-60b4-4e4f-8dc8-9857b0c65efe">
+        <clipPath id={`a-${id}`}>
           <path
             fill="#fff"
             d="M0 0h15v15H0z"
@@ -686,19 +706,21 @@ function phone(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function rows(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" {...props}>
       <path
         d="M19.27 3.96c-4.84-.47-9.7-.47-14.54 0-.43.04-.8.34-.93.75a8.26 8.26 0 0 0 0 5.08c.13.41.5.7.93.75 4.84.47 9.7.47 14.54 0 .43-.04.8-.34.93-.75a8.26 8.26 0 0 0 0-5.08 1.1 1.1 0 0 0-.93-.75Z"
-        fill="url(#a-e8ffca95-3be2-4a00-a0f5-01ef6d4bfcaa)"
+        fill={`url(#a-${id})`}
       />
       <path
         d="M19.27 13.46c-4.84-.47-9.7-.47-14.54 0-.43.04-.8.34-.93.75a8.26 8.26 0 0 0 0 5.08c.13.41.5.7.93.75 4.84.47 9.7.47 14.54 0 .43-.04.8-.34.93-.75a8.26 8.26 0 0 0 0-5.08 1.1 1.1 0 0 0-.93-.75Z"
-        fill="url(#b-e8ffca95-3be2-4a00-a0f5-01ef6d4bfcaa)"
+        fill={`url(#b-${id})`}
       />
       <defs>
         <linearGradient
-          id="a-e8ffca95-3be2-4a00-a0f5-01ef6d4bfcaa"
+          id={`a-${id}`}
           x1="10.33"
           y1="20.25"
           x2="15.68"
@@ -709,7 +731,7 @@ function rows(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
         <linearGradient
-          id="b-e8ffca95-3be2-4a00-a0f5-01ef6d4bfcaa"
+          id={`b-${id}`}
           x1="10.33"
           y1="20.25"
           x2="15.68"
@@ -751,17 +773,19 @@ function tablet(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function titleSeparator(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="1284" viewBox="0 0 1284 32" fill="none" {...props}>
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M944.117 0C1064.94 0 1171.81 0.000301916 1284 0.000301916V2.44857H1220.33C1212.49 2.11467 1204.55 6.84853 1203.2 12.1526L1200.94 21.0163C1199.35 28.5818 1192.24 32 1185.88 32C1055.04 32 924.217 31.9997 793.378 31.9997L0 32L909.664 29.5514C917.504 29.8853 925.446 25.1523 926.795 19.8474L929.048 10.9837C930.643 3.41823 937.754 0 944.117 0Z"
-        fill="url(#9a9fe455f6904c5c91a463944a1d9d46)"
+        fill={`url(#a-${id})`}
       />
       <defs>
         <linearGradient
-          id="9a9fe455f6904c5c91a463944a1d9d46"
+          id={`a-${id}`}
           x1="919.657"
           y1="31.999"
           x2="1132.47"
@@ -777,15 +801,17 @@ function titleSeparator(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function triangleRightGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="31" height="35" viewBox="0 0 31 35" fill="none" {...props}>
       <path
         d="M31 17.4711L7.75 32.1935L7.75 2.74864L31 17.4711Z"
-        fill="url(#c64f841b5a2e4cef883fa69dbb8d7af3)"
+        fill={`url(#a-${id})`}
       />
       <defs>
         <linearGradient
-          id="c64f841b5a2e4cef883fa69dbb8d7af3"
+          id={`a-${id}`}
           x1="0.271203"
           y1="14.1743"
           x2="0.451316"
@@ -801,23 +827,25 @@ function triangleRightGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function volumeUp(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="70" height="66" viewBox="0 0 70 66" fill="none" {...props}>
       <path
         d="M42.61 13.62c-.28-2.12-2.99-3.11-4.76-1.74L23.21 23.2c-.26.2-.6.31-.93.31H10.94c-2.02 0-3.65 1.52-3.65 3.39v12.18c0 1.87 1.63 3.39 3.65 3.39h11.34c.34 0 .67.11.93.31l14.64 11.33c1.77 1.37 4.48.38 4.76-1.74l.28-2.08a129.6 129.6 0 0 0 0-34.6l-.28-2.08Z"
-        fill="url(#a)"
+        fill={`url(#a-${id})`}
       />
       <path
         d="M58.07 16.6a2.23 2.23 0 0 1 2.76 1.3 44.91 44.91 0 0 1 0 30.2 2.23 2.23 0 0 1-2.76 1.3c-1.15-.36-1.77-1.5-1.4-2.57a41.11 41.11 0 0 0 0-27.66c-.37-1.07.25-2.21 1.4-2.57Z"
-        fill="url(#b)"
+        fill={`url(#b-${id})`}
       />
       <path
         d="M52.6 22.02a2.24 2.24 0 0 0-2.81-1.2c-1.14.39-1.72 1.55-1.3 2.6a25.94 25.94 0 0 1 0 19.15c-.42 1.06.16 2.22 1.3 2.61 1.13.39 2.39-.15 2.8-1.2A30.16 30.16 0 0 0 54.7 33c0-3.85-.74-7.55-2.1-10.98Z"
-        fill="url(#c)"
+        fill={`url(#c-${id})`}
       />
       <defs>
         <linearGradient
-          id="a"
+          id={`a-${id}`}
           x1="29.92"
           y1="54.37"
           x2="47.38"
@@ -828,7 +856,7 @@ function volumeUp(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
         <linearGradient
-          id="b"
+          id={`b-${id}`}
           x1="29.92"
           y1="54.37"
           x2="47.38"
@@ -839,7 +867,7 @@ function volumeUp(props: JSX.SVGAttributes<SVGSVGElement>) {
           <stop offset="1" stop-color="#0A529A" stop-opacity=".96" />
         </linearGradient>
         <linearGradient
-          id="c"
+          id={`c-${id}`}
           x1="29.92"
           y1="54.37"
           x2="47.38"
@@ -855,15 +883,17 @@ function volumeUp(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 function youtube(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
   return (
     <svg width="74" height="68" viewBox="0 0 74 68" fill="none" {...props}>
       <path
         d="M70.92 27.51c.15-4.05-.82-8.08-2.8-11.7a9.2 9.2 0 0 0-5.31-2.83c-8.58-.72-17.2-1.01-25.81-.88-8.58-.14-17.17.15-25.71.85a9.16 9.16 0 0 0-4.5 2.1C4 17.4 3.7 21.42 3.38 24.82c-.45 6.11-.45 12.25 0 18.36.1 1.91.4 3.81.93 5.67A8.68 8.68 0 0 0 6.5 52.7a9.1 9.1 0 0 0 4.59 2.21c6.65.75 13.35 1.07 20.04.94 10.8.14 20.26 0 31.45-.8a9.18 9.18 0 0 0 4.72-2.2c.86-.8 1.5-1.77 1.88-2.84a27.82 27.82 0 0 0 1.6-9.63c.13-1.6.13-11.17.13-12.87ZM30.03 42.08V24.54l18.25 8.8c-5.11 2.62-11.87 5.56-18.25 8.74Z"
-        fill="url(#a-243db731-e8cd-4aee-94a4-8442d80c8f77)"
+        fill={`url(#a-${id})`}
       />
       <defs>
         <linearGradient
-          id="a-243db731-e8cd-4aee-94a4-8442d80c8f77"
+          id={`a-${id}`}
           x1="30.41"
           y1="55.51"
           x2="51.51"
@@ -892,6 +922,78 @@ function x(props: JSX.SVGAttributes<SVGSVGElement>) {
       {...props}
     >
       <path d="M18 6 6 18M6 6l12 12" />
+    </svg>
+  );
+}
+
+function chevronDown(props: JSX.SVGAttributes<SVGSVGElement>) {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
+
+function chevronLeft(props: JSX.SVGAttributes<SVGSVGElement>) {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="m15 18-6-6 6-6" />
+    </svg>
+  );
+}
+
+function chevronRight(props: JSX.SVGAttributes<SVGSVGElement>) {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  );
+}
+
+function chevronUp(props: JSX.SVGAttributes<SVGSVGElement>) {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="m18 15-6-6-6 6" />
     </svg>
   );
 }
@@ -928,4 +1030,8 @@ export const icons = {
   volumeUp,
   youtube,
   x,
+  chevronDown,
+  chevronLeft,
+  chevronRight,
+  chevronUp
 };

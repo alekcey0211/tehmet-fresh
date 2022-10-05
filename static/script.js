@@ -1,160 +1,17 @@
-// import Alpine from "alpinejs";
 // import persist from "@alpinejs/persist";
 // import Swiper, { Navigation, Autoplay, Pagination } from "swiper";
 // import PhotoSwipeLightbox from "photoswipe/lightbox";
 // import Fuse from "fuse.js";
+// import Alpine from "alpinejs";
+import PhotoSwipeLightbox from "./photoswipe/photoswipe-lightbox.esm.min.js";
+import Swiper from "./swiper/swiper-bundle.esm.browser.min.js";
 
-// window.autoComplete = () => {
-//   return {
-//     cursorIndex: -1,
-//     activeSuggestion: null,
-//     inputValue: "",
-//     active: false,
-//     suggestions: [],
-//     query: "",
-//     initFuse: async () => {
-//       const productsUrl = new URL("https://tehmet.su/ajax/products.php");
-//       const productsResponse = await fetch(productsUrl.toString());
-//       const productsJson = await productsResponse.json();
-//       const products = Object.values(productsJson.data ?? {});
-//       products.forEach((p) => {
-//         p.isExists = p.isExists ?? true;
-//       });
-//       return products;
-//     },
-//     fuse: new Fuse([], {
-//       includeMatches: true,
-//       findAllMatches: true,
-//       threshold: 0.1,
-//       ignoreLocation: true,
-//       keys: ["name"],
-//     }),
-//     updateSuggestions: function (data) {
-//       this.query = data;
-//       this.suggestions = this.doFuseSearch(this.query);
-//     },
-//     doFuseSearch: function (query) {
-//       let results = this.fuse.search(query);
-//       return results.sort((a, b) => a.item.name.localeCompare(b.item.name));
-//     },
-//     getThis: function () {
-//       let t = this;
-//       return t;
-//     },
-//     getRefs(which) {
-//       return this.$refs[which];
-//     },
-//     moveUpList() {
-//       // Move up the list if there is a list and we're not at the top already.
-//       if (this.suggestions.length > 0 && this.cursorIndex > 0) {
-//         // Decrement cursorIndex.
-//         this.cursorIndex--;
+// window.Alpine = Alpine;
+// Alpine.plugin(persist);
 
-//         // Remove active status from any other suggestion.
-//         let oldActive = this.suggestions.find(
-//           (suggestion) => suggestion.active
-//         );
-//         if (oldActive) {
-//           oldActive.active = false;
-//         }
+// Alpine.start();
 
-//         // Add active status to suggestion at cursorIndex.
-//         this.suggestions[this.cursorIndex].active = true;
-//         this.inputValue = this.suggestions[this.cursorIndex].item.name;
-//       }
-//     },
-//     moveDownList() {
-//       // Move down the list only if there is room on the list to move down.
-//       if (
-//         this.suggestions.length > 0 &&
-//         this.cursorIndex < this.suggestions.length - 1
-//       ) {
-//         // Just increment the cursorIndex.
-//         this.cursorIndex++;
-
-//         // Remove active status from any other suggestion.
-//         let oldActive = this.suggestions.find(
-//           (suggestion) => suggestion.active
-//         );
-//         if (oldActive) {
-//           oldActive.active = false;
-//         }
-//         this.suggestions[this.cursorIndex].active = true;
-//         this.inputValue = this.suggestions[this.cursorIndex].item.name;
-//       }
-//     },
-//   };
-// };
-
-// window.generateLinkByQueryParam = (values, hash) => {
-//   const url = new URL(document.location.href);
-//   for (const [key, value] of values) {
-//     if (value === undefined || value === null) {
-//       if (url.searchParams.has(key)) url.searchParams.delete(key);
-//     } else {
-//       url.searchParams.set(key, value);
-//     }
-//   }
-//   return `${url.pathname}${url.search}${hash ? "#" + hash : ""}`;
-// };
-
-// window.getSearchParams = () => {
-//   const url = new URL(document.location.href);
-//   return [...url.searchParams.entries()].reduce((acc, [key, value]) => {
-//     return {
-//       ...acc,
-//       [key]: value,
-//     };
-//   }, {});
-// };
-
-// window.catalogProductsInit = () => {
-//   const params = getSearchParams();
-//   return {
-//     items: [],
-//     isLoading: true,
-//     getProducts: async (props) => {
-//       const company = params.company?.trim().toLowerCase();
-
-//       const brand = props?.brand;
-//       const categories = props?.categories;
-//       const id = props?.id;
-
-//       const productsUrl = new URL("https://tehmet.su/ajax/products.php");
-//       if (categories) {
-//         categories.split(",").forEach((c) => {
-//           productsUrl.searchParams.append("category[]", c);
-//         });
-//       }
-//       if (id) productsUrl.searchParams.set("id", id);
-//       if (company || brand)
-//         productsUrl.searchParams.set("brand", company ?? brand);
-
-//       const productsResponse = await fetch(productsUrl.toString());
-//       const productsJson = await productsResponse.json();
-//       const products = Object.values(productsJson.data ?? {});
-//       products.forEach((p) => {
-//         p.isExists = p.isExists ?? true;
-//       });
-
-//       let items = [...products];
-//       if (params.sort) {
-//         items = items.sort((a, b) =>
-//           params.order === "desc"
-//             ? b[params.sort] - a[params.sort]
-//             : a[params.sort] - b[params.sort]
-//         );
-//       }
-//       return items;
-//     },
-//     formatNumber: (number) => new Intl.NumberFormat("ru-RU").format(number),
-//     link: (v) => generateLinkByQueryParam(v, "catalog"),
-//     params,
-//     layout: Alpine.$persist("grid").as("layout"),
-//   };
-// };
-
-// window.dropdownToggle = () => ({
+// window.dropdownInit = () => ({
 //   open: false,
 //   toggle() {
 //     if (this.open) return this.close();
@@ -165,117 +22,6 @@
 //     this.open = false;
 //   },
 // });
-
-// window.bestManagerInit = () => ({
-//   data: {},
-//   isLoading: true,
-//   load: async () => {
-//     const url = new URL("https://tehmet.su/ajax/best.php");
-//     const resp = await fetch(url.toString());
-//     const json = await resp.json();
-//     return {
-//       ...json,
-//       img: `/assets/img/employee/${json.fio
-//         .toLowerCase()
-//         .split(" ")
-//         .join("-")}.jpg`,
-//     };
-//   },
-// });
-
-// window.popularProductsInit = () => ({
-//   data: [],
-//   isLoading: true,
-//   load: async () => {
-//     const url = new URL("https://tehmet.su/ajax/products.php");
-//     const resp = await fetch(url.toString());
-//     const json = await resp.json();
-//     const products = Object.values(json.data ?? {});
-//     const popular = [
-//       ...products.filter(
-//         (x) =>
-//           Boolean(x.featured) ||
-//           x.features.find((f) =>
-//             ["хит", "хит продаж"].includes(f.value.toLowerCase())
-//           )
-//       ),
-//     ];
-
-//     const sliderWrapper = document.querySelector(
-//       "#swiper-bbaccfb375bf4ed48546783f28c4c46a .swiper-wrapper"
-//     );
-//     popular.forEach((item) => {
-//       const slide = document.createElement("div");
-//       slide.classList.add("swiper-slide");
-//       slide.innerHTML = `
-// 			<div
-// 				class="swiper-slide__wrapper"
-// 				style="clip-path: url(#form-01)"
-// 			>
-// 				<div
-// 					class="swiper-slide__wrapper__img-container"
-// 					style="clip-path: url(#form-01)"
-// 				>
-// 					<img src="${item.image}" alt="${item.name}" loading="lazy">
-// 				</div>
-// 				<span class="swiper-slide__wrapper__text">${item.name}</span>
-// 				<a href="/products/${item.url}/" class="swiper-slide__wrapper__link"></a>
-// 			</div>`;
-//       sliderWrapper.appendChild(slide);
-//     });
-
-//     new Swiper("#swiper-bbaccfb375bf4ed48546783f28c4c46a", {
-//       modules: [Navigation],
-//       slidesPerView: 1,
-//       breakpoints: {
-//         [screens["2xs"]]: {
-//           slidesPerView: Math.min(2, popular.length),
-//         },
-//         [screens.xs]: {
-//           slidesPerView: Math.min(3, popular.length),
-//         },
-//         [screens.lg]: {
-//           slidesPerView: Math.min(2, popular.length),
-//         },
-//         [screens.xl]: {
-//           slidesPerView: Math.min(3, popular.length),
-//         },
-//         [screens["2xl"]]: {
-//           slidesPerView: Math.min(4, popular.length),
-//         },
-//       },
-//       // loop: true,
-//       navigation: {
-//         nextEl: "#swiper-bbaccfb375bf4ed48546783f28c4c46a-button-next",
-//         prevEl: "#swiper-bbaccfb375bf4ed48546783f28c4c46a-button-prev",
-//       },
-//     });
-
-//     return popular;
-//   },
-// });
-
-// window.categoryInit = () => ({
-//   data: {},
-//   isLoading: true,
-//   load: async (id) => {
-//     const url = new URL("https://tehmet.su/ajax/categories.php");
-//     if (id) url.searchParams.set("category", id);
-//     const resp = await fetch(url.toString());
-//     const json = await resp.json();
-//     const category = json.data;
-//     const children = Object.values(category?.children ?? {});
-//     return {
-//       category,
-//       children: children.filter((x) => Boolean(Number(x.parent_id) === id)),
-//     };
-//   },
-// });
-
-// window.Alpine = Alpine;
-// Alpine.plugin(persist);
-
-// Alpine.start();
 
 const screens = {
   /** 375px */
@@ -294,118 +40,120 @@ const screens = {
   "2xl": 1536,
 };
 
-// new Swiper("#swiper-47b71397b2cc4df69b420a003b5477aa", {
-//   // modules: [Navigation, Autoplay],
-//   slidesPerView: 1,
-//   loop: true,
-//   navigation: {
-//     nextEl: "#swiper-47b71397b2cc4df69b420a003b5477aa-button-next",
-//     prevEl: "#swiper-47b71397b2cc4df69b420a003b5477aa-button-prev",
-//   },
-//   autoplay: {
-//     delay: 10000,
-//     disableOnInteraction: false,
-//     pauseOnMouseEnter: true,
-//   },
-// });
+new Swiper("#swiper-47b71397b2cc4df69b420a003b5477aa", {
+  // modules: [Navigation, Autoplay],
+  slidesPerView: 1,
+  loop: true,
+  navigation: {
+    nextEl: "#swiper-47b71397b2cc4df69b420a003b5477aa-button-next",
+    prevEl: "#swiper-47b71397b2cc4df69b420a003b5477aa-button-prev",
+  },
+  autoplay: {
+    delay: 10000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+});
 
-// new Swiper("#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3", {
-//   // modules: [Navigation],
-//   spaceBetween: 20,
-//   slidesPerView: 3,
-//   breakpoints: {
-//     [screens.lg]: {
-//       slidesPerView: 5,
-//     },
-//     [screens["2xl"]]: {
-//       slidesPerView: 6,
-//       slidesPerGroup: 6,
-//     },
-//   },
-//   loop: true,
-//   navigation: {
-//     nextEl: "#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-next",
-//     prevEl: "#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-prev",
-//   },
-// });
+new Swiper("#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3", {
+  // modules: [Navigation],
+  spaceBetween: 20,
+  slidesPerView: 3,
+  breakpoints: {
+    [screens.lg]: {
+      slidesPerView: 5,
+    },
+    [screens["2xl"]]: {
+      slidesPerView: 6,
+      slidesPerGroup: 6,
+    },
+  },
+  loop: true,
+  navigation: {
+    nextEl: "#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-next",
+    prevEl: "#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-prev",
+  },
+});
 
-// new Swiper("#swiper-aef69157f3874b3d8911be4c51d5741b", {
-//   // modules: [Navigation],
-//   spaceBetween: 20,
-//   slidesPerView: 2,
-//   breakpoints: {
-//     [screens.md]: {
-//       slidesPerView: 3,
-//     },
-//     [screens.lg]: {
-//       slidesPerView: 5,
-//     },
-//   },
-//   loop: true,
-//   navigation: {
-//     nextEl: "#swiper-aef69157f3874b3d8911be4c51d5741b-button-next",
-//     prevEl: "#swiper-aef69157f3874b3d8911be4c51d5741b-button-prev",
-//   },
-//   on: {
-//     click: (swiper) => {
-//       document
-//         .getElementById(swiper.clickedSlide.dataset["galleryItemId"])
-//         ?.click();
-//     },
-//   },
-// });
+new Swiper("#swiper-aef69157f3874b3d8911be4c51d5741b", {
+  // modules: [Navigation],
+  spaceBetween: 20,
+  slidesPerView: 2,
+  breakpoints: {
+    [screens.md]: {
+      slidesPerView: 3,
+    },
+    [screens.lg]: {
+      slidesPerView: 5,
+    },
+  },
+  loop: true,
+  navigation: {
+    nextEl: "#swiper-aef69157f3874b3d8911be4c51d5741b-button-next",
+    prevEl: "#swiper-aef69157f3874b3d8911be4c51d5741b-button-prev",
+  },
+  on: {
+    click: (swiper) => {
+      document
+        .getElementById(swiper.clickedSlide.dataset["galleryItemId"])
+        ?.click();
+    },
+  },
+});
 
-// new Swiper("#swiper-67233994a168456eb9db9ba8c425f2b5", {
-//   // modules: [Navigation],
-//   spaceBetween: 50,
-//   slidesPerView: 1,
-//   breakpoints: {
-//     [screens.sm]: {
-//       slidesPerView: 2,
-//       spaceBetween: 20,
-//     },
-//     [screens.lg]: {
-//       slidesPerView: 3,
-//       navigation: false,
-//     },
-//   },
-//   loop: true,
-//   navigation: {
-//     nextEl: "#swiper-67233994a168456eb9db9ba8c425f2b5-button-next",
-//     prevEl: "#swiper-67233994a168456eb9db9ba8c425f2b5-button-prev",
-//   },
-// });
+new Swiper("#swiper-67233994a168456eb9db9ba8c425f2b5", {
+  // modules: [Navigation],
+  spaceBetween: 50,
+  slidesPerView: 1,
+  breakpoints: {
+    [screens.sm]: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    [screens.lg]: {
+      slidesPerView: 3,
+      navigation: false,
+    },
+  },
+  loop: true,
+  navigation: {
+    nextEl: "#swiper-67233994a168456eb9db9ba8c425f2b5-button-next",
+    prevEl: "#swiper-67233994a168456eb9db9ba8c425f2b5-button-prev",
+  },
+});
 
-// new Swiper("#swiper-9a3e8ea9-7faf-486e-957f-de3a1795479f", {
-//   // modules: [Pagination],
-//   pagination: {
-//     el: ".swiper-pagination-9a3e8ea9-7faf-486e-957f-de3a1795479f",
-//     clickable: true,
-//   },
-//   autoplay: {
-//     delay: 5_000,
-//     disableOnInteraction: false,
-//     pauseOnMouseEnter: true,
-//   },
-// });
+new Swiper("#swiper-9a3e8ea9-7faf-486e-957f-de3a1795479f", {
+  // modules: [Pagination],
+  pagination: {
+    el: ".swiper-pagination-9a3e8ea9-7faf-486e-957f-de3a1795479f",
+    clickable: true,
+  },
+  autoplay: {
+    delay: 5_000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+});
 
-// new Swiper("#swiper-bbf7c73f-0433-40a2-945b-8708ba9dfbc4", {
-//   // modules: [Pagination],
-//   pagination: {
-//     el: ".swiper-pagination-bbf7c73f-0433-40a2-945b-8708ba9dfbc4",
-//     clickable: true,
-//   },
-//   autoplay: {
-//     delay: 5_000,
-//     disableOnInteraction: false,
-//     pauseOnMouseEnter: true,
-//   },
-// });
+new Swiper("#swiper-bbf7c73f-0433-40a2-945b-8708ba9dfbc4", {
+  // modules: [Pagination],
+  pagination: {
+    el: ".swiper-pagination-bbf7c73f-0433-40a2-945b-8708ba9dfbc4",
+    clickable: true,
+  },
+  autoplay: {
+    delay: 5_000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+});
 
 if (!window.HTMLDialogElement) {
-  const dialogs = document.querySelectorAll("dialog");
-  dialogs.forEach((dialog) => {
-    dialogPolyfill.registerDialog(dialog);
+  import("./dialog-polyfill/dialog-polyfill.esm.js").then((dialogPolyfill) => {
+    const dialogs = document.querySelectorAll("dialog");
+    dialogs.forEach((dialog) => {
+      dialogPolyfill.registerDialog(dialog);
+    });
   });
 }
 
@@ -563,12 +311,12 @@ dialogs.forEach((dialog) => {
   });
 });
 
-// const lightbox = new PhotoSwipeLightbox({
-//   gallery: "#gallery-89fcf8b9d9ab43948151a207a5eba144",
-//   children: "a",
-//   pswpModule: () => import("photoswipe"),
-// });
-// lightbox.init();
+const lightbox = new PhotoSwipeLightbox({
+  gallery: "#gallery-89fcf8b9d9ab43948151a207a5eba144",
+  children: "a",
+  pswpModule: () => import("./photoswipe/photoswipe.esm.min.js"),
+});
+lightbox.init();
 
 function init() {
   document.querySelectorAll("[data-map]").forEach((map) => {

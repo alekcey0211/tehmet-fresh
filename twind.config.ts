@@ -1,6 +1,55 @@
 import { Configuration } from "twind";
 
 export default {
+  theme: {
+    extend: {
+      fontSize: {
+        xxs: ".5rem",
+        "2xs": ".625rem",
+      },
+      screens: {
+        "-xs": { max: "475px" },
+      },
+      gridTemplateRows: {
+        layout: "max-content 1fr max-content",
+      },
+      maxWidth: {
+        hero: "1440px",
+        fullhd: "1920px",
+      },
+      colors: {
+        "light-blue": "rgba(0, 137, 204, 0.15)",
+        "dark-blue": "#39446B",
+        "light-grey": "#E8E8E8",
+        grey: "#9C9EA8",
+        grey2: "#4F4F4F",
+        blue: "#0089CC",
+        blue1: "#0A529A",
+      },
+      outline: {
+        "light-blue": ["rgba(0, 137, 204, 0.15)"],
+        "dark-blue": ["#39446B"],
+        "light-grey": ["#E8E8E8"],
+        grey: ["#9C9EA8"],
+        grey2: ["#4F4F4F"],
+        blue: ["#0089CC"],
+        blue1: ["#0A529A"],
+      },
+      fontFamily: {
+        sans: ["Fira Sans", "sans-serif"],
+      },
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "40px",
+        sm: "2rem",
+        lg: "40px",
+        xl: "40px",
+        "2xl": "40px",
+      },
+    },
+  },
   plugins: {
     "header-nav-shadow": {
       "box-shadow": `0px 4px 4px rgba(0, 0, 0, 0.25),
@@ -8,6 +57,7 @@ export default {
     },
     "nav-item-link": {},
     "nav-item-button": {},
+    "nav-item-span": {},
     "hover-gradient": {
       "&:hover": {
         "background-image": `linear-gradient(
@@ -75,45 +125,96 @@ export default {
         rgba(10, 82, 154) 66.08%
       )`,
     },
+    "shrink-0": {
+      "flex-shrink": 0,
+    },
+    "shrink-1": {
+      "flex-shrink": 1,
+    },
+    "grid-rows": (parts) =>
+      parts[0]?.startsWith("[")
+        ? {
+            "grid-template-rows": parts[0]
+              .substring(1, parts[0].length - 1)
+              .split("_")
+              .join(" "),
+          }
+        : {
+            "grid-template-rows": `repeat(${parts[0]}, minmax(0,1fr))`,
+          },
+    "grid-cols": (parts) =>
+      parts[0]?.startsWith("[")
+        ? {
+            "grid-template-columns": parts[0]
+              .substring(1, parts[0].length - 1)
+              .split("_")
+              .join(" "),
+          }
+        : {
+            "grid-template-columns": `repeat(${parts[0]}, minmax(0,1fr))`,
+          },
+    "aspect-auto": {
+      "aspect-ratio": `auto`,
+    },
+    "aspect-square": {
+      "aspect-ratio": `1 / 1`,
+    },
+    "aspect-video": {
+      "aspect-ratio": `16 / 9`,
+    },
+    scroll: (parts) => ({
+      "scroll-behavior": parts[0],
+    }),
+    aspect: (parts) =>
+      parts[0]?.startsWith("[") && {
+        "aspect-ratio": parts[0]
+          .substring(1, parts[0].length - 1)
+          .split("/")
+          .join(" / "),
+      },
   },
-  theme: {
-    extend: {
-      fontSize: {
-        xxs: ".5rem",
-        "2xs": ".625rem",
-      },
-      screens: {
-        "-xs": { max: "475px" },
-      },
-      gridTemplateRows: {
-        layout: "max-content 1fr max-content",
-      },
-      maxWidth: {
-        hero: "1440px",
-        fullhd: "1920px",
-      },
-      colors: {
-        "light-blue": "rgba(0, 137, 204, 0.15)",
-        "dark-blue": "#39446B",
-        "light-grey": "#E8E8E8",
-        grey: "#9C9EA8",
-        grey2: "#4F4F4F",
-        blue: "#0089CC",
-        blue1: "#0A529A",
-      },
-      fontFamily: {
-        sans: ["Fira Sans", "sans-serif"],
-      },
-    },
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: "40px",
-        sm: "2rem",
-        lg: "40px",
-        xl: "40px",
-        "2xl": "40px",
-      },
-    },
+  preflight: (cssRule, { css }) => {
+    cssRule["@import"] = [
+      "url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')",
+    ];
+
+    cssRule[":root"] = { "--swiper-navigation-color": "#9c9ea8" };
+    cssRule["body"] = css(
+      `antialiased grid grid-rows-[max-content_max-content_1fr_max-content] min-h-screen grid-cols-1 text-dark-blue`
+    );
+    cssRule["svg, img"] = {
+      maxHeight: "100%",
+      maxWidth: "100%",
+    };
+    cssRule[".pswp img"] = {
+      maxHeight: "none",
+    };
+    cssRule["a.gradient-text"] = {
+      display: "inline-block",
+    };
+    cssRule['*[class*="after"]::after'] = { content: '""' };
+    cssRule[".checkbox:checked + .form-check-input"] =
+      css(`bg-blue border-blue`);
+    cssRule[
+      ".nav-item-link:hover, .nav-item-button:hover > span, .nav-item-button:hover .nav-item-span"
+    ] = {
+      "-webkit-background-clip": "text",
+      backgroundClip: "text",
+      color: "transparent",
+      backgroundImage: `linear-gradient(
+                            90deg,
+                            #0089cc 39.7%,
+                            rgba(10, 82, 154, 0.96) 70.33%
+                          )`,
+    };
+    cssRule[".c-prav h2"] = css(`text-xl`);
+    cssRule[".c-prav thead"] = css(`border`);
+    cssRule[".c-prav th, .c-prav td"] = css(`p-1 border-r`);
+    cssRule[".c-prav tr"] = css(`border`);
+    cssRule[".c-prav table"] = css(
+      `table-auto w-full flex overflow-auto mb-4 mt-4`
+    );
+    cssRule[".c-prav p"] = css(`mb-4 mt-4`);
+    cssRule[".c-prav ul"] = css(`mb-4 mt-4 ml-0 mr-0 pl-0 list-disc`);
   },
 } as Configuration;

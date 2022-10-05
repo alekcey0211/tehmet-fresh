@@ -1,19 +1,25 @@
-import { HeadElement } from "../components/head-element.tsx";
-import { PageProps } from "$fresh/server.ts";
-import { Header } from "../components/header.tsx";
-import { Dialogs } from "../components/dialogs.tsx";
-import { Nav } from "../components/nav.tsx";
+import { Handlers, PageProps } from "$fresh/server.ts";
+import { pageCache, PageData } from "../context/page-context.tsx";
+import { fetchCategories } from "../data/categories.ts";
+import { isProduction } from "../shared/config.ts";
+import { Base } from "../components/layout.tsx";
 
-export default function Home(ctx: PageProps) {
-  const { url, route } = ctx;
+type Data = PageData;
 
-  return (
-    <>
-      <HeadElement title="О компании" url={url} />
-      <Header />
-      <Nav route={route} />
-      <main class="z-10"></main>
-      <Dialogs />
-    </>
-  );
+export const handler: Handlers<Data> = {
+  async GET(_req, ctx) {
+    const categories = pageCache.has("categories")
+      ? pageCache.get("categories")!
+      : await fetchCategories();
+
+    if (!isProduction) pageCache.set("categories", categories);
+
+    return ctx.render({
+      categories,
+    });
+  },
+};
+
+export default function About(ctx: PageProps) {
+  return <Base pageData={ctx} title="О компании"></Base>;
 }
