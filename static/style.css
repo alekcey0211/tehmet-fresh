@@ -217,7 +217,7 @@ dialog.fixed {
   padding-inline-start: 40px;
 } */
 
-.visually-hidden {
+/* .visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -240,7 +240,7 @@ dialog.fixed {
   position: static;
   width: auto;
   white-space: inherit;
-}
+} */
 
 .form-select {
   -moz-padding-start: calc(0.75rem - 3px);
@@ -249,11 +249,11 @@ dialog.fixed {
   background-size: 16px 12px;
 }
 
-.spinner-border {
+/* .spinner-border {
   vertical-align: -0.125em;
   border: 0.25em solid;
   border-right-color: transparent;
-}
+} */
 
 /* .swiper-slide__wrapper {
 	@apply bg-light-blue relative pt-1 pr-1 pl-6 md:pl-10 lg:pl-16 grid justify-items-end w-48 md:w-56 lg:w-96 h-full max-w-full mx-auto;

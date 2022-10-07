@@ -42,23 +42,23 @@ export function HeadElement({
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="apple-touch-icon.png"
+        href="/apple-touch-icon.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="favicon-32x32.png"
+        href="/favicon-32x32.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="favicon-16x16.png"
+        href="/favicon-16x16.png"
       />
-      <link rel="manifest" href="site.webmanifest" />
-      <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
-      <link rel="shortcut icon" href="favicon.ico" />
+      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+      <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="apple-mobile-web-app-title" content="Tehmet" />
       <meta name="application-name" content="Tehmet" />
       <meta name="msapplication-TileColor" content="#da532c" />
@@ -68,15 +68,16 @@ export function HeadElement({
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-      <link rel="stylesheet" href="photoswipe/photoswipe.css" />
+      <link rel="stylesheet" href="/photoswipe/photoswipe.css" />
       <link
         rel="stylesheet"
         type="text/css"
-        href="swiper/swiper-bundle.min.css"
+        href="/swiper/swiper-bundle.min.css"
       />
-      <link rel="stylesheet" type="text/css" href="style.css" />
+      <link rel="stylesheet" type="text/css" href="/style.css" />
 
-      <script type="module" src="script.js" async defer></script>
+	  <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.3.1/lite-youtube.js" async defer></script>
+      <script type="module" src="/script.js" async defer></script>
 
       {/* {% if site.production %}
 	{# <!-- Yandex.Metrika counter --> #}

@@ -3,27 +3,37 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import config from "./deno.json" assert { type: "json" };
-import * as $0 from "./routes/[name].tsx";
-import * as $1 from "./routes/about.tsx";
-import * as $2 from "./routes/api/joke.ts";
+import * as $0 from "./routes/about.tsx";
+import * as $1 from "./routes/api/joke.ts";
+import * as $2 from "./routes/catalog/[url].tsx";
 import * as $3 from "./routes/index.tsx";
-import * as $$0 from "./islands/CatalogSearch.tsx";
-import * as $$1 from "./islands/CategoriesNavDropdown.tsx";
-import * as $$2 from "./islands/Container.tsx";
-import * as $$3 from "./islands/Dropdown.tsx";
+import * as $$0 from "./islands/BrandsFooterList.tsx";
+import * as $$1 from "./islands/CatalogSearch.tsx";
+import * as $$2 from "./islands/CategoriesNavDropdown.tsx";
+import * as $$3 from "./islands/CharityDropdown.tsx";
+import * as $$4 from "./islands/Container.tsx";
+import * as $$5 from "./islands/Dropdown.tsx";
+import * as $$6 from "./islands/GeographySalesDropdown.tsx";
+import * as $$7 from "./islands/PopularProductsSlider.tsx";
+import * as $$8 from "./islands/TopNewSlider.tsx";
 
 const manifest = {
   routes: {
-    "./routes/[name].tsx": $0,
-    "./routes/about.tsx": $1,
-    "./routes/api/joke.ts": $2,
+    "./routes/about.tsx": $0,
+    "./routes/api/joke.ts": $1,
+    "./routes/catalog/[url].tsx": $2,
     "./routes/index.tsx": $3,
   },
   islands: {
-    "./islands/CatalogSearch.tsx": $$0,
-    "./islands/CategoriesNavDropdown.tsx": $$1,
-    "./islands/Container.tsx": $$2,
-    "./islands/Dropdown.tsx": $$3,
+    "./islands/BrandsFooterList.tsx": $$0,
+    "./islands/CatalogSearch.tsx": $$1,
+    "./islands/CategoriesNavDropdown.tsx": $$2,
+    "./islands/CharityDropdown.tsx": $$3,
+    "./islands/Container.tsx": $$4,
+    "./islands/Dropdown.tsx": $$5,
+    "./islands/GeographySalesDropdown.tsx": $$6,
+    "./islands/PopularProductsSlider.tsx": $$7,
+    "./islands/TopNewSlider.tsx": $$8,
   },
   baseUrl: import.meta.url,
   config,

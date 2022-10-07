@@ -29,7 +29,7 @@ export function Image({
         <source
           media={`(max-width: ${showBreakpointWidth}px)`}
           sizes="1px"
-          srcset="/assets/img/blank.gif 1w"
+          srcset="/blank.gif 1w"
         />
       )}
       <source

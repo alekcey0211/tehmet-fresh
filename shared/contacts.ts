@@ -49,7 +49,7 @@ export const contacts = ({ isPage = false }: { isPage?: boolean } = {}) => {
       .join(", "),
     coords: coords.join(","),
     phone,
-    telLink: transformTelLink(phone),
+    telLink: `tel:${transformTelLink(phone)}`,
   }));
 
   if (isPage) {

@@ -4,7 +4,7 @@ import { Category } from "../data/categories.ts";
 import { Brand } from "../data/brands.ts";
 
 export type PageData = {
-  categories: Category[];
+  categories?: Category[];
 };
 
 export const pageCache = new Map<keyof PageData, PageData[keyof PageData]>();

@@ -6,12 +6,14 @@ export function Button({
   view,
   dialogId,
   onClick,
+  className,
 }: {
   text?: string;
   href?: string;
   view: "gradient" | "white" | "blue";
   dialogId?: string;
   onClick?: () => void;
+  className?: string;
 }) {
   const Tag = href ? "a" : "button";
 
@@ -28,7 +30,7 @@ export function Button({
   return (
     <Tag
       id="asdasd"
-      class={[buttonClass, textClass, borderColorClass, hoverClass]
+      class={[buttonClass, textClass, borderColorClass, hoverClass, className]
         .filter(Boolean)
         .join(" ")}
       {...(href && {

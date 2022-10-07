@@ -13,7 +13,7 @@ export function Header() {
             <span class="sr-only">Логотип компании</span>
             <Image
               {...{
-                src: "logo-text.png",
+                src: "/logo-text.png",
                 alt: "Оборудование для газопроводов и нефтепроводов, материалы для сварочных работ - Техмет",
                 imgClassName: "block",
                 baseFormat: "png",
@@ -26,10 +26,7 @@ export function Header() {
               <div class="flex items-center gap-2 text-xl lg:text-2xl">
                 <icons.locationGradient />
                 <span class="gradient-text">{item.city}</span>
-                <a
-                  class="gradient-text whitespace-nowrap"
-                  href={`tel:${item.telLink}`}
-                >
+                <a class="gradient-text whitespace-nowrap" href={item.telLink}>
                   {item.phone}
                 </a>
               </div>
@@ -62,13 +59,13 @@ export function Header() {
             </div>
           </div>
         </div>
-        <div class="hidden md:flex justify-end mb-1">
-          <button class="flex items-center gap-2">
+        <div class="hidden md:flex justify-end mb-1 h-10">
+          {/* <button class="flex items-center gap-2">
             <icons.eye />
             <span class="text-sm text-grey2 leading-none">
               версия для слабовидящих
             </span>
-          </button>
+          </button> */}
         </div>
         <div class="flex gap-3 justify-end mb-2 md:mb-8 col-span-2">
           <button
@@ -85,7 +82,7 @@ export function Header() {
         <div class="hidden md:flex absolute bottom-0 left-0 right-0 -z-10 justify-center pr-[130px]">
           <Image
             {...{
-              src: "img/content/8e44cfdba3144a6cbbf4be610e3545d6.png",
+              src: "/img/content/8e44cfdba3144a6cbbf4be610e3545d6.png",
               alt: "На картинке изображена часть глобуса с отображением завода на суше",
               imgClassName: "block",
               baseFormat: "png",

@@ -58,6 +58,65 @@ export default {
     "nav-item-link": {},
     "nav-item-button": {},
     "nav-item-span": {},
+    "pswp-gallery": {},
+    "w-fit": {
+      width: "fit-content",
+    },
+    isolate: {
+      isolation: "isolate",
+    },
+    "swiper-slide__wrapper": (parts, { tw, theme, tag, css }) =>
+      tw`bg-light-blue relative pt-1 pr-1 pl-6 md:pl-10 lg:pl-16 grid justify-items-end w-48 md:w-56 lg:w-96 h-full max-w-full mx-auto`,
+    "swiper-slide__wrapper__img-container": (parts, { tw, theme, tag, css }) =>
+      tw`bg-white w-full h-32 md:h-36 lg:h-60 lg:p-8`,
+    "swiper-slide__wrapper__text": (parts, { tw, theme, tag, css }) =>
+      tw`text-dark-blue text-xxs md:text-xs lg:text-base pr-8 lg:pr-20 leading-[10px] justify-self-start`,
+    "swiper-slide__wrapper__link": (parts, { tw, theme, tag, css }) =>
+      tw`absolute inset-0`,
+    swiper: {},
+    "swiper-wrapper": {},
+    "swiper-slide": {},
+    "visually-hidden": {
+      border: "0",
+      clip: "rect(0 0 0 0)",
+      "clip-path": "inset(50%)",
+      height: "1px",
+      margin: "-1px",
+      overflow: "hidden",
+      padding: "0",
+      position: "absolute",
+      width: "1px",
+      "white-space": "nowrap",
+      "&.focusable:active": {
+        clip: "auto",
+        "clip-path": "none",
+        height: "auto",
+        margin: "0",
+        overflow: "visible",
+        position: "static",
+        width: "auto",
+        "white-space": "inherit",
+      },
+      "&.focusable:focus": {
+        clip: "auto",
+        "clip-path": "none",
+        height: "auto",
+        margin: "0",
+        overflow: "visible",
+        position: "static",
+        width: "auto",
+        "white-space": "inherit",
+      },
+    },
+    "spinner-border": {
+      "vertical-align": "-0.125em",
+      border: "0.25em solid",
+      "border-right-color": "transparent",
+    },
+    "swiper-button-next": {},
+    "swiper-button-prev": {},
+    a768e8baa19f64e51ad0012c672be3e95: {},
+    "a768e8baa19f64e51ad0012c672be3e95-bg": {},
     "hover-gradient": {
       "&:hover": {
         "background-image": `linear-gradient(
@@ -131,6 +190,9 @@ export default {
     "shrink-1": {
       "flex-shrink": 1,
     },
+    columns: (parts) => ({
+      columns: parts[0],
+    }),
     "grid-rows": (parts) =>
       parts[0]?.startsWith("[")
         ? {
