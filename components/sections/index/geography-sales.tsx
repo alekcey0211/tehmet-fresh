@@ -14,7 +14,7 @@ export const GeographySales = () => {
             ГЕОГРАФИЯ ПРОДАЖ
           </h1>
           <div class="hidden lg:block absolute bottom-0 right-0">
-            <icons.titleSeparator />
+            <icons.TitleSeparator />
           </div>
         </div>
       </div>
@@ -39,10 +39,10 @@ export const GeographySales = () => {
               {contacts({ isPage: true }).map((item) => (
                 <div class="flex items-center gap-1 sm:gap-2 text-xs sm:text-[18px] ">
                   <div class="shrink-0 hidden sm:block text-dark-blue">
-                    <icons.location />
+                    <icons.Location />
                   </div>
                   <div class="shrink-0 sm:hidden">
-                    <icons.locationGradientMini />
+                    <icons.LocationGradientMini />
                   </div>
 
                   <span class="gradient-text sm:text-dark-blue">

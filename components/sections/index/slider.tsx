@@ -91,7 +91,7 @@ export const Slider = () => {
                       style="clip-path: url(#form-01)"
                     ></div>
                     <div class="flex items-center gap-2">
-                      <icons.locationGradient />
+                      <icons.LocationGradient />
                       <span class="text-xl lg:text-[28px] gradient-text">
                         {item.city}
                       </span>

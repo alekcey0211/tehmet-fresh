@@ -14,7 +14,7 @@ export function Dialogs() {
             data-close
             class="absolute top-0 right-0 md:top-10 md:right-10 rounded-2xl grid place-content-center w-10 h-10 sm:w-16 sm:h-16"
           >
-            <icons.x stroke="#fff" strokeWidth={1} width={40} height={40} />
+            <icons.X stroke="#fff" strokeWidth={1} width={40} height={40} />
           </button>
           <span class="block mb-4 sm:mb-10 md:mb-16 text-2xl sm:text-4xl md:text-5xl text-center text-white">
             Свяжитесь с ТЕХМЕТ
@@ -106,7 +106,7 @@ export function Dialogs() {
             data-close
             class="absolute top-0 right-0 md:top-10 md:right-10 rounded-2xl grid place-content-center w-10 h-10 sm:w-16 sm:h-16"
           >
-            <icons.x stroke="#fff" strokeWidth={1} width={40} height={40} />
+            <icons.X stroke="#fff" strokeWidth={1} width={40} height={40} />
           </button>
           <span class="block mb-4 sm:mb-10 md:mb-16 text-2xl sm:text-4xl md:text-5xl text-center text-white">
             Свяжитесь с ТЕХМЕТ
@@ -198,7 +198,7 @@ export function Dialogs() {
             data-close
             class="absolute top-0 right-0 md:top-10 md:right-10 rounded-2xl grid place-content-center w-10 h-10 sm:w-16 sm:h-16"
           >
-            <icons.x stroke="#fff" strokeWidth={1} width={40} height={40} />
+            <icons.X stroke="#fff" strokeWidth={1} width={40} height={40} />
           </button>
           <span class="block mb-4 sm:mb-10 md:mb-16 text-2xl sm:text-4xl md:text-5xl text-center text-white">
             Обратная связь
@@ -337,7 +337,7 @@ export function Dialogs() {
 
       {/* <dialog id="form-3b57f227-2967-466b-baf7-51d758ec184b" class="nav-dialog p-0 !max-h-full !w-auto !h-auto !ml-0 !mt-0 !mb-0 top-0 bottom-0 right-16 sm:right-20">
 	<button type="button" data-close class="fixed top-3 right-3 rounded-2xl grid place-content-center w-10 h-10 sm:w-16 sm:h-16">
-		<icons.x stroke="#fff" strokeWidth={1} width={40} height={40} />
+		<icons.X stroke="#fff" strokeWidth={1} width={40} height={40} />
 	</button>
 	<div class="py-4 pl-8">
 		<div class="mb-4 grid gap-1">
@@ -404,7 +404,7 @@ export function Dialogs() {
 			width: 40,
 			height: 40
 		} %}
-    <icons.x stroke="#fff" strokeWidth={1} width={40} height={40} />
+    <icons.X stroke="#fff" strokeWidth={1} width={40} height={40} />
 	</button>
 	<div class="min-h-32 bg-light-blue xs:pr-24 grid gap-4 relative pt-8 pl-4 pb-3">
 		<div class="absolute bottom-0 right-0 w-20 grid">

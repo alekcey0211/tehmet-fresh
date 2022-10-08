@@ -31,14 +31,14 @@ export default function CategoriesNavDropdown({
             class="w-full flex gap-4 items-center justify-between"
             style="max-width: 180px"
           >
-            <icons.menuHamburger class="shrink-0" />
+            <icons.MenuHamburger class="shrink-0" />
             <a class="nav-item-span" href="/catalog" style="padding: 1rem">
               Каталог
             </a>
           </div>
         </div>
       }
-      triggerClassName="grid place-items-center nav-item-button lowercase"
+      triggerClassName="grid place-items-center nav-item-button lowercase after::absolute after::right-0 after::top-2 after::bottom-2 after::border-r-2 after::border-[#C4C4C4]"
       panel={
         <ul class="pl-12 py-4 bg-white max-w-[440px] overflow-auto max-h-[calc(100vh-70px)]">
           {data.map(({ url, name, children }, index, { length }) => {
@@ -57,9 +57,9 @@ export default function CategoriesNavDropdown({
                   >
                     {name}
                   </a>
-                  {isActive ? <icons.chevronDown /> : <icons.chevronRight />}
+                  {isActive ? <icons.ChevronDown /> : <icons.ChevronRight />}
                 </div>
-                {index < length && (
+                {index < length - 1 && (
                   <div
                     class={`border-b-[1px] ${
                       isActive ? "border-b-blue" : "border-b-[#DADADA]"

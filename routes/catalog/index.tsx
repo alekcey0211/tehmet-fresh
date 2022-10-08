@@ -2,12 +2,9 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { Base } from "../../components/layout.tsx";
 import { PageData, pageCache } from "../../context/page-context.tsx";
 import { Category, fetchCategories } from "../../data/categories.ts";
-import CategoryProducts from "../../islands/CategoryProducts.tsx";
 import { isProduction } from "../../shared/config.ts";
 
-type Data = PageData & {
-  category: Category;
-};
+type Data = PageData;
 
 export const handler: Handlers<Data> = {
   async GET(_req, ctx) {
@@ -17,25 +14,27 @@ export const handler: Handlers<Data> = {
 
     if (!isProduction) pageCache.set("categories", categories);
 
-    const category = categories.find(({ url }) => url === ctx.params.url);
-
-    if (!category) {
-      return ctx.renderNotFound();
-    }
-
     return ctx.render({
       categories,
-      category,
     });
   },
 };
 
-export default function CatalogUrlRoute(ctx: PageProps<Data>) {
+export default function CatalogRoute(ctx: PageProps<Data>) {
   const { data } = ctx;
+  const navCategories = data.categories?.filter(
+    ({ parent_id, url }) => parent_id === "0" && Boolean(url)
+  );
   return (
-    <Base pageData={ctx} title={data.category.name}>
-      <h1>{data.category.name}</h1>
-      <CategoryProducts categories={data.category.children.map((x) => x.id)} />
+    <Base pageData={ctx} title={"Каталог"}>
+      <h1>Каталог</h1>
+      <ul class="list-disc">
+        {navCategories?.map((category) => (
+          <li>
+            <a href={`/catalog/${category.url}`}>{category.name}</a>
+          </li>
+        ))}
+      </ul>
     </Base>
   );
 }

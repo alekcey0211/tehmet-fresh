@@ -24,7 +24,7 @@ export function Header() {
           <div class="hidden md:grid gap-1 lg:gap-0">
             {contacts({ isPage: true }).map((item) => (
               <div class="flex items-center gap-2 text-xl lg:text-2xl">
-                <icons.locationGradient />
+                <icons.LocationGradient />
                 <span class="gradient-text">{item.city}</span>
                 <a class="gradient-text whitespace-nowrap" href={item.telLink}>
                   {item.phone}
@@ -61,7 +61,7 @@ export function Header() {
         </div>
         <div class="hidden md:flex justify-end mb-1 h-10">
           {/* <button class="flex items-center gap-2">
-            <icons.eye />
+            <icons.Eye />
             <span class="text-sm text-grey2 leading-none">
               версия для слабовидящих
             </span>
@@ -73,7 +73,7 @@ export function Header() {
             data-dialog-for="form-3b57f227-2967-466b-baf7-51d758ec184b"
           >
             <span class="sr-only">Открыть меню</span>
-            <icons.menuHamburger />
+            <icons.MenuHamburger />
           </button>
           <div class="grid w-full lg:max-w-[674px]">
             <CatalogSearch />

@@ -20,7 +20,7 @@ export default function CharityDropdown({
             {text}
           </span>
           <div class="shrink-0 w-4 sm:w-8">
-            <icons.triangleRightGradient />
+            <icons.TriangleRightGradient />
           </div>
         </>
       }

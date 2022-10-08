@@ -1,7 +1,7 @@
 import { JSX } from "preact";
-import { useId } from "preact/hooks";
+import { useId } from "../hooks/use-id.ts";
 
-function address(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Address(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="24" height="19" viewBox="0 0 24 19" fill="none" {...props}>
       <path
@@ -20,7 +20,7 @@ function address(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function approveUser(props: JSX.SVGAttributes<SVGSVGElement>) {
+function ApproveUser(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -46,7 +46,7 @@ function approveUser(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function arrowLeft(props: JSX.SVGAttributes<SVGSVGElement>) {
+function ArrowLeft(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="15" height="16" fill="none" viewBox="0 0 15 16" {...props}>
       <path
@@ -57,7 +57,7 @@ function arrowLeft(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function arrowRight(props: JSX.SVGAttributes<SVGSVGElement>) {
+function ArrowRight(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="24" height="24" fill="none" viewBox="0 0 24 24" {...props}>
       <path
@@ -68,7 +68,7 @@ function arrowRight(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function arrowUp(props: JSX.SVGAttributes<SVGSVGElement>) {
+function ArrowUp(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" {...props}>
       <path
@@ -79,7 +79,7 @@ function arrowUp(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function award(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Award(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -122,7 +122,7 @@ function award(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function calendar(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Calendar(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -148,7 +148,7 @@ function calendar(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function documentTransfer(props: JSX.SVGAttributes<SVGSVGElement>) {
+function DocumentTransfer(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="24" height="23" viewBox="0 0 24 23" fill="none" {...props}>
       <path
@@ -167,7 +167,7 @@ function documentTransfer(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function doubleCaretDown(props: JSX.SVGAttributes<SVGSVGElement>) {
+function DoubleCaretDown(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="37" height="42" viewBox="0 0 37 42" fill="none" {...props}>
       <path
@@ -186,7 +186,7 @@ function doubleCaretDown(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function eye(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Eye(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="41" height="38" viewBox="0 0 41 38" fill="none" {...props}>
       <path
@@ -209,7 +209,7 @@ function eye(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function fileArrowDown(props: JSX.SVGAttributes<SVGSVGElement>) {
+function FileArrowDown(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -252,7 +252,7 @@ function fileArrowDown(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function happySmileHappy(props: JSX.SVGAttributes<SVGSVGElement>) {
+function HappySmileHappy(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -278,7 +278,7 @@ function happySmileHappy(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function layout(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Layout(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -349,7 +349,7 @@ function layout(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function locationGradientMini(props: JSX.SVGAttributes<SVGSVGElement>) {
+function LocationGradientMini(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -394,7 +394,7 @@ function locationGradientMini(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function locationGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
+function LocationGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -439,7 +439,7 @@ function locationGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function location(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Location(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="28" height="29" viewBox="0 0 28 29" fill="none" {...props}>
       <path
@@ -458,7 +458,7 @@ function location(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function logoColor(props: JSX.SVGAttributes<SVGSVGElement>) {
+function LogoColor(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -504,7 +504,7 @@ function logoColor(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function logoGrey(props: JSX.SVGAttributes<SVGSVGElement>) {
+function LogoGrey(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -552,7 +552,7 @@ function logoGrey(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function menuHamburger(props: JSX.SVGAttributes<SVGSVGElement>) {
+function MenuHamburger(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -599,7 +599,7 @@ function menuHamburger(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function mortarboard(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Mortarboard(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -625,7 +625,7 @@ function mortarboard(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function orderAsc(props: JSX.SVGAttributes<SVGSVGElement>) {
+function OrderAsc(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -651,7 +651,7 @@ function orderAsc(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function orderDesc(props: JSX.SVGAttributes<SVGSVGElement>) {
+function OrderDesc(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -686,7 +686,7 @@ function orderDesc(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function phone(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Phone(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="24" height="23" viewBox="0 0 24 23" fill="none" {...props}>
       <path
@@ -705,7 +705,7 @@ function phone(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function rows(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Rows(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -746,7 +746,7 @@ function rows(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function search(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Search(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="34" height="38" viewBox="0 0 34 38" fill="none" {...props}>
       <path
@@ -759,7 +759,7 @@ function search(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function tablet(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Tablet(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="18" height="23" viewBox="0 0 18 23" fill="none" {...props}>
       <path
@@ -772,7 +772,7 @@ function tablet(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function titleSeparator(props: JSX.SVGAttributes<SVGSVGElement>) {
+function TitleSeparator(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -800,7 +800,7 @@ function titleSeparator(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function triangleRightGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
+function TriangleRightGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -826,7 +826,7 @@ function triangleRightGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function volumeUp(props: JSX.SVGAttributes<SVGSVGElement>) {
+function VolumeUp(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -882,7 +882,7 @@ function volumeUp(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function youtube(props: JSX.SVGAttributes<SVGSVGElement>) {
+function Youtube(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();
 
   return (
@@ -908,7 +908,7 @@ function youtube(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function x(props: JSX.SVGAttributes<SVGSVGElement>) {
+function X(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       width="24"
@@ -926,7 +926,7 @@ function x(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function chevronDown(props: JSX.SVGAttributes<SVGSVGElement>) {
+function ChevronDown(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       width="24"
@@ -944,7 +944,7 @@ function chevronDown(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function chevronLeft(props: JSX.SVGAttributes<SVGSVGElement>) {
+function ChevronLeft(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       width="24"
@@ -962,7 +962,7 @@ function chevronLeft(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function chevronRight(props: JSX.SVGAttributes<SVGSVGElement>) {
+function ChevronRight(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       width="24"
@@ -980,7 +980,7 @@ function chevronRight(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function chevronUp(props: JSX.SVGAttributes<SVGSVGElement>) {
+function ChevronUp(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       width="24"
@@ -999,39 +999,39 @@ function chevronUp(props: JSX.SVGAttributes<SVGSVGElement>) {
 }
 
 export const icons = {
-  address,
-  approveUser,
-  arrowLeft,
-  arrowRight,
-  arrowUp,
-  award,
-  calendar,
-  documentTransfer,
-  doubleCaretDown,
-  eye,
-  fileArrowDown,
-  happySmileHappy,
-  layout,
-  locationGradientMini,
-  locationGradient,
-  location,
-  logoColor,
-  logoGrey,
-  menuHamburger,
-  mortarboard,
-  orderAsc,
-  orderDesc,
-  phone,
-  rows,
-  search,
-  tablet,
-  titleSeparator,
-  triangleRightGradient,
-  volumeUp,
-  youtube,
-  x,
-  chevronDown,
-  chevronLeft,
-  chevronRight,
-  chevronUp
+  Address,
+  ApproveUser,
+  ArrowLeft,
+  ArrowRight,
+  ArrowUp,
+  Award,
+  Calendar,
+  DocumentTransfer,
+  DoubleCaretDown,
+  Eye,
+  FileArrowDown,
+  HappySmileHappy,
+  Layout,
+  LocationGradientMini,
+  LocationGradient,
+  Location,
+  LogoColor,
+  LogoGrey,
+  MenuHamburger,
+  Mortarboard,
+  OrderAsc,
+  OrderDesc,
+  Phone,
+  Rows,
+  Search,
+  Tablet,
+  TitleSeparator,
+  TriangleRightGradient,
+  VolumeUp,
+  Youtube,
+  X,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp
 };

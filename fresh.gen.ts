@@ -3,37 +3,61 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import config from "./deno.json" assert { type: "json" };
-import * as $0 from "./routes/about.tsx";
-import * as $1 from "./routes/api/joke.ts";
-import * as $2 from "./routes/catalog/[url].tsx";
-import * as $3 from "./routes/index.tsx";
+import * as $0 from "./routes/about/career.tsx";
+import * as $1 from "./routes/about/defaulter.tsx";
+import * as $2 from "./routes/about/index.tsx";
+import * as $3 from "./routes/about/team.tsx";
+import * as $4 from "./routes/api/joke.ts";
+import * as $5 from "./routes/blog.tsx";
+import * as $6 from "./routes/brands/[url].tsx";
+import * as $7 from "./routes/catalog/[url].tsx";
+import * as $8 from "./routes/catalog/index.tsx";
+import * as $9 from "./routes/contacts.tsx";
+import * as $10 from "./routes/delivery.tsx";
+import * as $11 from "./routes/index.tsx";
+import * as $12 from "./routes/products/[url].tsx";
+import * as $13 from "./routes/video.tsx";
 import * as $$0 from "./islands/BrandsFooterList.tsx";
 import * as $$1 from "./islands/CatalogSearch.tsx";
 import * as $$2 from "./islands/CategoriesNavDropdown.tsx";
-import * as $$3 from "./islands/CharityDropdown.tsx";
-import * as $$4 from "./islands/Container.tsx";
-import * as $$5 from "./islands/Dropdown.tsx";
-import * as $$6 from "./islands/GeographySalesDropdown.tsx";
-import * as $$7 from "./islands/PopularProductsSlider.tsx";
-import * as $$8 from "./islands/TopNewSlider.tsx";
+import * as $$3 from "./islands/CategoryProducts.tsx";
+import * as $$4 from "./islands/CharityDropdown.tsx";
+import * as $$5 from "./islands/Container.tsx";
+import * as $$6 from "./islands/Dropdown.tsx";
+import * as $$7 from "./islands/GeographySalesDropdown.tsx";
+import * as $$8 from "./islands/NavDropdown.tsx";
+import * as $$9 from "./islands/PopularProductsSlider.tsx";
+import * as $$10 from "./islands/TopNewSlider.tsx";
 
 const manifest = {
   routes: {
-    "./routes/about.tsx": $0,
-    "./routes/api/joke.ts": $1,
-    "./routes/catalog/[url].tsx": $2,
-    "./routes/index.tsx": $3,
+    "./routes/about/career.tsx": $0,
+    "./routes/about/defaulter.tsx": $1,
+    "./routes/about/index.tsx": $2,
+    "./routes/about/team.tsx": $3,
+    "./routes/api/joke.ts": $4,
+    "./routes/blog.tsx": $5,
+    "./routes/brands/[url].tsx": $6,
+    "./routes/catalog/[url].tsx": $7,
+    "./routes/catalog/index.tsx": $8,
+    "./routes/contacts.tsx": $9,
+    "./routes/delivery.tsx": $10,
+    "./routes/index.tsx": $11,
+    "./routes/products/[url].tsx": $12,
+    "./routes/video.tsx": $13,
   },
   islands: {
     "./islands/BrandsFooterList.tsx": $$0,
     "./islands/CatalogSearch.tsx": $$1,
     "./islands/CategoriesNavDropdown.tsx": $$2,
-    "./islands/CharityDropdown.tsx": $$3,
-    "./islands/Container.tsx": $$4,
-    "./islands/Dropdown.tsx": $$5,
-    "./islands/GeographySalesDropdown.tsx": $$6,
-    "./islands/PopularProductsSlider.tsx": $$7,
-    "./islands/TopNewSlider.tsx": $$8,
+    "./islands/CategoryProducts.tsx": $$3,
+    "./islands/CharityDropdown.tsx": $$4,
+    "./islands/Container.tsx": $$5,
+    "./islands/Dropdown.tsx": $$6,
+    "./islands/GeographySalesDropdown.tsx": $$7,
+    "./islands/NavDropdown.tsx": $$8,
+    "./islands/PopularProductsSlider.tsx": $$9,
+    "./islands/TopNewSlider.tsx": $$10,
   },
   baseUrl: import.meta.url,
   config,

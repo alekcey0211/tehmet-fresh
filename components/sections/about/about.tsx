@@ -8,7 +8,7 @@ export const AboutTitle = () => {
           О КОМПАНИИ
         </h1>
         <div class="hidden lg:block absolute bottom-0 right-0">
-          <icons.titleSeparator />
+          <icons.TitleSeparator />
         </div>
       </div>
       <div class="bg-light-blue rounded-2xl py-4 sm:py-8 pl-8 sm:pl-9 pr-20 md:pr-40 relative overflow-hidden mx-4 md:mx-10 sm:mb-14">
@@ -25,7 +25,7 @@ export const AboutTitle = () => {
             style="clip-path: polygon(100% 100%, 0% 100%, 100% 0)"
           ></div>
           <div class="col-start-1 row-start-1 z-10">
-            <icons.logoColor />
+            <icons.LogoColor />
           </div>
         </div>
       </div>

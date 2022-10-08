@@ -1,6 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { pageCache, PageData } from "../context/page-context.tsx";
-import { fetchCategories } from "../data/categories.ts";
+import { Category, fetchCategories } from "../data/categories.ts";
 import { isProduction } from "../shared/config.ts";
 import { Base } from "../components/layout.tsx";
 import { Slider } from "../components/sections/index/slider.tsx";
@@ -17,7 +17,7 @@ type Data = PageData;
 export const handler: Handlers<Data> = {
   async GET(_req, ctx) {
     const categories = pageCache.has("categories")
-      ? pageCache.get("categories")!
+      ? (pageCache.get("categories")! as Category[])
       : await fetchCategories();
 
     if (!isProduction) pageCache.set("categories", categories);
@@ -28,7 +28,7 @@ export const handler: Handlers<Data> = {
   },
 };
 
-export default function Home(ctx: PageProps<Data>) {
+export default function HomeRoute(ctx: PageProps<Data>) {
   return (
     <Base pageData={ctx} title="Главная">
       <Slider />

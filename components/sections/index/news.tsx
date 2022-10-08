@@ -9,7 +9,7 @@ export const News = () => {
           Новости техмет
         </h1>
         <div class="hidden lg:block absolute bottom-0 right-0">
-          <icons.titleSeparator />
+          <icons.TitleSeparator />
         </div>
       </div>
       <div class="px-4 lg:px-10">
@@ -18,7 +18,7 @@ export const News = () => {
         </div>
       </div>
       <div class="mt-4 sm:mt-8 lg:mt-20 flex justify-end mb-4 sm:mb-8 lg:mb-20">
-        <icons.titleSeparator />
+        <icons.TitleSeparator />
       </div>
     </section>
   );

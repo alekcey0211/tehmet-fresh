@@ -12,7 +12,7 @@ export const Partners = () => {
             НАШИ ПАРТНЕРЫ
           </h1>
           <div class="hidden lg:block absolute bottom-0 right-0">
-            <icons.titleSeparator />
+            <icons.TitleSeparator />
           </div>
         </div>
         <div class="grid grid-cols-4 place-items-center gap-x-6 gap-y-10 px-10">

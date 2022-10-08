@@ -18,7 +18,7 @@ export default function GeographySalesDropdown({
             «Техмет-Урал» обеспечивает дистрибуцию во все регионы&nbsp;России
           </span>
           <div class="shrink-0">
-            <icons.doubleCaretDown />
+            <icons.DoubleCaretDown />
           </div>
         </>
       }

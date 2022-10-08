@@ -30,10 +30,10 @@ export const GeographySales = () => {
                 <div class="grid place-content-center gap-2">
                   <div class="flex items-center gap-2">
                     <div class="shrink-0 hidden sm:block text-dark-blue">
-                      <icons.locationGradient />
+                      <icons.LocationGradient />
                     </div>
                     <div class="shrink-0 sm:hidden">
-                      <icons.locationGradientMini />
+                      <icons.LocationGradientMini />
                     </div>
                     <span class="text-xs sm:text-[28px] sm:leading-[34px] gradient-text">
                       {item.city}

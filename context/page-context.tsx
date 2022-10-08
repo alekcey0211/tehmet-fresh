@@ -1,13 +1,12 @@
 import { createContext } from "preact";
 import { PageProps } from "$fresh/server.ts";
 import { Category } from "../data/categories.ts";
-import { Brand } from "../data/brands.ts";
 
 export type PageData = {
   categories?: Category[];
 };
 
-export const pageCache = new Map<keyof PageData, PageData[keyof PageData]>();
+export const pageCache = new Map<string, unknown>();
 // export const setPageCache = async (
 //   key: keyof PageData,
 //   data: PageData[keyof PageData]
@@ -21,6 +20,4 @@ export const pageCache = new Map<keyof PageData, PageData[keyof PageData]>();
 //   // return JSON.parse(data) as PageData[typeof key];
 // };
 
-export const Page = createContext<
-  PageProps<PageData>
->({} as any);
+export const Page = createContext<PageProps<PageData>>({} as any);

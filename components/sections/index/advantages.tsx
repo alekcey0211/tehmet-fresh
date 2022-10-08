@@ -20,7 +20,7 @@ export const Advantages = () => {
           НАШИ ПРЕИМУЩЕСТВА
         </h1>
         <div class="hidden lg:block absolute bottom-0 right-0">
-          <icons.titleSeparator />
+          <icons.TitleSeparator />
         </div>
       </div>
       <div class="grid gap-6 sm:gap-10 md:gap-14 mb-7 sm:mb-12 md:mb-14 px-4 sm:px-8 md:px-10">

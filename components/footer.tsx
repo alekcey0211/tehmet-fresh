@@ -18,7 +18,7 @@ export const Footer = () => {
                 {contacts({ isPage: true }).map((item) => (
                   <li class="grid gap-1">
                     <div class="grid items-center grid-cols-[max-content_1fr] gap-2">
-                      <icons.address />
+                      <icons.Address />
                       <span
                         dangerouslySetInnerHTML={{
                           __html: `Адрес: ${item.address}`,
@@ -26,7 +26,7 @@ export const Footer = () => {
                       />
                     </div>
                     <div class="grid items-center grid-cols-[max-content_1fr] gap-2">
-                      <icons.phone />
+                      <icons.Phone />
                       <span>
                         Телефон:
                         <a class="whitespace-nowrap" href={item.telLink}>
@@ -57,7 +57,7 @@ export const Footer = () => {
               </ul>
             </div>
             <div class="absolute bottom-0 right-0 w-32 sm:w-48 lg:w-64 xl:w-[301px] grid">
-              <icons.logoGrey />
+              <icons.LogoGrey />
             </div>
           </div>
           <div class="flex flex-wrap gap-y-2 sm:gap-y-4 gap-x-10 items-center">

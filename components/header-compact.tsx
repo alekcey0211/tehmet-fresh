@@ -44,7 +44,7 @@ export function HeaderCompact() {
                 class="lg:hidden shrink-0"
                 data-dialog-for="form-3b57f227-2967-466b-baf7-51d758ec184b"
               >
-                <icons.menuHamburger />
+                <icons.MenuHamburger />
               </button>
               <div class="grid w-full lg:max-w-[674px]">
                 <CatalogSearch />
@@ -53,7 +53,7 @@ export function HeaderCompact() {
           </div>
           <div class="flex flex-col xl:flex-row justify-between items-start flex-1 max-w-[700px] gap-x-4 justify-self-end">
             <button class="hidden lg:flex items-center gap-2 flex-shrink-0 h-10">
-              {/* <icons.eye />
+              {/* <icons.Eye />
 					<span class="text-sm text-grey leading-none">
 						версия для слабовидящих
 					</span> */}
@@ -61,7 +61,7 @@ export function HeaderCompact() {
             <div class="hidden lg:flex flex-col h-full items-start">
               {contacts({ isPage: true }).map((item) => (
                 <div class="flex items-center gap-x-2 text-[24px]">
-                  <icons.locationGradient />
+                  <icons.LocationGradient />
                   <span class="gradient-text">{item.city}</span>
                   <a
                     class="gradient-text whitespace-nowrap"

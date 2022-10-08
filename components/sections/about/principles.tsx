@@ -13,7 +13,7 @@ export const Principles = () => {
     {
       title: "КАЧЕСТВО",
       html: "Поставляем только<br/>качественные<br/>материалы.",
-      icon: <icons.award />,
+      icon: <icons.Award />,
     },
     {
       title: "ПРОЗРАЧНОСТЬ",
