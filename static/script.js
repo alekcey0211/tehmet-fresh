@@ -103,7 +103,7 @@ new Swiper("#swiper-aef69157f3874b3d8911be4c51d5741b", {
 new Swiper("#swiper-9a3e8ea9-7faf-486e-957f-de3a1795479f", {
   // modules: [Pagination],
   pagination: {
-    el: ".swiper-pagination-9a3e8ea9-7faf-486e-957f-de3a1795479f",
+    el: "#swiper-pagination-9a3e8ea9-7faf-486e-957f-de3a1795479f",
     clickable: true,
   },
   autoplay: {
@@ -116,7 +116,7 @@ new Swiper("#swiper-9a3e8ea9-7faf-486e-957f-de3a1795479f", {
 new Swiper("#swiper-bbf7c73f-0433-40a2-945b-8708ba9dfbc4", {
   // modules: [Pagination],
   pagination: {
-    el: ".swiper-pagination-bbf7c73f-0433-40a2-945b-8708ba9dfbc4",
+    el: "#swiper-pagination-bbf7c73f-0433-40a2-945b-8708ba9dfbc4",
     clickable: true,
   },
   autoplay: {

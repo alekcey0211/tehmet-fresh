@@ -1,7 +1,9 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { Base } from "../../components/layout.tsx";
+import { CatalogWrapper } from "../../components/catalog-wrapper.tsx";
+import { LayoutBase } from "../../components/layout.tsx";
 import { PageData, pageCache } from "../../context/page-context.tsx";
 import { Brand, fetchBrands } from "../../data/brands.ts";
+import { Category, fetchCategories } from "../../data/categories.ts";
 import { fetchProducts, Product } from "../../data/products.ts";
 import { isProduction } from "../../shared/config.ts";
 
@@ -32,7 +34,14 @@ export const handler: Handlers<Data> = {
 
     if (!isProduction) pageCache.set("products", products);
 
+    const categories = pageCache.has("categories")
+      ? (pageCache.get("categories")! as Category[])
+      : await fetchCategories();
+
+    if (!isProduction) pageCache.set("categories", categories);
+
     return ctx.render({
+      categories,
       brand,
       products,
     });
@@ -42,12 +51,22 @@ export const handler: Handlers<Data> = {
 export default function BrandsUrlRoute(ctx: PageProps<Data>) {
   const { data } = ctx;
   return (
-    <Base pageData={ctx} title={data.brand.name}>
-      <ul>
-        {data.products.map((product) => (
-          <li>{product.name}</li>
-        ))}
-      </ul>
-    </Base>
+    <LayoutBase pageData={ctx} title={data.brand.name} isCompact={true}>
+      <CatalogWrapper>
+        <div>
+          <h1>{data.brand.name}</h1>
+          <ul>
+            {data.products.map((product) => (
+              <li>{product.name}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="col-span-2">
+          {/* {% include "sections/catalog/ПОПУЛЯРНЫЕ ТОВАРЫ.njk" %} */}
+          {/* {% include "sections/catalog/Наши партнеры.njk" %} */}
+          {/* {% include "sections/catalog/Сертификаты.njk" %} */}
+        </div>
+      </CatalogWrapper>
+    </LayoutBase>
   );
 }

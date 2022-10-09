@@ -2,7 +2,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { pageCache, PageData } from "../context/page-context.tsx";
 import { Category, fetchCategories } from "../data/categories.ts";
 import { isProduction } from "../shared/config.ts";
-import { Base } from "../components/layout.tsx";
+import { Layout } from "../components/layout.tsx";
 import { Slider } from "../components/sections/index/slider.tsx";
 import { Categories } from "../components/sections/index/categories.tsx";
 import { PopularProducts } from "../components/sections/index/popular-products.tsx";
@@ -30,7 +30,7 @@ export const handler: Handlers<Data> = {
 
 export default function HomeRoute(ctx: PageProps<Data>) {
   return (
-    <Base pageData={ctx} title="Главная">
+    <Layout pageData={ctx} title="Главная">
       <Slider />
       <Categories />
       <PopularProducts />
@@ -39,6 +39,6 @@ export default function HomeRoute(ctx: PageProps<Data>) {
       <Advantages />
       <Partners />
       <News />
-    </Base>
+    </Layout>
   );
 }

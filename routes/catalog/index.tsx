@@ -1,5 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { Base } from "../../components/layout.tsx";
+import { CatalogWrapper } from "../../components/catalog-wrapper.tsx";
+import { LayoutBase } from "../../components/layout.tsx";
 import { PageData, pageCache } from "../../context/page-context.tsx";
 import { Category, fetchCategories } from "../../data/categories.ts";
 import { isProduction } from "../../shared/config.ts";
@@ -21,20 +22,20 @@ export const handler: Handlers<Data> = {
 };
 
 export default function CatalogRoute(ctx: PageProps<Data>) {
-  const { data } = ctx;
-  const navCategories = data.categories?.filter(
-    ({ parent_id, url }) => parent_id === "0" && Boolean(url)
-  );
+  const { data, url } = ctx;
+
   return (
-    <Base pageData={ctx} title={"Каталог"}>
-      <h1>Каталог</h1>
-      <ul class="list-disc">
-        {navCategories?.map((category) => (
-          <li>
-            <a href={`/catalog/${category.url}`}>{category.name}</a>
-          </li>
-        ))}
-      </ul>
-    </Base>
+    <LayoutBase pageData={ctx} title={"Каталог"} isCompact={true}>
+      <CatalogWrapper>
+        <div>
+          <h1>Каталог</h1>
+        </div>
+        <div class="col-span-2">
+          {/* {% include "sections/catalog/ПОПУЛЯРНЫЕ ТОВАРЫ.njk" %} */}
+          {/* {% include "sections/catalog/Наши партнеры.njk" %} */}
+          {/* {% include "sections/catalog/Сертификаты.njk" %} */}
+        </div>
+      </CatalogWrapper>
+    </LayoutBase>
   );
 }

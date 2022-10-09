@@ -1,6 +1,6 @@
 import { PageProps, Handlers } from "$fresh/server.ts";
 import { icons } from "../../../../components/icons.tsx";
-import { BaseCompact } from "../../../../components/layout.tsx";
+import { LayoutCompact } from "../../../../components/layout.tsx";
 import { PageData } from "../../../../context/page-context.tsx";
 import { vacancies, Vacancy } from "../../../../shared/vacancies.ts";
 
@@ -26,7 +26,7 @@ export default function Buhgalter(ctx: PageProps<Data>) {
     ctx.data.vacancy;
 
   return (
-    <BaseCompact pageData={ctx} title={title}>
+    <LayoutCompact pageData={ctx} title={title}>
       <>
         <section class="grid gap-y-4 md:gap-y-8 py-4 sm:pt-10 md:pt-16 max-w-fullhd mx-auto">
           <div class="relative">
@@ -129,6 +129,6 @@ export default function Buhgalter(ctx: PageProps<Data>) {
           <icons.TitleSeparator />
         </div>
       </>
-    </BaseCompact>
+    </LayoutCompact>
   );
 }

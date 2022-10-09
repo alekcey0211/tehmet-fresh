@@ -1,6 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import { PageData } from "../../context/page-context.tsx";
-import { BaseCompact } from "../../components/layout.tsx";
+import { LayoutCompact } from "../../components/layout.tsx";
 import { AboutTitle } from "../../components/sections/about/about.tsx";
 import { Goal } from "../../components/sections/about/goal.tsx";
 import { Principles } from "../../components/sections/about/principles.tsx";
@@ -27,7 +27,7 @@ type Data = PageData;
 
 export default function AboutRoute(ctx: PageProps<Data>) {
   return (
-    <BaseCompact pageData={ctx} title="О компании">
+    <LayoutCompact pageData={ctx} title="О компании">
       <AboutTitle />
       <Goal />
       <Principles />
@@ -35,6 +35,6 @@ export default function AboutRoute(ctx: PageProps<Data>) {
       <Parners />
       <Certificates />
       <Charity />
-    </BaseCompact>
+    </LayoutCompact>
   );
 }

@@ -1,6 +1,8 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { Base } from "../../components/layout.tsx";
+import { CatalogWrapper } from "../../components/catalog-wrapper.tsx";
+import { Layout } from "../../components/layout.tsx";
 import { PageData, pageCache } from "../../context/page-context.tsx";
+import { Category, fetchCategories } from "../../data/categories.ts";
 import { fetchProducts, Product } from "../../data/products.ts";
 import { isProduction } from "../../shared/config.ts";
 
@@ -24,7 +26,14 @@ export const handler: Handlers<Data> = {
       return ctx.renderNotFound();
     }
 
+    const categories = pageCache.has("categories")
+      ? (pageCache.get("categories")! as Category[])
+      : await fetchCategories();
+
+    if (!isProduction) pageCache.set("categories", categories);
+
     return ctx.render({
+      categories,
       product,
     });
   },
@@ -33,8 +42,17 @@ export const handler: Handlers<Data> = {
 export default function ProductsUrlRoute(ctx: PageProps<Data>) {
   const { data } = ctx;
   return (
-    <Base pageData={ctx} title={data.product.name}>
-      <h1>{data.product.name}</h1>
-    </Base>
+    <Layout pageData={ctx} title={data.product.name}>
+      <CatalogWrapper>
+        <div>
+          <h1>{data.product.name}</h1>
+        </div>
+        <div class="col-span-2">
+          {/* {% include "sections/catalog/ПОПУЛЯРНЫЕ ТОВАРЫ.njk" %} */}
+          {/* {% include "sections/catalog/Наши партнеры.njk" %} */}
+          {/* {% include "sections/catalog/Сертификаты.njk" %} */}
+        </div>
+      </CatalogWrapper>
+    </Layout>
   );
 }

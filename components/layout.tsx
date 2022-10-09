@@ -8,15 +8,18 @@ import { Nav } from "./nav.tsx";
 import { ComponentChildren } from "preact";
 import { Footer } from "./footer.tsx";
 
-export const Base = ({
+export const LayoutBase = ({
   pageData,
   title,
   description,
   image,
   children,
-}: { pageData: PageProps<PageData>; children?: ComponentChildren } & Parameters<
-  typeof HeadElement
->[number]) => {
+  isCompact,
+}: {
+  pageData: PageProps<PageData>;
+  children?: ComponentChildren;
+  isCompact?: boolean;
+} & Parameters<typeof HeadElement>[number]) => {
   return (
     <Page.Provider value={pageData}>
       <svg class="absolute" height="0" width="0">
@@ -25,37 +28,37 @@ export const Base = ({
         </clipPath>
       </svg>
       <HeadElement title={title} description={description} image={image} />
-      <Header />
+      {isCompact ? <HeaderCompact /> : <Header />}
       <Nav />
-      <main class="z-10">{children}</main>
+      {children}
       <Footer />
       <Dialogs />
     </Page.Provider>
   );
 };
 
-export const BaseCompact = ({
-  pageData,
-  title,
-  description,
-  image,
+export const Layout = ({
   children,
+  ...props
 }: { pageData: PageProps<PageData>; children?: ComponentChildren } & Parameters<
   typeof HeadElement
 >[number]) => {
   return (
-    <Page.Provider value={pageData}>
-      <svg class="absolute" height="0" width="0">
-        <clipPath id="form-01" clipPathUnits="objectBoundingBox">
-          <path d="M0.39,0 h0.314 L1,0.002 l-0.062,0.668 c-0.017,0.18,-0.165,0.328,-0.328,0.328 h-0.314 L0,1,0.062,0.328 C0.079,0.148,0.226,0,0.39,0"></path>
-        </clipPath>
-      </svg>
-      <HeadElement title={title} description={description} image={image} />
-      <HeaderCompact />
-      <Nav />
+    <LayoutBase {...props}>
       <main class="z-10">{children}</main>
-      <Footer />
-      <Dialogs />
-    </Page.Provider>
+    </LayoutBase>
+  );
+};
+
+export const LayoutCompact = ({
+  children,
+  ...props
+}: { pageData: PageProps<PageData>; children?: ComponentChildren } & Parameters<
+  typeof HeadElement
+>[number]) => {
+  return (
+    <LayoutBase {...props} isCompact={true}>
+      <main class="z-10">{children}</main>
+    </LayoutBase>
   );
 };

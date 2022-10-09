@@ -59,6 +59,7 @@ export default {
     "nav-item-button": {},
     "nav-item-span": {},
     "pswp-gallery": {},
+    "swiper-pagination": {},
     "w-fit": {
       width: "fit-content",
     },

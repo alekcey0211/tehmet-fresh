@@ -1,6 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import { PageData } from "../context/page-context.tsx";
-import { BaseCompact } from "../components/layout.tsx";
+import { LayoutCompact } from "../components/layout.tsx";
 import { DeliveryTitle } from "../components/sections/delivery/delivery-title.tsx";
 import { Cargo } from "../components/sections/delivery/cargo.tsx";
 import { DeliveryTime } from "../components/sections/delivery/delivery-time.tsx";
@@ -24,11 +24,11 @@ type Data = PageData;
 
 export default function DeliveryRoute(ctx: PageProps<Data>) {
   return (
-    <BaseCompact pageData={ctx} title="Доставка">
+    <LayoutCompact pageData={ctx} title="Доставка">
       <DeliveryTitle />
       <Cargo />
       <DeliveryTime />
       <Contacts />
-    </BaseCompact>
+    </LayoutCompact>
   );
 }

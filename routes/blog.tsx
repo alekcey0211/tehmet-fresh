@@ -1,6 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import { PageData } from "../context/page-context.tsx";
-import { BaseCompact } from "../components/layout.tsx";
+import { LayoutCompact } from "../components/layout.tsx";
 
 type Data = PageData;
 
@@ -19,5 +19,5 @@ type Data = PageData;
 // };
 
 export default function BlogRoute(ctx: PageProps<Data>) {
-  return <BaseCompact pageData={ctx} title="Новости"></BaseCompact>;
+  return <LayoutCompact pageData={ctx} title="Новости"></LayoutCompact>;
 }
