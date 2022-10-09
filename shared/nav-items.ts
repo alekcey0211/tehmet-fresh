@@ -84,7 +84,7 @@ export const navItems = [
     items: [
       {
         text: "О нас",
-        link: "/",
+        link: "",
       },
       {
         text: "Наша команда",

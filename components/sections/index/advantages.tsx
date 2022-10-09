@@ -9,7 +9,7 @@ export const Advantages = () => {
       <div class="absolute inset-0 -right-24 md:right-0 -z-10">
         <Image
           {...{
-            src: "/img/content/db9a67eaecfa45e7b5667670f7fed79e.jpeg",
+            src: "/img/content/db9a67eaecfa45e7b5667670f7fed79e.jpg",
             alt: "gears in hand with the company logo",
             imgClassName: "block w-full h-full object-cover",
           }}

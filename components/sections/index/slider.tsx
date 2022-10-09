@@ -14,7 +14,7 @@ export const Slider = () => {
             <div class="grid h-full grid-rows-1">
               <Image
                 {...{
-                  src: "/img/content/48c0807cee105ec88fdd0523257ba439.jpeg",
+                  src: "/img/content/48c0807cee105ec88fdd0523257ba439.jpg",
                   alt: "drawing of a factory with fire from a pipe",
                   className: "col-span-full row-span-full",
                   imgClassName: "object-cover block w-full h-full",
@@ -39,7 +39,7 @@ export const Slider = () => {
             <div class="grid h-full grid-rows-1">
               <Image
                 {...{
-                  src: "/img/content/60e6d525211a4371af72f2958c36c030.jpeg",
+                  src: "/img/content/60e6d525211a4371af72f2958c36c030.jpg",
                   alt: "drawing of a factory with fire from a pipe",
                   className: "col-span-full row-span-full",
                   imgClassName: "object-cover block w-full h-full",
@@ -77,7 +77,7 @@ export const Slider = () => {
               <div class="h-[150px] sm:h-[280px] lg:h-auto flex justify-center">
                 <Image
                   {...{
-                    src: "/img/content/97b3dba279a54f2ca28326d274e021eb.jpeg",
+                    src: "/img/content/97b3dba279a54f2ca28326d274e021eb.jpg",
                     alt: "a map showing the offices and the geography of sales",
                     imgClassName: "block object-contain h-full max-w-full",
                   }}

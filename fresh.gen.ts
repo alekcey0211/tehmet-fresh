@@ -3,20 +3,24 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import config from "./deno.json" assert { type: "json" };
-import * as $0 from "./routes/about/career.tsx";
-import * as $1 from "./routes/about/defaulter.tsx";
-import * as $2 from "./routes/about/index.tsx";
-import * as $3 from "./routes/about/team.tsx";
-import * as $4 from "./routes/api/joke.ts";
-import * as $5 from "./routes/blog.tsx";
-import * as $6 from "./routes/brands/[url].tsx";
-import * as $7 from "./routes/catalog/[url].tsx";
-import * as $8 from "./routes/catalog/index.tsx";
-import * as $9 from "./routes/contacts.tsx";
-import * as $10 from "./routes/delivery.tsx";
-import * as $11 from "./routes/index.tsx";
-import * as $12 from "./routes/products/[url].tsx";
-import * as $13 from "./routes/video.tsx";
+import * as $0 from "./routes/about/career/index.tsx";
+import * as $1 from "./routes/about/career/vacancy/buhgalter.tsx";
+import * as $2 from "./routes/about/career/vacancy/menedzher-po-snabzheniyu.tsx";
+import * as $3 from "./routes/about/career/vacancy/menedzher.tsx";
+import * as $4 from "./routes/about/career/vacancy/operator-pk.tsx";
+import * as $5 from "./routes/about/defaulter.tsx";
+import * as $6 from "./routes/about/index.tsx";
+import * as $7 from "./routes/about/team.tsx";
+import * as $8 from "./routes/api/joke.ts";
+import * as $9 from "./routes/blog.tsx";
+import * as $10 from "./routes/brands/[url].tsx";
+import * as $11 from "./routes/catalog/[url].tsx";
+import * as $12 from "./routes/catalog/index.tsx";
+import * as $13 from "./routes/contacts.tsx";
+import * as $14 from "./routes/delivery.tsx";
+import * as $15 from "./routes/index.tsx";
+import * as $16 from "./routes/products/[url].tsx";
+import * as $17 from "./routes/video.tsx";
 import * as $$0 from "./islands/BrandsFooterList.tsx";
 import * as $$1 from "./islands/CatalogSearch.tsx";
 import * as $$2 from "./islands/CategoriesNavDropdown.tsx";
@@ -27,24 +31,29 @@ import * as $$6 from "./islands/Dropdown.tsx";
 import * as $$7 from "./islands/GeographySalesDropdown.tsx";
 import * as $$8 from "./islands/NavDropdown.tsx";
 import * as $$9 from "./islands/PopularProductsSlider.tsx";
-import * as $$10 from "./islands/TopNewSlider.tsx";
+import * as $$10 from "./islands/PublicLifeMedia.tsx";
+import * as $$11 from "./islands/TopNewSlider.tsx";
 
 const manifest = {
   routes: {
-    "./routes/about/career.tsx": $0,
-    "./routes/about/defaulter.tsx": $1,
-    "./routes/about/index.tsx": $2,
-    "./routes/about/team.tsx": $3,
-    "./routes/api/joke.ts": $4,
-    "./routes/blog.tsx": $5,
-    "./routes/brands/[url].tsx": $6,
-    "./routes/catalog/[url].tsx": $7,
-    "./routes/catalog/index.tsx": $8,
-    "./routes/contacts.tsx": $9,
-    "./routes/delivery.tsx": $10,
-    "./routes/index.tsx": $11,
-    "./routes/products/[url].tsx": $12,
-    "./routes/video.tsx": $13,
+    "./routes/about/career/index.tsx": $0,
+    "./routes/about/career/vacancy/buhgalter.tsx": $1,
+    "./routes/about/career/vacancy/menedzher-po-snabzheniyu.tsx": $2,
+    "./routes/about/career/vacancy/menedzher.tsx": $3,
+    "./routes/about/career/vacancy/operator-pk.tsx": $4,
+    "./routes/about/defaulter.tsx": $5,
+    "./routes/about/index.tsx": $6,
+    "./routes/about/team.tsx": $7,
+    "./routes/api/joke.ts": $8,
+    "./routes/blog.tsx": $9,
+    "./routes/brands/[url].tsx": $10,
+    "./routes/catalog/[url].tsx": $11,
+    "./routes/catalog/index.tsx": $12,
+    "./routes/contacts.tsx": $13,
+    "./routes/delivery.tsx": $14,
+    "./routes/index.tsx": $15,
+    "./routes/products/[url].tsx": $16,
+    "./routes/video.tsx": $17,
   },
   islands: {
     "./islands/BrandsFooterList.tsx": $$0,
@@ -57,7 +66,8 @@ const manifest = {
     "./islands/GeographySalesDropdown.tsx": $$7,
     "./islands/NavDropdown.tsx": $$8,
     "./islands/PopularProductsSlider.tsx": $$9,
-    "./islands/TopNewSlider.tsx": $$10,
+    "./islands/PublicLifeMedia.tsx": $$10,
+    "./islands/TopNewSlider.tsx": $$11,
   },
   baseUrl: import.meta.url,
   config,

@@ -84,7 +84,7 @@ export const GeographySales = () => {
           <div class="grid gap-8 xl:grid-cols-[638px_1fr] row-start-2 lg:row-auto">
             <Image
               {...{
-                src: "/img/content/97b3dba279a54f2ca28326d274e021eb.jpeg",
+                src: "/img/content/97b3dba279a54f2ca28326d274e021eb.jpg",
                 alt: "a map showing the offices and the geography of sales",
                 imgClassName: "block w-full",
               }}

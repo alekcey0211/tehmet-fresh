@@ -30,12 +30,13 @@ export default function NavDropdown({
       panel={
         <ul class="pl-12 py-4 bg-white">
           {items.map(({ text, link: itemLink }, index, { length }) => {
+            const isActive = pathname === link + itemLink;
             return (
               <li class="grid items-center text-xl text-grey hover:text-dark-blue">
                 <a
                   href={link + itemLink}
                   class={`grid items-center h-full pr-4 py-[5px] nav-item-link ${
-                    pathname.startsWith(link + itemLink) && "gradient-text"
+                    isActive && "gradient-text"
                   }`}
                 >
                   {text}

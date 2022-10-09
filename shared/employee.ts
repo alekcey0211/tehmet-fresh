@@ -1,3 +1,5 @@
+import { transformTelLink } from "./link.ts";
+
 const data = [
   {
     lastName: "Глушков",
@@ -326,6 +328,9 @@ export const employee = () => {
     ...x,
     fio: [x.lastName, x.firstName, x.middleName].filter(Boolean).join(" "),
     io: [x.firstName, x.middleName].filter(Boolean).join(" "),
+    whatsappLink: transformTelLink(x.whatsapp),
+    icqLink: transformTelLink(x.icq),
+    phoneLink: transformTelLink(x.phone),
     img:
       [
         x.lastName?.toLowerCase(),

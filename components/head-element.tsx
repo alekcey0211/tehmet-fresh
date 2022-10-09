@@ -76,7 +76,19 @@ export function HeadElement({
       />
       <link rel="stylesheet" type="text/css" href="/style.css" />
 
-	  <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.3.1/lite-youtube.js" async defer></script>
+      <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.3.1/lite-youtube.js"
+        async
+        defer
+      ></script>
+      {url.pathname === "/contacts" && (
+        <script
+          src="https://api-maps.yandex.ru/2.1/?apikey=5c97121dd5a0a4f13e785dce756a60838f8829f147f13c8a06628fec6931b410&lang=ru_RU"
+          async
+          defer
+        ></script>
+      )}
       <script type="module" src="/script.js" async defer></script>
 
       {/* {% if site.production %}
