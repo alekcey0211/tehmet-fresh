@@ -1,4 +1,4 @@
-import { employeeReviews } from "../../../shared/employee-reviews.ts";
+import { getEmployeeReviews } from "../../../data/employee-reviews.ts";
 import { icons } from "../../icons.tsx";
 
 export const WhyEmployeeWork = () => {
@@ -9,7 +9,7 @@ export const WhyEmployeeWork = () => {
           Почему наши сотрудники работают в компании «ТЕХМЕТ»?
         </h1>
         <div class="grid 2xl:grid-cols-2 gap-6 mb-8 md:mb-16">
-          {employeeReviews().map((item, index) => (
+          {getEmployeeReviews().map((item, index) => (
             <div
               class={`grid lg:grid-cols-[270px_1fr] 2xl:grid-cols-1 grid-rows-[auto_1fr] content-start gap-2 md:gap-4 py-3 md:py-6 px-4 md:px-8 whitespace-pre-line ${
                 index % 2 === 0 ? "bg-light-blue" : "bg-light-grey"

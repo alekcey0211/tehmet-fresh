@@ -1,6 +1,6 @@
 import BrandsFooterList from "../islands/BrandsFooterList.tsx";
-import { contacts } from "../shared/contacts.ts";
-import { popularCategories } from "../shared/popular-categories.ts";
+import { getContacts } from "../data/contacts.ts";
+import { getPopularCategories } from "../data/popular-categories.ts";
 import { Button } from "./button.tsx";
 import { icons } from "./icons.tsx";
 
@@ -15,7 +15,7 @@ export const Footer = () => {
                 Свяжитесь с нами
               </p>
               <ul class="grid gap-4 sm:gap-8 text-xs sm:text-[18px] font-light text-dark-blue">
-                {contacts({ isPage: true }).map((item) => (
+                {getContacts({ isPage: true }).map((item) => (
                   <li class="grid gap-1">
                     <div class="grid items-center grid-cols-[max-content_1fr] gap-2">
                       <icons.Address />
@@ -49,7 +49,7 @@ export const Footer = () => {
                 Популярные категории:
               </p>
               <ul class="grid gap-1 sm:gap-2 text-[10px] sm:text-[18px] font-light text-dark-blue">
-                {popularCategories().map((category) => (
+                {getPopularCategories().map((category) => (
                   <li class="whitespace-nowrap">
                     <a href={`/catalog${category.url}`}>{category.name}</a>
                   </li>

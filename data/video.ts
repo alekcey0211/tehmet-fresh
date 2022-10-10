@@ -1,4 +1,4 @@
-import { stringToDate } from "./date.ts";
+import { stringToDate } from "../shared/date.ts";
 
 const data = [
   {
@@ -44,7 +44,7 @@ const data = [
   },
 ];
 
-export const video = () => {
+export const getVideo = () => {
   return data
     .map((x) => ({
       ...x,

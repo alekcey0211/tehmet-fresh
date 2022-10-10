@@ -107,6 +107,6 @@ const data = [
   },
 ];
 
-export const defaulter = () => {
+export const getDefaulter = () => {
   return data;
 };

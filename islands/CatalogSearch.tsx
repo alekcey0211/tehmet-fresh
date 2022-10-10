@@ -1,28 +1,29 @@
 import { useEffect, useMemo, useState } from "preact/hooks";
 // @deno-types="https://deno.land/x/fuse@v6.4.1/dist/fuse.d.ts"
 import Fuse from "https://deno.land/x/fuse@v6.4.1/dist/fuse.esm.min.js";
+import { fetchProductsSearch } from "../data/products-search.ts";
 
 type SearchDefinition = {
-  image?: string;
+  // image?: string;
   preview?: string;
-  price?: number;
+  // price?: number;
   url: string;
   name: string;
-  annotation: string;
-  description: string;
-  brand: string;
-  featured: boolean | null;
-  features: {
-    feature_id: string;
-    name: string;
-    value: string;
-    product_id: string;
-  }[];
-  category: {
-    id: string;
-    name: string;
-    url: string;
-  };
+  // annotation: string;
+  // description: string;
+  // brand: string;
+  // featured: boolean | null;
+  // features: {
+  //   feature_id: string;
+  //   name: string;
+  //   value: string;
+  //   product_id: string;
+  // }[];
+  // category: {
+  //   id: string;
+  //   name: string;
+  //   url: string;
+  // };
 };
 
 const useFuse = <T,>({
@@ -45,14 +46,6 @@ const useFuse = <T,>({
   return results;
 };
 
-const useData = async () => {
-  const productsUrl = new URL("https://tehmet.su/ajax/products.php");
-  const productsResponse = await fetch(productsUrl.toString());
-  const productsJson = await productsResponse.json();
-  const products = Object.values(productsJson.data ?? {}) as SearchDefinition[];
-  return products;
-};
-
 export default function CatalogSearch() {
   const [collection, setCollection] = useState<SearchDefinition[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -73,24 +66,14 @@ export default function CatalogSearch() {
   const filteredListTop = filteredList.slice(0, 20);
 
   useEffect(() => {
-    useData().then((data) => {
+    fetchProductsSearch().then((data) => {
       setCollection(data);
     });
     return;
-  }, [useData]);
+  }, []);
 
   return (
     <div class="grid items-center w-full">
-      {/* <input
-        class="text-base sm:text-lg md:text-xl py-1 md:py-3 pl-4 md:pl-8 pr-12 md:pr-16 border-blue1 focus-visible:outline-blue border-2 rounded-2xl col-span-full row-span-full leading-none font-light"
-        type="text"
-        onFocus={() => {
-          setActive(true);
-        }}
-        onBlur={() => {
-          setActive(false);
-        }}
-      /> */}
       <input
         type="text"
         autocomplete="off"
@@ -121,7 +104,7 @@ export default function CatalogSearch() {
       </button>
       {focused && filteredListTop.length > 0 && (
         <div class="relative col-span-full row-span-full self-end">
-          <div class="absolute mt-1 w-full border bg-white shadow-xl rounded max-h-[400px] overflow-auto">
+          <div class="absolute mt-1 w-full border bg-white shadow-xl! rounded max-h-[400px] overflow-auto">
             <div class="p-3">
               <div class="divide-y">
                 {filteredListTop.map((result, index) => (

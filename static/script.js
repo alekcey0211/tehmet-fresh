@@ -311,9 +311,12 @@ function init() {
     );
   });
 }
-if (typeof ymaps !== "undefined") {
-  ymaps.ready(init);
-}
+const ymapsInterval = setInterval(() => {
+  if (typeof ymaps !== "undefined") {
+    ymaps.ready(init);
+    clearInterval(ymapsInterval);
+  }
+}, 500);
 
 const _ctreq_b24 = (data) => {
   const sid = 42285;

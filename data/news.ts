@@ -10,9 +10,15 @@ export type News = {
   dateString: string;
   fileName: string;
   description: string;
+  videoId?: string;
 };
 
-const news = [
+export type FetchNews = {
+  news: News[];
+  pages: number;
+};
+
+const data = [
   {
     title: "С днем строителя!",
     date: "04.08.2022",
@@ -1114,8 +1120,10 @@ const news = [
   },
 ];
 
-export const fetchNews = async () => {
-  return news
+const limit = 20;
+
+export const fetchNews = async ({ page }: { page: number }) => {
+  const news = data
     .map((x) => ({
       ...x,
       date: stringToDate(x.date, "dd.mm.yyyy", "."),
@@ -1128,4 +1136,9 @@ export const fetchNews = async () => {
       date: x.date.toISOString(),
       dateString: x.date.toLocaleDateString("ru"),
     })) as News[];
+  return {
+    news: news.slice((page - 1) * limit, page * limit),
+    pages: Math.round(news.length / limit),
+    // total: news.length,
+  };
 };

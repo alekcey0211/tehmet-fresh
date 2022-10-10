@@ -1,4 +1,4 @@
-import { contacts } from "../../../shared/contacts.ts";
+import { getContacts } from "../../../data/contacts.ts";
 import { Button } from "../../button.tsx";
 import { icons } from "../../icons.tsx";
 import { Image } from "../../image.tsx";
@@ -51,7 +51,7 @@ export const Contacts = () => {
             Или свяжитесь с нам по телефону
           </span>
           <div class="grid gap-1 sm:gap-3">
-            {contacts({ isPage: true }).map((item) => (
+            {getContacts({ isPage: true }).map((item) => (
               <div class="flex items-center gap-2 text-xs sm:text-[22px] sm:leading-[29px] text-dark-blue">
                 <div class="shrink-0 hidden sm:block">
                   <icons.LocationGradient />

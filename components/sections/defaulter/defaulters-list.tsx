@@ -1,11 +1,11 @@
-import { defaulter } from "../../../shared/defaulter.ts";
+import { getDefaulter } from "../../../data/defaulter.ts";
 import { icons } from "../../icons.tsx";
 
 export const DefaulterList = () => {
   return (
     <section class="max-w-fullhd mx-auto">
       <div class="grid 2xl:grid-cols-2 gap-7 mx-4 md:mx-10">
-        {defaulter().map((item, index) => (
+        {getDefaulter().map((item, index) => (
           <div
             class={`px-4 md:px-10 py-4 md:py-6 grid grid-rows-[auto_1fr] gap-y-2 md:gap-y-6 content-start text-base lg:text-xl lg:leading-[40px] text-dark-blue ${
               (index + 1) % 2 === 0 ? "bg-light-blue" : "bg-light-grey"

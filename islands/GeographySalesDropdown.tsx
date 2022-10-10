@@ -1,6 +1,6 @@
 import { icons } from "../components/icons.tsx";
 import { Dropdown as DropdownComponent } from "../components/dropdown.tsx";
-import { cities } from "../shared/cities.ts";
+import { getCities } from "../data/cities.ts";
 
 export default function GeographySalesDropdown({
   containerClassName,
@@ -26,13 +26,13 @@ export default function GeographySalesDropdown({
       panel={
         <>
           <ul class={listClassName}>
-            {cities().map((city) => (
+            {getCities().map((city) => (
               <li class="">{city}</li>
             ))}
           </ul>
         </>
       }
-      panelClassName="overflow-hidden py-4 bg-white shadow-lg"
+      panelClassName="overflow-hidden py-4 bg-white shadow-lg!"
     />
   );
 }

@@ -9,6 +9,6 @@ const data = [
   { src: "/img/logo/8.png", alt: "КЕДР логотип компани" },
 ];
 
-export const partners = () => {
+export const getPartners = () => {
   return data;
 };

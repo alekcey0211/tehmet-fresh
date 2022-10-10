@@ -49,7 +49,7 @@ export default function NavDropdown({
           })}
         </ul>
       }
-      panelClassName="absolute bottom-0 left-0 translate-y-full pt-1 min-w-full !shadow-lg"
+      panelClassName="absolute bottom-0 left-0 translate-y-full pt-1 min-w-full shadow-lg!"
     />
   );
 }

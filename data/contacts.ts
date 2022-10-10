@@ -1,4 +1,4 @@
-import { transformTelLink } from "./link.ts";
+import { transformTelLink } from "../shared/link.ts";
 
 const data = [
   {
@@ -40,7 +40,7 @@ const data = [
   },
 ];
 
-export const contacts = ({ isPage = false }: { isPage?: boolean } = {}) => {
+export const getContacts = ({ isPage = false }: { isPage?: boolean } = {}) => {
   let items = data.map(({ address, coords, phone, ...r }) => ({
     ...r,
     address: address

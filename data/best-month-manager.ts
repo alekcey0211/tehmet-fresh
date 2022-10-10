@@ -1,6 +1,6 @@
 const fio = "Данилова Виктория Сергеевна";
 
-export const bestMonthManager = () => {
+export const getBestMonthManager = () => {
   return {
     fio,
     img: `/img/employee/${fio.toLowerCase().split(" ").join("-")}.jpg`,

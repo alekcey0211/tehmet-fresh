@@ -1,4 +1,4 @@
-import { transformTelLink } from "./link.ts";
+import { transformTelLink } from "../shared/link.ts";
 
 export type Vacancy = {
   title: string;
@@ -40,7 +40,7 @@ const data = [
   },
 ];
 
-export const vacancies = () => {
+export const getVacancies = () => {
   return data.map((x) => ({
     ...x,
     contactPhoneLink: transformTelLink(x.contactPhone),

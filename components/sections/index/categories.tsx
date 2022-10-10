@@ -1,11 +1,10 @@
 import { Page } from "../../../context/page-context.tsx";
 import { useContext } from "preact/hooks";
+import { getNavCategories } from "../../../shared/nav-categories.ts";
 
 export const Categories = () => {
   const { data } = useContext(Page);
-  const navCategories = data.categories?.filter(
-    ({ parent_id, url }) => parent_id === "0" && Boolean(url)
-  );
+  const navCategories = getNavCategories(data.categories);
 
   return (
     <section class="bg-light-blue py-4 sm:py-8 md:py-16 max-w-fullhd mx-auto">

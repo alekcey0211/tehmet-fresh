@@ -1,9 +1,15 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { CatalogWrapper } from "../../components/catalog-wrapper.tsx";
+import { icons } from "../../components/icons.tsx";
 import { LayoutBase } from "../../components/layout.tsx";
+import { CatalogCategories } from "../../components/sections/catalog/categories.tsx";
+import { Certificates } from "../../components/sections/catalog/certificates.tsx";
+import { Partners } from "../../components/sections/catalog/partners.tsx";
+import { Popular } from "../../components/sections/catalog/popular.tsx";
 import { PageData, pageCache } from "../../context/page-context.tsx";
 import { Category, fetchCategories } from "../../data/categories.ts";
 import { isProduction } from "../../shared/config.ts";
+import { getNavCategories } from "../../shared/nav-categories.ts";
 
 type Data = PageData;
 
@@ -23,17 +29,45 @@ export const handler: Handlers<Data> = {
 
 export default function CatalogRoute(ctx: PageProps<Data>) {
   const { data, url } = ctx;
+  const navCategories = getNavCategories(data.categories);
 
   return (
     <LayoutBase pageData={ctx} title={"Каталог"} isCompact={true}>
       <CatalogWrapper>
         <div>
-          <h1>Каталог</h1>
+          <section class="py-4 sm:py-8 lg:py-16 max-w-fullhd mx-auto">
+            <div class="relative">
+              <p class="font-light text-2xl sm:text-4xl lg:text-5xl text-dark-blue lg:leading-[80px] text-right mr-4 sm:mr-8 lg:mr-[410px] uppercase sm:mb-4 lg:mb-0">
+                КАТАЛОГ
+              </p>
+              <div class="hidden lg:block absolute bottom-0 right-0">
+                <icons.TitleSeparator />
+              </div>
+            </div>
+            <nav class="ml-4 md:ml-10 lg:ml-0 md:mb-2 lg:mb-16 mt-1">
+              <ol class="list-reset flex flex-wrap gap-2 text-base">
+                <li>
+                  <a href="/" class="text-dark-blue hover:text-blue">
+                    Главная
+                  </a>
+                </li>
+                <li>
+                  <span class="text-dark-blue">/</span>
+                </li>
+                <li>
+                  <a href="/catalog" class="text-dark-blue hover:text-blue">
+                    Каталог
+                  </a>
+                </li>
+              </ol>
+            </nav>
+          </section>
+          <CatalogCategories categories={navCategories} />
         </div>
         <div class="col-span-2">
-          {/* {% include "sections/catalog/ПОПУЛЯРНЫЕ ТОВАРЫ.njk" %} */}
-          {/* {% include "sections/catalog/Наши партнеры.njk" %} */}
-          {/* {% include "sections/catalog/Сертификаты.njk" %} */}
+          <Popular />
+          <Partners />
+          <Certificates />
         </div>
       </CatalogWrapper>
     </LayoutBase>

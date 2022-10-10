@@ -13,6 +13,8 @@ export type Product = {
   featured: boolean | null;
   category?: Category;
   features: { id: number; value: string }[];
+  articleNumber?: string;
+  isExists?: boolean;
 };
 
 export const fetchProducts = async ({
@@ -38,5 +40,6 @@ export const fetchProducts = async ({
 
   const response = await fetch(url.toString());
   const json = await response.json();
-  return Object.values(json.data ?? {}) as Product[];
+  const data = Object.values(json.data ?? {}) as Product[];
+  return data.map((x) => ({ ...x, isExists: true }));
 };

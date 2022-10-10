@@ -46,6 +46,6 @@ const data = [
   },
 ];
 
-export const certificates = () => {
+export const getCertificates = () => {
   return data;
 };

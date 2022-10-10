@@ -1,5 +1,5 @@
 import CatalogSearch from "../islands/CatalogSearch.tsx";
-import { contacts } from "../shared/contacts.ts";
+import { getContacts } from "../data/contacts.ts";
 import { Button } from "./button.tsx";
 import { icons } from "./icons.tsx";
 import { Image } from "./image.tsx";
@@ -22,7 +22,7 @@ export function Header() {
             />
           </a>
           <div class="hidden md:grid gap-1 lg:gap-0">
-            {contacts({ isPage: true }).map((item) => (
+            {getContacts({ isPage: true }).map((item) => (
               <div class="flex items-center gap-2 text-xl lg:text-2xl">
                 <icons.LocationGradient />
                 <span class="gradient-text">{item.city}</span>

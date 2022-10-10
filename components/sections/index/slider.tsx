@@ -1,4 +1,4 @@
-import { contacts } from "../../../shared/contacts.ts";
+import { getContacts } from "../../../data/contacts.ts";
 import { icons } from "../../icons.tsx";
 import { Image } from "../../image.tsx";
 
@@ -84,7 +84,7 @@ export const Slider = () => {
                 />
               </div>
               <div class="hidden sm:grid grid-cols-[200px_200px_200px] lg:grid-cols-[296px_296px_296px] justify-center mb-4">
-                {contacts({ isPage: true }).map((item) => (
+                {getContacts({ isPage: true }).map((item) => (
                   <div class="aspect-[1.33333/1] relative grid place-content-center gap-2 a768e8baa19f64e51ad0012c672be3e95">
                     <div
                       class="a768e8baa19f64e51ad0012c672be3e95-bg hidden absolute inset-0 -z-10 bg-light-blue"

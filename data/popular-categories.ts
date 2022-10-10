@@ -25,6 +25,6 @@ const data = [
   },
 ];
 
-export const popularCategories = () => {
+export const getPopularCategories = () => {
   return data;
 };

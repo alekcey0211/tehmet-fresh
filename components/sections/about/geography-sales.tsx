@@ -1,5 +1,5 @@
 import GeographySalesDropdown from "../../../islands/GeographySalesDropdown.tsx";
-import { contacts } from "../../../shared/contacts.ts";
+import { getContacts } from "../../../data/contacts.ts";
 import { icons } from "../../icons.tsx";
 import { Image } from "../../image.tsx";
 
@@ -26,7 +26,7 @@ export const GeographySales = () => {
               Екатеринбурге, Сургуте и Новом Уренгое.
             </p>
             <div class="flex flex-wrap justify-center md:justify-end gap-x-6 2xl:gap-x-16 gap-y-8 ">
-              {contacts({ isPage: true }).map((item) => (
+              {getContacts({ isPage: true }).map((item) => (
                 <div class="grid place-content-center gap-2">
                   <div class="flex items-center gap-2">
                     <div class="shrink-0 hidden sm:block text-dark-blue">

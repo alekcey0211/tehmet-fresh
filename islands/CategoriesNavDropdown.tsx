@@ -3,6 +3,7 @@ import { Dropdown as DropdownComponent } from "../components/dropdown.tsx";
 import { Category, fetchCategories } from "../data/categories.ts";
 import { useState, useEffect } from "preact/hooks";
 import { NavCategories } from "../components/nav-categories.tsx";
+import { getNavCategories } from "../shared/nav-categories.ts";
 
 export default function CategoriesNavDropdown({
   pathname,
@@ -13,9 +14,7 @@ export default function CategoriesNavDropdown({
 
   useEffect(() => {
     fetchCategories().then((categories) => {
-      const navCategories = categories.filter(
-        ({ parent_id, url }) => parent_id === "0" && Boolean(url)
-      );
+      const navCategories = getNavCategories(categories);
       setData(navCategories);
     });
   }, []);
@@ -38,8 +37,12 @@ export default function CategoriesNavDropdown({
         </div>
       }
       triggerClassName="grid place-items-center nav-item-button lowercase after::absolute after::right-0 after::top-2 after::bottom-2 after::border-r-2 after::border-[#C4C4C4]"
-      panel={<NavCategories pathname={pathname} categories={data} />}
-      panelClassName="absolute bottom-0 left-0 translate-y-full pt-1 min-w-full !shadow-lg w-[442px] border-r-[1px] border-l-[1px] border-b-[1px] border-transparent box-border"
+      panel={
+        <div class="overflow-auto max-h-[calc(100vh-70px)]">
+          <NavCategories pathname={pathname} categories={data} />
+        </div>
+      }
+      panelClassName="absolute bottom-0 left-0 translate-y-full pt-1 min-w-full shadow-lg! w-[442px] border-r-[1px] border-l-[1px] border-b-[1px] border-transparent box-border"
     />
   );
 }

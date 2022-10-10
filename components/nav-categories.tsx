@@ -9,7 +9,7 @@ export const NavCategories = ({
   categories: Category[];
 }) => {
   return (
-    <ul class="pl-12 py-4 bg-white max-w-[440px] overflow-auto max-h-[calc(100vh-70px)]">
+    <ul class="pl-12 py-4 bg-white max-w-[440px] ">
       {categories.map(({ url, name, children }, index, { length }) => {
         const link = `/catalog/${url}`;
         const isActive =

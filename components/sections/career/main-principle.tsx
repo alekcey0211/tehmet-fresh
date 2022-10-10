@@ -1,4 +1,4 @@
-import { vacancies } from "../../../shared/vacancies.ts";
+import { getVacancies } from "../../../data/vacancies.ts";
 
 export const MainPrinciple = () => {
   return (
@@ -16,7 +16,7 @@ export const MainPrinciple = () => {
               Актуальные вакансии
             </span>
             <ul class="grid content-start gap-2 md:gap-4">
-              {vacancies()
+              {getVacancies()
                 .filter(({ isArchive }) => !isArchive)
                 .map((vacancy) => (
                   <li>

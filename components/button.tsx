@@ -3,6 +3,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 export function Button({
   text,
   href,
+  target,
   view,
   dialogId,
   onClick,
@@ -10,6 +11,7 @@ export function Button({
 }: {
   text?: string;
   href?: string;
+  target?: string;
   view: "gradient" | "white" | "blue";
   dialogId?: string;
   onClick?: () => void;
@@ -35,6 +37,7 @@ export function Button({
         .join(" ")}
       {...(href && {
         href,
+        target,
       })}
       {...(dialogId && {
         "data-dialog-for": dialogId,

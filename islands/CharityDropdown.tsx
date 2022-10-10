@@ -1,6 +1,5 @@
 import { icons } from "../components/icons.tsx";
 import { Dropdown as DropdownComponent } from "../components/dropdown.tsx";
-import { cities } from "../shared/cities.ts";
 
 export default function CharityDropdown({
   containerClassName,

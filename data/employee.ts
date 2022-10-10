@@ -1,4 +1,4 @@
-import { transformTelLink } from "./link.ts";
+import { transformTelLink } from "../shared/link.ts";
 
 const data = [
   {
@@ -323,7 +323,7 @@ const data = [
   },
 ];
 
-export const employee = () => {
+export const getEmployee = () => {
   return data.map((x) => ({
     ...x,
     fio: [x.lastName, x.firstName, x.middleName].filter(Boolean).join(" "),

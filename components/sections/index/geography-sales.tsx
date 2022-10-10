@@ -1,6 +1,6 @@
 import GeographySalesDropdown from "../../../islands/GeographySalesDropdown.tsx";
-import { cities } from "../../../shared/cities.ts";
-import { contacts } from "../../../shared/contacts.ts";
+import { getCities } from "../../../data/cities.ts";
+import { getContacts } from "../../../data/contacts.ts";
 import { Button } from "../../button.tsx";
 import { icons } from "../../icons.tsx";
 import { Image } from "../../image.tsx";
@@ -36,7 +36,7 @@ export const GeographySales = () => {
               </div>
             </div>
             <div class="lg:col-start-2 lg:row-start-1 lg:row-end-3 grid gap-2 lg:gap-3 place-content-center lg:place-content-end">
-              {contacts({ isPage: true }).map((item) => (
+              {getContacts({ isPage: true }).map((item) => (
                 <div class="flex items-center gap-1 sm:gap-2 text-xs sm:text-[18px] ">
                   <div class="shrink-0 hidden sm:block text-dark-blue">
                     <icons.Location />
@@ -90,7 +90,7 @@ export const GeographySales = () => {
               }}
             />
             <ul class="hidden lg:block columns-4 xl:columns-3 2xl:columns-4 font-light text-blue1 text-lg">
-              {cities().map((city) => (
+              {getCities().map((city) => (
                 <li class="whitespace-nowrap">{city}</li>
               ))}
             </ul>

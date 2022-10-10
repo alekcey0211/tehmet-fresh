@@ -1,10 +1,11 @@
 import { useState, useEffect } from "preact/hooks";
 import { Spin } from "../components/spin.tsx";
-import { fetchProducts, Product } from "../data/products.ts";
+import { fetchPopularProducts } from "../data/popular-products.ts";
+import { PopularProductsResponse } from "../routes/api/popular-products.ts";
 import { screens } from "../shared/screens.ts";
 import Swiper from "../static/swiper/swiper-bundle.esm.browser.min.js";
 
-const Slider = ({ data }: { data: Product[] }) => {
+const Slider = ({ data }: { data: PopularProductsResponse }) => {
   useEffect(() => {
     new Swiper("#swiper-bbaccfb375bf4ed48546783f28c4c46a", {
       slidesPerView: 1,
@@ -41,7 +42,12 @@ const Slider = ({ data }: { data: Product[] }) => {
               class="swiper-slide__wrapper__img-container"
               style="clip-path: url(#form-01)"
             >
-              <img src={item.image} alt={item.name} loading="lazy" class="object-contain object-center h-full w-full" />
+              <img
+                src={item.image}
+                alt={item.name}
+                loading="lazy"
+                class="object-contain object-center h-full w-full"
+              />
             </div>
             <span class="swiper-slide__wrapper__text">{item.name}</span>
             <a
@@ -57,20 +63,11 @@ const Slider = ({ data }: { data: Product[] }) => {
 
 export default function PopularProductsSlider() {
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState<Product[]>([]);
+  const [data, setData] = useState<PopularProductsResponse>([]);
 
   useEffect(() => {
-    fetchProducts().then((products) => {
-      const popular = [
-        ...products.filter(
-          (x) =>
-            Boolean(x.featured) ||
-            x.features.find((f) =>
-              ["хит", "хит продаж"].includes(f.value.toLowerCase())
-            )
-        ),
-      ];
-      setData(popular);
+    fetchPopularProducts().then((popularProducts) => {
+      setData(popularProducts);
       setIsLoading(false);
     });
   }, []);

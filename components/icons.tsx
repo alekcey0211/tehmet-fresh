@@ -778,8 +778,8 @@ function TitleSeparator(props: JSX.SVGAttributes<SVGSVGElement>) {
   return (
     <svg width="1284" viewBox="0 0 1284 32" fill="none" {...props}>
       <path
-        fillRule="evenodd"
-        clipRule="evenodd"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
         d="M944.117 0C1064.94 0 1171.81 0.000301916 1284 0.000301916V2.44857H1220.33C1212.49 2.11467 1204.55 6.84853 1203.2 12.1526L1200.94 21.0163C1199.35 28.5818 1192.24 32 1185.88 32C1055.04 32 924.217 31.9997 793.378 31.9997L0 32L909.664 29.5514C917.504 29.8853 925.446 25.1523 926.795 19.8474L929.048 10.9837C930.643 3.41823 937.754 0 944.117 0Z"
         fill={`url(#a-${id})`}
       />
@@ -1016,6 +1016,52 @@ function Download(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
+function MoreHorizontal(props: JSX.SVGAttributes<SVGSVGElement>) {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      {...props}
+    >
+      <circle cx="12" cy="12" r="1" />
+      <circle cx="19" cy="12" r="1" />
+      <circle cx="5" cy="12" r="1" />
+    </svg>
+  );
+}
+
+function GradientArrowRight(props: JSX.SVGAttributes<SVGSVGElement>) {
+  const id = useId();
+
+  return (
+    <svg width="27" height="30" viewBox="0 0 27 30" fill="none" {...props}>
+      <path
+        d="M27 15L6.75 27.9904L6.75 2.00962L27 15Z"
+        fill={`url(#a-${id})`}
+      />
+      <defs>
+        <linearGradient
+          id={`a-${id}`}
+          x1="0.236209"
+          y1="12.0911"
+          x2="0.397208"
+          y2="21.4189"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#0089CC" />
+          <stop offset="1" stop-color="#0A529A" stop-opacity="0.96" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
 export const icons = {
   Address,
   ApproveUser,
@@ -1052,5 +1098,7 @@ export const icons = {
   ChevronLeft,
   ChevronRight,
   ChevronUp,
-  Download
+  Download,
+  GradientArrowRight,
+  MoreHorizontal,
 };

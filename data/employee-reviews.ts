@@ -116,6 +116,6 @@ const data = [
   },
 ];
 
-export const employeeReviews = () => {
+export const getEmployeeReviews = () => {
   return data;
 };

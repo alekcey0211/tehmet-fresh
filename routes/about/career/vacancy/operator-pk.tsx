@@ -2,7 +2,7 @@ import { PageProps, Handlers } from "$fresh/server.ts";
 import { icons } from "../../../../components/icons.tsx";
 import { LayoutCompact } from "../../../../components/layout.tsx";
 import { PageData } from "../../../../context/page-context.tsx";
-import { vacancies, Vacancy } from "../../../../shared/vacancies.ts";
+import { getVacancies, Vacancy } from "../../../../data/vacancies.ts";
 
 type Data = PageData & {
   vacancy: Vacancy;
@@ -10,7 +10,7 @@ type Data = PageData & {
 
 export const handler: Handlers<Data> = {
   GET(req, ctx) {
-    const vacancy = vacancies().find((x) => req.url.endsWith(x.link));
+    const vacancy = getVacancies().find((x) => req.url.endsWith(x.link));
 
     if (!vacancy) return ctx.renderNotFound();
     if (vacancy.isArchive) return ctx.renderNotFound();

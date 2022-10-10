@@ -28,6 +28,6 @@ const data = {
   ],
 };
 
-export const banner = () => {
+export const getBanner = () => {
   return data;
 };

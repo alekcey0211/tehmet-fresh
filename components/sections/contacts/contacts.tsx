@@ -1,4 +1,4 @@
-import { contacts } from "../../../shared/contacts.ts";
+import { getContacts } from "../../../data/contacts.ts";
 import { icons } from "../../icons.tsx";
 import { Button } from "../../button.tsx";
 
@@ -13,7 +13,7 @@ export const Contacts = () => {
           <icons.TitleSeparator />
         </div>
       </div>
-      {contacts().map((item) => (
+      {getContacts().map((item) => (
         <>
           <h2 class="font-light text-xl sm:text-4xl md:text-5xl md:leading-[80px] ml-4 sm:ml-10 text-dark-blue">
             {item.title}

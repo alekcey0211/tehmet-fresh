@@ -1,4 +1,4 @@
-import { partners } from "../shared/partners.ts";
+import { getPartners } from "../data/partners.ts";
 import { Image } from "./image.tsx";
 
 export const PartnersSlider = () => {
@@ -13,7 +13,7 @@ export const PartnersSlider = () => {
         class="swiper w-full max-w-[1167px] 2xl:max-w-none mx-auto"
       >
         <div class="swiper-wrapper items-center">
-          {partners().map((partner) => (
+          {getPartners().map((partner) => (
             <div class="swiper-slide">
               <div class="h-full w-full grid place-content-center">
                 <Image {...partner} imgClassName="block max-w-full w-full" />

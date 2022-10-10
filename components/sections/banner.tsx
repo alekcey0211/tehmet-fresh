@@ -1,4 +1,4 @@
-import { banner } from "../../shared/banner.ts";
+import { getBanner } from "../../data/banner.ts";
 import { Button } from "../button.tsx";
 import { Image } from "../image.tsx";
 
@@ -11,7 +11,7 @@ export const Banner = () => {
           class="swiper w-full"
         >
           <div class="swiper-wrapper">
-            {banner().topSlider.map((item) => (
+            {getBanner().topSlider.map((item) => (
               <div class="swiper-slide bg-light-grey grid place-content-center">
                 <a href="{{item.link}}" class="block">
                   <Image
@@ -36,7 +36,7 @@ export const Banner = () => {
           class="swiper w-full"
         >
           <div class="swiper-wrapper">
-            {banner().bottomSlider.map((item) => (
+            {getBanner().bottomSlider.map((item) => (
               <div class="swiper-slide bg-light-grey grid place-content-center">
                 <a href="{{item.link}}" class="block">
                   <Image
@@ -55,12 +55,12 @@ export const Banner = () => {
           ></div>
         </div>
       </div>
-      {banner().bestPurchase && (
+      {getBanner().bestPurchase && (
         <div class="grid h-16 grid-rows-1 pl-12 max-w-[440px]">
           <Button
             view="gradient"
             text="Выгодная покупка"
-            href={banner().bestPurchase}
+            href={getBanner().bestPurchase}
           />
         </div>
       )}

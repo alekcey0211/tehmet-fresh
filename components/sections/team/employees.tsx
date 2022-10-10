@@ -1,4 +1,4 @@
-import { employee } from "../../../shared/employee.ts";
+import { getEmployee } from "../../../data/employee.ts";
 import { icons } from "../../icons.tsx";
 import { Image } from "../../image.tsx";
 
@@ -7,7 +7,7 @@ export const Employees = () => {
     <section class="pb-4 md:pb-16 px-4 md:px-10 pt-4 lg:pt-16">
       <div class="max-w-fullhd mx-auto">
         <div class="grid xl:grid-cols-2 gap-3">
-          {employee().map((item, index, { length }) => (
+          {getEmployee().map((item, index, { length }) => (
             <>
               <div class="px-2 sm:px-4 md:px-10 py-2 sm:py-4 md:py-10 grid gap-x-3 md:gap-x-8 grid-cols-[70px_1fr] sm:grid-cols-[100px_1fr] md:grid-cols-[200px_1fr] bg-light-blue">
                 <div>

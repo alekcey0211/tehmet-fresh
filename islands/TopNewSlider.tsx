@@ -34,7 +34,7 @@ const Slider = ({ data }: { data: News[] }) => {
           <div class="grid grid-rows-[243px_auto_1fr_auto] md:grid-rows-[327px_auto_1fr_auto] 2xl:grid-rows-[500px_auto_1fr_auto] h-full">
             <a
               href="/blog/#{{item.id}}"
-              class="mb-3 md:mb-7 bg-light-grey shadow-md"
+              class="mb-3 md:mb-7 bg-light-grey shadow-md!"
             >
               <Image
                 src={`/img/news/${item.fileName}`}
@@ -77,7 +77,7 @@ export default function TopNewSlider() {
   const [data, setData] = useState<News[]>([]);
 
   useEffect(() => {
-    fetchNews().then((news) => {
+    fetchNews({ page: 1 }).then(({ news }) => {
       setData(news.slice(0, 3));
       setIsLoading(false);
     });

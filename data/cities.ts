@@ -60,6 +60,6 @@ const data = [
   "Якутск",
 ];
 
-export const cities = () => {
+export const getCities = () => {
   return data;
 };

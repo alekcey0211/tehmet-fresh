@@ -1,4 +1,4 @@
-import { partners } from "../../../shared/partners.ts";
+import { getPartners } from "../../../data/partners.ts";
 import { icons } from "../../icons.tsx";
 import { Image } from "../../image.tsx";
 import { PartnersSlider } from "../../partners-slider.tsx";
@@ -16,7 +16,7 @@ export const Partners = () => {
           </div>
         </div>
         <div class="grid grid-cols-4 place-items-center gap-x-6 gap-y-10 px-10">
-          {partners().map((partner) => (
+          {getPartners().map((partner) => (
             <Image {...partner} imgClassName="block max-w-full" />
           ))}
         </div>

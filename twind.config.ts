@@ -109,6 +109,9 @@ export default {
         "white-space": "inherit",
       },
     },
+    "list-reset": {
+      "list-style-type": "reset",
+    },
     "spinner-border": {
       "vertical-align": "-0.125em",
       border: "0.25em solid",
@@ -161,7 +164,7 @@ export default {
       )`,
     },
     checkbox: {},
-    "form-check-input": {
+    "form-check-input": (parts, { tw, theme, tag, css }) => ({
       width: "1.23rem",
       height: "1.23rem",
       "background-color": "#fff",
@@ -177,7 +180,23 @@ export default {
       transition: `background-color 0.25s ease, border-color 0.25s ease,
         background-position 0.15s ease-in-out, opacity 0.15s ease-out,
         box-shadow 0.15s ease-in-out`,
-    },
+      "&.checked": css("bg-blue border-blue"),
+      "&.checked::after": {
+        transition: "opacity 0.25s ease-in-out",
+        content: '" "',
+        "background-image": `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd' /%3E%3C/svg%3E")`,
+        "background-repeat": "no-repeat",
+        "background-position": "50%",
+        width: "100%",
+        height: "100%",
+        color: "#fff",
+        position: "absolute",
+        display: "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        "font-size": "0.67rem",
+      },
+    }),
     "form-dialog": {
       "background-image": `linear-gradient(
         213.83deg,
@@ -227,6 +246,9 @@ export default {
     },
     scroll: (parts) => ({
       "scroll-behavior": parts[0],
+    }),
+    "scroll-m": (parts) => ({
+      "scroll-margin": parts[0].substring(1, parts[0].length - 1),
     }),
     aspect: (parts) =>
       parts[0]?.startsWith("[") && {
@@ -278,6 +300,6 @@ export default {
       `table-auto w-full flex overflow-auto mb-4 mt-4`
     );
     cssRule[".c-prav p"] = css(`mb-4 mt-4`);
-    cssRule[".c-prav ul"] = css(`mb-4 mt-4 ml-0 mr-0 pl-0 list-disc`);
+    cssRule[".c-prav ul"] = css(`mb-4 mt-4 ml-0 mr-0 pl-[40px] list-disc`);
   },
 } as Configuration;
