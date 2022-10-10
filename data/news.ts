@@ -1138,7 +1138,7 @@ export const fetchNews = async ({ page }: { page: number }) => {
     })) as News[];
   return {
     news: news.slice((page - 1) * limit, page * limit),
-    pages: Math.round(news.length / limit),
+    pages: Math.ceil(news.length / limit),
     // total: news.length,
   };
 };

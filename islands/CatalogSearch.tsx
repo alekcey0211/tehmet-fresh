@@ -4,26 +4,9 @@ import Fuse from "https://deno.land/x/fuse@v6.4.1/dist/fuse.esm.min.js";
 import { fetchProductsSearch } from "../data/products-search.ts";
 
 type SearchDefinition = {
-  // image?: string;
   preview?: string;
-  // price?: number;
   url: string;
   name: string;
-  // annotation: string;
-  // description: string;
-  // brand: string;
-  // featured: boolean | null;
-  // features: {
-  //   feature_id: string;
-  //   name: string;
-  //   value: string;
-  //   product_id: string;
-  // }[];
-  // category: {
-  //   id: string;
-  //   name: string;
-  //   url: string;
-  // };
 };
 
 const useFuse = <T,>({
@@ -102,7 +85,7 @@ export default function CatalogSearch() {
           />
         </svg>
       </button>
-      {focused && filteredListTop.length > 0 && (
+      {filteredListTop.length > 0 && (
         <div class="relative col-span-full row-span-full self-end">
           <div class="absolute mt-1 w-full border bg-white shadow-xl! rounded max-h-[400px] overflow-auto">
             <div class="p-3">

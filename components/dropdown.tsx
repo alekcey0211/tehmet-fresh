@@ -32,7 +32,6 @@ export function Dropdown({
   const triggerProps = {
     ref: btnDropdownRef,
     onClick: () => {
-      console.log("open");
       isOpen ? close() : open();
     },
     "aria-expanded": isOpen,

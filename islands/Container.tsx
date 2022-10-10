@@ -9,6 +9,5 @@ interface ContainerProps {
 }
 
 export default function Container(props: ContainerProps) {
-  console.log(props);
   return <div>{props.start}</div>;
 }

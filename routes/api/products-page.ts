@@ -4,6 +4,7 @@ import { fetchProducts, Product } from "../../data/products.ts";
 export type ProductsPageResponse = {
   products: Product[];
   pages: number;
+  total: number;
 };
 
 const limit = 48;
@@ -11,6 +12,7 @@ const limit = 48;
 export const handler = async (req: Request, _ctx: HandlerContext) => {
   const url = new URL(req.url);
   const categories = url.searchParams.getAll("category[]");
+  console.log(req.url, categories)
   const brand = url.searchParams.get("brand") ?? undefined;
   const sort = (url.searchParams.get("sort") ?? undefined) as
     | "price"
@@ -31,7 +33,8 @@ export const handler = async (req: Request, _ctx: HandlerContext) => {
   return new Response(
     JSON.stringify({
       products: items.slice((page - 1) * limit, page * limit),
-      pages: Math.round(items.length / limit),
+      pages: Math.ceil(items.length / limit),
+      total: items.length,
     }),
     {
       headers: {

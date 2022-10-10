@@ -9,9 +9,11 @@ import { PageData, pageCache } from "../../context/page-context.tsx";
 import { Category, fetchCategories } from "../../data/categories.ts";
 import CatalogList from "../../islands/CatalogList.tsx";
 import { isProduction } from "../../shared/config.ts";
+import { getCategoryPath } from "../../shared/path.ts";
 
 type Data = PageData & {
   category: Category;
+  path: Category[];
 };
 
 export const handler: Handlers<Data> = {
@@ -28,9 +30,12 @@ export const handler: Handlers<Data> = {
       return ctx.renderNotFound();
     }
 
+    const path = getCategoryPath({ category, categories });
+
     return ctx.render({
       categories,
       category,
+      path,
     });
   },
 };
@@ -68,12 +73,40 @@ export default function CatalogUrlRoute(ctx: PageProps<Data>) {
                 <li>
                   <span class="text-dark-blue">/</span>
                 </li>
+                {data.path.map((item) => (
+                  <>
+                    <li>
+                      <a
+                        href={`/catalog/${item.url}`}
+                        class="text-dark-blue hover:text-blue"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                    <li>
+                      <span class="text-dark-blue">/</span>
+                    </li>
+                  </>
+                ))}
                 <li class="">{data.category.name}</li>
               </ol>
             </nav>
+            <div class="flex flex-wrap gap-1 pl-4 md:pl-10 lg:pl-0 pr-8 md:pr-16 lg:pr-0 my-4">
+              {data.category.children.map((item) => (
+                <a
+                  href={`/catalog/${item.url}`}
+                  class="text-sm inline-flex items-center leading-sm px-3 py-1 rounded-full bg-white border"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
             <CatalogList
               title={data.category.name}
-              categories={data.category.children.map((x) => x.id)}
+              categories={[
+                data.category.id,
+                ...data.category.children.map((x) => x.id),
+              ]}
               brands={data.category.brands}
             />
           </section>

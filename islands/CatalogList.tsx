@@ -110,9 +110,10 @@ export default function CatalogList({
 }) {
   const [isLoading, setIsLoading] = useState(true);
   const [layout, setLayout] = useState<"grid" | "list">(getSessionLayout());
-  const [{ products, pages }, setData] = useState<ProductsPageResponse>({
+  const [{ products, pages, total }, setData] = useState<ProductsPageResponse>({
     products: [],
     pages: 1,
+    total: 0,
   });
 
   const { sort, order, page, ...params } = getSearchParams();
@@ -128,18 +129,6 @@ export default function CatalogList({
       setData(response);
       setIsLoading(false);
     });
-    // fetchProducts({ brand: brandId, categories }).then((products) => {
-    //   let items = products;
-    //   if (params.sort) {
-    //     items = items.sort((a, b) =>
-    //       params.order === "desc"
-    //         ? Number(b[params.sort!] ?? 0) - Number(a[params.sort!] ?? 0)
-    //         : Number(a[params.sort!] ?? 0) - Number(b[params.sort!] ?? 0)
-    //     );
-    //   }
-    //   setData(items);
-    //   setIsLoading(false);
-    // });
   }, [sort, order, page]);
 
   return (
@@ -151,7 +140,7 @@ export default function CatalogList({
         <div class="pr-8 md:pr-16">
           <h1 class="gradient-text text-xl sm:text-2xl lg:text-4xl">{title}</h1>
           <span class="gradient-text text-base sm:text-lg">
-            {`(${products?.length ?? 0} товаров)`}
+            {`(${total} товаров)`}
           </span>
         </div>
         <div class="border-blue border-b-[1px] pb-2 pr-8 md:pr-16 text-blue1 text-base md:text-lg w-full grid md:flex gap-y-2 justify-between">
@@ -258,11 +247,13 @@ export default function CatalogList({
       </div>
       {IS_BROWSER && (
         <div class="bg-light-blue pb-8 pr-4 md:pr-10 pl-4 md:pl-16 py-4 md:py-8">
-          {!isLoading && <Pagination
-            page={page}
-            pages={pages}
-            link={(p) => `${document.location.pathname}?page=${p}#catalog`}
-          />}
+          {!isLoading && pages > 1 && (
+            <Pagination
+              page={page}
+              pages={pages}
+              link={(p) => `${document.location.pathname}?page=${p}#catalog`}
+            />
+          )}
         </div>
       )}
     </>
