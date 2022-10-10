@@ -2,7 +2,6 @@ import { PageProps } from "$fresh/server.ts";
 import { Layout } from "../components/layout.tsx";
 
 export default function PageNotFound(ctx: PageProps) {
-  console.log(ctx);
   return (
     <Layout pageData={ctx} title="Страница не найдена">
       <section class="w-full flex items-center justify-center py-20">
