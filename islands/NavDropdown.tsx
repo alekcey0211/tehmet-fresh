@@ -17,7 +17,7 @@ export default function NavDropdown({
   return (
     <DropdownComponent
       containerTag="li"
-      containerClassName="text-3xl text-dark-blue grid grid-cols-1 grid-rows-1 place-content-center h-[70px] relative whitespace-nowrap [ after:absolute after:right-0 after:top-2 after:bottom-2 after:border-r-2 after:border-[#C4C4C4] ]"
+      containerClassName="text-3xl text-dark-blue grid grid-cols-1 grid-rows-1 place-content-center h-[70px] relative whitespace-nowrap after::absolute after::right-0 after::top-2 after::bottom-2 after::border-r-2 after::border-[#C4C4C4]"
       trigger={
         <span class={`${pathname.startsWith(link) && "gradient-text"}`}>
           {text}
