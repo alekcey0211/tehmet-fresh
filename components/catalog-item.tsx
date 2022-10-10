@@ -49,7 +49,12 @@ export const CatalogItem = ({
           <Button
             view="gradient"
             text="Заказать"
-            dialogId="form-31e08410-add4-4eeb-be6d-9375bc7cf349"
+            onClick={() => {
+              const dialog = document.getElementById(
+                "form-31e08410-add4-4eeb-be6d-9375bc7cf349"
+              ) as HTMLDialogElement | undefined;
+              dialog?.showModal();
+            }}
           />
         </div>
       </div>
