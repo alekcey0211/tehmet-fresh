@@ -1,7 +1,4 @@
-import { icons } from "../components/icons.tsx";
 import { Dropdown as DropdownComponent } from "../components/dropdown.tsx";
-import { Category, fetchCategories } from "../data/categories.ts";
-import { useState, useEffect } from "preact/hooks";
 
 export default function NavDropdown({
   pathname,
@@ -32,7 +29,7 @@ export default function NavDropdown({
           {items.map(({ text, link: itemLink }, index, { length }) => {
             const isActive = pathname === link + itemLink;
             return (
-              <li class="grid items-center text-xl text-grey hover:text-dark-blue">
+              <li class="grid items-center text-xl text-grey2 hover:text-dark-blue">
                 <a
                   href={link + itemLink}
                   class={`grid items-center h-full pr-4 py-[5px] nav-item-link ${

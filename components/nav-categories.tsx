@@ -16,7 +16,7 @@ export const NavCategories = ({
           link === pathname ||
           children.some((child) => `/catalog/${child.url}` === pathname);
         return (
-          <li class="grid items-center text-xl text-grey hover:text-dark-blue">
+          <li class="grid items-center text-xl text-grey2 hover:text-dark-blue">
             <div class="grid items-center grid-cols-[1fr_auto] pr-1">
               <a
                 href={link}
@@ -43,7 +43,7 @@ export const NavCategories = ({
                   const childLink = `/catalog/${child.url}`;
                   const isChildActive = childLink === pathname;
                   return (
-                    <li class="grid items-center text-xl text-grey hover:text-dark-blue border-b-[1px] border-[#DADADA]">
+                    <li class="grid items-center text-xl text-grey2 hover:text-dark-blue border-b-[1px] border-[#DADADA]">
                       <a
                         href={childLink}
                         class={`grid items-center h-full pr-4 py-1 ${

@@ -248,7 +248,8 @@ export default {
       "scroll-behavior": parts[0],
     }),
     "scroll-m": (parts) => ({
-      "scroll-margin": parts[0].substring(1, parts[0].length - 1),
+      "scroll-margin":
+        parts[0]?.startsWith("[") && parts[0].substring(1, parts[0].length - 1),
     }),
     aspect: (parts) =>
       parts[0]?.startsWith("[") && {

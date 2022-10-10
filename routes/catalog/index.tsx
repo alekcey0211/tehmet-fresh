@@ -45,7 +45,7 @@ export default function CatalogRoute(ctx: PageProps<Data>) {
               </div>
             </div>
             <nav class="ml-4 md:ml-10 lg:ml-0 md:mb-2 lg:mb-16 mt-1">
-              <ol class="list-reset flex flex-wrap gap-2 text-base">
+              <ol class="list-none flex flex-wrap gap-2 text-base">
                 <li>
                   <a href="/" class="text-dark-blue hover:text-blue">
                     Главная

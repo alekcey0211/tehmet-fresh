@@ -56,7 +56,7 @@ export default function CatalogUrlRoute(ctx: PageProps<Data>) {
               </div>
             </div>
             <nav class="ml-4 md:ml-10 lg:ml-0 md:mb-2 lg:mb-16 mt-1">
-              <ol class="list-reset flex flex-wrap gap-2 text-base">
+              <ol class="list-none flex flex-wrap gap-2 text-base">
                 <li>
                   <a href="/" class="text-dark-blue hover:text-blue">
                     Главная
@@ -95,7 +95,7 @@ export default function CatalogUrlRoute(ctx: PageProps<Data>) {
               {data.category.children.map((item) => (
                 <a
                   href={`/catalog/${item.url}`}
-                  class="text-sm inline-flex items-center leading-sm px-3 py-1 rounded-full bg-white border"
+                  class="text-base inline-flex items-center px-3 py-1 rounded-full bg-white border hover:text-blue"
                 >
                   {item.name}
                 </a>

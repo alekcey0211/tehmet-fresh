@@ -35,7 +35,7 @@ export function Header() {
         </div>
         <div class="grid gap-1 md:gap-3 mb-2 md:mb-4 lg:mb-20">
           <div class="md:flex justify-between items-center">
-            <span class="hidden md:inline text-2xl lg:text-3xl text-grey">
+            <span class="hidden md:inline text-2xl lg:text-3xl text-grey2">
               КОМЛЕКТАЦИЯ ОБЪЕКТОВ ЛЮБОЙ
             </span>
             <div class="grid max-w-[140px] sm:max-w-[228px] md:w-[228px]">
@@ -47,7 +47,7 @@ export function Header() {
             </div>
           </div>
           <div class="md:flex justify-between items-center">
-            <span class="hidden md:inline text-2xl lg:text-3xl text-grey">
+            <span class="hidden md:inline text-2xl lg:text-3xl text-grey2">
               СЛОЖНОСТИ ПО ВСЕЙ РОССИИ
             </span>
             <div class="grid max-w-[140px] sm:max-w-[228px] md:w-[228px]">

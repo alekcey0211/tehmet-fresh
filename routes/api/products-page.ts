@@ -12,7 +12,6 @@ const limit = 48;
 export const handler = async (req: Request, _ctx: HandlerContext) => {
   const url = new URL(req.url);
   const categories = url.searchParams.getAll("category[]");
-  console.log(req.url, categories)
   const brand = url.searchParams.get("brand") ?? undefined;
   const sort = (url.searchParams.get("sort") ?? undefined) as
     | "price"
