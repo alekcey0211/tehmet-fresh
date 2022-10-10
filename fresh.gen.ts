@@ -3,27 +3,28 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import config from "./deno.json" assert { type: "json" };
-import * as $0 from "./routes/about/career/index.tsx";
-import * as $1 from "./routes/about/career/vacancy/buhgalter.tsx";
-import * as $2 from "./routes/about/career/vacancy/menedzher-po-snabzheniyu.tsx";
-import * as $3 from "./routes/about/career/vacancy/menedzher.tsx";
-import * as $4 from "./routes/about/career/vacancy/operator-pk.tsx";
-import * as $5 from "./routes/about/defaulter.tsx";
-import * as $6 from "./routes/about/index.tsx";
-import * as $7 from "./routes/about/team.tsx";
-import * as $8 from "./routes/api/popular-products.ts";
-import * as $9 from "./routes/api/product.ts";
-import * as $10 from "./routes/api/products-page.ts";
-import * as $11 from "./routes/api/products-search.ts";
-import * as $12 from "./routes/blog.tsx";
-import * as $13 from "./routes/brands/[url].tsx";
-import * as $14 from "./routes/catalog/[url].tsx";
-import * as $15 from "./routes/catalog/index.tsx";
-import * as $16 from "./routes/contacts.tsx";
-import * as $17 from "./routes/delivery.tsx";
-import * as $18 from "./routes/index.tsx";
-import * as $19 from "./routes/products/[url].tsx";
-import * as $20 from "./routes/video.tsx";
+import * as $0 from "./routes/_404.tsx";
+import * as $1 from "./routes/about/career/index.tsx";
+import * as $2 from "./routes/about/career/vacancy/buhgalter.tsx";
+import * as $3 from "./routes/about/career/vacancy/menedzher-po-snabzheniyu.tsx";
+import * as $4 from "./routes/about/career/vacancy/menedzher.tsx";
+import * as $5 from "./routes/about/career/vacancy/operator-pk.tsx";
+import * as $6 from "./routes/about/defaulter.tsx";
+import * as $7 from "./routes/about/index.tsx";
+import * as $8 from "./routes/about/team.tsx";
+import * as $9 from "./routes/api/popular-products.ts";
+import * as $10 from "./routes/api/product.ts";
+import * as $11 from "./routes/api/products-page.ts";
+import * as $12 from "./routes/api/products-search.ts";
+import * as $13 from "./routes/blog.tsx";
+import * as $14 from "./routes/brands/[url].tsx";
+import * as $15 from "./routes/catalog/[url].tsx";
+import * as $16 from "./routes/catalog/index.tsx";
+import * as $17 from "./routes/contacts.tsx";
+import * as $18 from "./routes/delivery.tsx";
+import * as $19 from "./routes/index.tsx";
+import * as $20 from "./routes/products/[url].tsx";
+import * as $21 from "./routes/video.tsx";
 import * as $$0 from "./islands/BrandsFooterList.tsx";
 import * as $$1 from "./islands/CatalogItem.tsx";
 import * as $$2 from "./islands/CatalogList.tsx";
@@ -42,27 +43,28 @@ import * as $$14 from "./islands/TopNewSlider.tsx";
 
 const manifest = {
   routes: {
-    "./routes/about/career/index.tsx": $0,
-    "./routes/about/career/vacancy/buhgalter.tsx": $1,
-    "./routes/about/career/vacancy/menedzher-po-snabzheniyu.tsx": $2,
-    "./routes/about/career/vacancy/menedzher.tsx": $3,
-    "./routes/about/career/vacancy/operator-pk.tsx": $4,
-    "./routes/about/defaulter.tsx": $5,
-    "./routes/about/index.tsx": $6,
-    "./routes/about/team.tsx": $7,
-    "./routes/api/popular-products.ts": $8,
-    "./routes/api/product.ts": $9,
-    "./routes/api/products-page.ts": $10,
-    "./routes/api/products-search.ts": $11,
-    "./routes/blog.tsx": $12,
-    "./routes/brands/[url].tsx": $13,
-    "./routes/catalog/[url].tsx": $14,
-    "./routes/catalog/index.tsx": $15,
-    "./routes/contacts.tsx": $16,
-    "./routes/delivery.tsx": $17,
-    "./routes/index.tsx": $18,
-    "./routes/products/[url].tsx": $19,
-    "./routes/video.tsx": $20,
+    "./routes/_404.tsx": $0,
+    "./routes/about/career/index.tsx": $1,
+    "./routes/about/career/vacancy/buhgalter.tsx": $2,
+    "./routes/about/career/vacancy/menedzher-po-snabzheniyu.tsx": $3,
+    "./routes/about/career/vacancy/menedzher.tsx": $4,
+    "./routes/about/career/vacancy/operator-pk.tsx": $5,
+    "./routes/about/defaulter.tsx": $6,
+    "./routes/about/index.tsx": $7,
+    "./routes/about/team.tsx": $8,
+    "./routes/api/popular-products.ts": $9,
+    "./routes/api/product.ts": $10,
+    "./routes/api/products-page.ts": $11,
+    "./routes/api/products-search.ts": $12,
+    "./routes/blog.tsx": $13,
+    "./routes/brands/[url].tsx": $14,
+    "./routes/catalog/[url].tsx": $15,
+    "./routes/catalog/index.tsx": $16,
+    "./routes/contacts.tsx": $17,
+    "./routes/delivery.tsx": $18,
+    "./routes/index.tsx": $19,
+    "./routes/products/[url].tsx": $20,
+    "./routes/video.tsx": $21,
   },
   islands: {
     "./islands/BrandsFooterList.tsx": $$0,

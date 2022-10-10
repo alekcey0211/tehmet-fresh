@@ -33,7 +33,7 @@ const Slider = ({ data }: { data: News[] }) => {
         <div class="swiper-slide">
           <div class="grid grid-rows-[243px_auto_1fr_auto] md:grid-rows-[327px_auto_1fr_auto] 2xl:grid-rows-[500px_auto_1fr_auto] h-full">
             <a
-              href="/blog/#{{item.id}}"
+              href={`/blog/#${item.id}`}
               class="mb-3 md:mb-7 bg-light-grey shadow-md!"
             >
               <Image
@@ -43,7 +43,7 @@ const Slider = ({ data }: { data: News[] }) => {
               />
             </a>
             <a
-              href="/blog/#{{item.id}}"
+              href={`/blog/#${item.id}`}
               class="mb-1 md:mb-4 text-blue1 hover:text-blue text-base md:text-lg uppercase"
             >
               {item.title}
