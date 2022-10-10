@@ -7,9 +7,11 @@ import { PageData, pageCache } from "../../context/page-context.tsx";
 import { Category, fetchCategories } from "../../data/categories.ts";
 import { fetchProducts, Product } from "../../data/products.ts";
 import { isProduction } from "../../shared/config.ts";
+import { getCategoryPath } from "../../shared/path.ts";
 
 type Data = PageData & {
   product: Product;
+  path?: Category[];
 };
 
 export const handler: Handlers<Data> = {
@@ -34,9 +36,16 @@ export const handler: Handlers<Data> = {
 
     if (!isProduction) pageCache.set("categories", categories);
 
+    product.category = categories.find((x) => x.id === product.category?.id);
+
+    const path =
+      product.category &&
+      getCategoryPath({ category: product.category, categories });
+
     return ctx.render({
       categories,
       product,
+      path,
     });
   },
 };
@@ -74,6 +83,21 @@ export default function ProductsUrlRoute(ctx: PageProps<Data>) {
                 <li>
                   <span class="text-dark-blue">/</span>
                 </li>
+                {data.path?.map((item) => (
+                  <>
+                    <li>
+                      <a
+                        href={`/catalog/${item.url}`}
+                        class="text-dark-blue hover:text-blue"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                    <li>
+                      <span class="text-dark-blue">/</span>
+                    </li>
+                  </>
+                ))}
                 {data.product.category && (
                   <>
                     <li>
