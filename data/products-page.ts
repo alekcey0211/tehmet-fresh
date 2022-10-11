@@ -1,4 +1,4 @@
-import { ProductsPageResponse } from "../routes/api/products-page.ts";
+import { ProductsPageResponse } from "../routes/data/products-page.ts";
 
 export const fetchProductsPage = async ({
   categories,
@@ -27,7 +27,7 @@ export const fetchProductsPage = async ({
   if (order) params.set("order", order);
   if (page) params.set("page", page.toString());
 
-  const response = await fetch(`/api/products-page?${params.toString()}`);
+  const response = await fetch(`/data/products-page?${params.toString()}`);
   const json = (await response.json()) as ProductsPageResponse;
   return json;
 };

@@ -12,15 +12,15 @@ import * as $5 from "./routes/about/career/vacancy/operator-pk.tsx";
 import * as $6 from "./routes/about/defaulter.tsx";
 import * as $7 from "./routes/about/index.tsx";
 import * as $8 from "./routes/about/team.tsx";
-import * as $9 from "./routes/api/popular-products.ts";
-import * as $10 from "./routes/api/product.ts";
-import * as $11 from "./routes/api/products-page.ts";
-import * as $12 from "./routes/api/products-search.ts";
-import * as $13 from "./routes/blog.tsx";
-import * as $14 from "./routes/brands/[url].tsx";
-import * as $15 from "./routes/catalog/[url].tsx";
-import * as $16 from "./routes/catalog/index.tsx";
-import * as $17 from "./routes/contacts.tsx";
+import * as $9 from "./routes/blog.tsx";
+import * as $10 from "./routes/brands/[url].tsx";
+import * as $11 from "./routes/catalog/[url].tsx";
+import * as $12 from "./routes/catalog/index.tsx";
+import * as $13 from "./routes/contacts.tsx";
+import * as $14 from "./routes/data/popular-products.ts";
+import * as $15 from "./routes/data/product.ts";
+import * as $16 from "./routes/data/products-page.ts";
+import * as $17 from "./routes/data/products-search.ts";
 import * as $18 from "./routes/delivery.tsx";
 import * as $19 from "./routes/index.tsx";
 import * as $20 from "./routes/products/[url].tsx";
@@ -52,15 +52,15 @@ const manifest = {
     "./routes/about/defaulter.tsx": $6,
     "./routes/about/index.tsx": $7,
     "./routes/about/team.tsx": $8,
-    "./routes/api/popular-products.ts": $9,
-    "./routes/api/product.ts": $10,
-    "./routes/api/products-page.ts": $11,
-    "./routes/api/products-search.ts": $12,
-    "./routes/blog.tsx": $13,
-    "./routes/brands/[url].tsx": $14,
-    "./routes/catalog/[url].tsx": $15,
-    "./routes/catalog/index.tsx": $16,
-    "./routes/contacts.tsx": $17,
+    "./routes/blog.tsx": $9,
+    "./routes/brands/[url].tsx": $10,
+    "./routes/catalog/[url].tsx": $11,
+    "./routes/catalog/index.tsx": $12,
+    "./routes/contacts.tsx": $13,
+    "./routes/data/popular-products.ts": $14,
+    "./routes/data/product.ts": $15,
+    "./routes/data/products-page.ts": $16,
+    "./routes/data/products-search.ts": $17,
     "./routes/delivery.tsx": $18,
     "./routes/index.tsx": $19,
     "./routes/products/[url].tsx": $20,

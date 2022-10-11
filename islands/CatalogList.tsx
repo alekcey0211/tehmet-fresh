@@ -5,7 +5,7 @@ import { CatalogItem } from "../components/catalog-item.tsx";
 import { Spin } from "../components/spin.tsx";
 import { Brand } from "../data/brands.ts";
 import { fetchProductsPage } from "../data/products-page.ts";
-import { ProductsPageResponse } from "../routes/api/products-page.ts";
+import { ProductsPageResponse } from "../routes/data/products-page.ts";
 import { Pagination } from "../components/pagination.tsx";
 
 const getSessionLayout = () => {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "preact/hooks";
 import { Spin } from "../components/spin.tsx";
 import { fetchPopularProducts } from "../data/popular-products.ts";
-import { PopularProductsResponse } from "../routes/api/popular-products.ts";
+import { PopularProductsResponse } from "../routes/data/popular-products.ts";
 import { screens } from "../shared/screens.ts";
 import Swiper from "../static/swiper/swiper-bundle.esm.browser.min.js";
 
