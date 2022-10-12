@@ -3,7 +3,8 @@
   "scripts": {
     "start": {
       "cmd": "deno run -A main.ts",
-      "desc": "run my main.ts file"
+      "desc": "run my main.ts file",
+      "log": "info"
     }
   }
 }

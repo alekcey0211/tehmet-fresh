@@ -1,7 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { pageCache, PageData } from "../context/page-context.tsx";
-import { Category, fetchCategories } from "../data/categories.ts";
-import { isProduction } from "../shared/config.ts";
+import { PageData } from "../context/page-context.tsx";
+import { fetchCategories } from "../data/categories.ts";
 import { Layout } from "../components/layout.tsx";
 import { Slider } from "../components/sections/index/slider.tsx";
 import { Categories } from "../components/sections/index/categories.tsx";
@@ -16,11 +15,7 @@ type Data = PageData;
 
 export const handler: Handlers<Data> = {
   async GET(_req, ctx) {
-    const categories = pageCache.has("categories")
-      ? (pageCache.get("categories")! as Category[])
-      : await fetchCategories();
-
-    if (!isProduction) pageCache.set("categories", categories);
+    const categories = await fetchCategories();
 
     return ctx.render({
       categories,

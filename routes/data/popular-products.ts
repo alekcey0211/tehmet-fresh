@@ -1,7 +1,5 @@
 import { HandlerContext } from "$fresh/server.ts";
-import { pageCache } from "../../context/page-context.tsx";
-import { fetchProducts, Product } from "../../data/products.ts";
-import { isProduction } from "../../shared/config.ts";
+import { fetchProducts } from "../../data/products.ts";
 
 export type PopularProductsResponse = {
   image?: string;
@@ -10,11 +8,7 @@ export type PopularProductsResponse = {
 }[];
 
 export const handler = async (_req: Request, _ctx: HandlerContext) => {
-  const products = pageCache.has("products")
-    ? (pageCache.get("products")! as Product[])
-    : await fetchProducts();
-
-  if (!isProduction) pageCache.set("products", products);
+  const products = await fetchProducts();
 
   const popular = [
     ...products.filter(

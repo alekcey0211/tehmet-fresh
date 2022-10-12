@@ -3,10 +3,9 @@ import { CatalogWrapper } from "../../components/catalog-wrapper.tsx";
 import { icons } from "../../components/icons.tsx";
 import { Layout } from "../../components/layout.tsx";
 import { ProductInfo } from "../../components/sections/products/product-info.tsx";
-import { PageData, pageCache } from "../../context/page-context.tsx";
+import { PageData } from "../../context/page-context.tsx";
 import { Category, fetchCategories } from "../../data/categories.ts";
 import { fetchProducts, Product } from "../../data/products.ts";
-import { isProduction } from "../../shared/config.ts";
 import { getCategoryPath } from "../../shared/path.ts";
 
 type Data = PageData & {
@@ -18,11 +17,7 @@ export const handler: Handlers<Data> = {
   async GET(_req, ctx) {
     const productUrl = ctx.params.url;
 
-    const products = pageCache.has("products-" + productUrl)
-      ? (pageCache.get("products-" + productUrl)! as Product[])
-      : await fetchProducts();
-
-    if (!isProduction) pageCache.set("products-" + productUrl, products);
+    const products = await fetchProducts();
 
     const product = products.find(({ url }) => url === productUrl);
 
@@ -30,11 +25,7 @@ export const handler: Handlers<Data> = {
       return ctx.renderNotFound();
     }
 
-    const categories = pageCache.has("categories")
-      ? (pageCache.get("categories")! as Category[])
-      : await fetchCategories();
-
-    if (!isProduction) pageCache.set("categories", categories);
+    const categories = await fetchCategories();
 
     product.category = categories.find((x) => x.id === product.category?.id);
 

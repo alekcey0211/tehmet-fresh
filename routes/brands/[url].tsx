@@ -5,12 +5,11 @@ import { LayoutBase } from "../../components/layout.tsx";
 import { Certificates } from "../../components/sections/catalog/certificates.tsx";
 import { Partners } from "../../components/sections/catalog/partners.tsx";
 import { Popular } from "../../components/sections/catalog/popular.tsx";
-import { PageData, pageCache } from "../../context/page-context.tsx";
+import { PageData } from "../../context/page-context.tsx";
 import { Brand, fetchBrands } from "../../data/brands.ts";
-import { Category, fetchCategories } from "../../data/categories.ts";
+import { fetchCategories } from "../../data/categories.ts";
 import { fetchProducts, Product } from "../../data/products.ts";
 import CatalogList from "../../islands/CatalogList.tsx";
-import { isProduction } from "../../shared/config.ts";
 
 type Data = PageData & {
   products: Product[];
@@ -21,11 +20,7 @@ export const handler: Handlers<Data> = {
   async GET(_req, ctx) {
     const brandUrl = ctx.params.url;
 
-    const brands = pageCache.has("brands")
-      ? (pageCache.get("brands")! as Brand[])
-      : await fetchBrands();
-
-    if (!isProduction) pageCache.set("brands", brands);
+    const brands = await fetchBrands();
 
     const brand = brands.find(({ url }) => url === brandUrl);
 
@@ -33,17 +28,9 @@ export const handler: Handlers<Data> = {
       return ctx.renderNotFound();
     }
 
-    const products = pageCache.has("products")
-      ? (pageCache.get("products")! as Product[])
-      : await fetchProducts({ brand: brand.id });
+    const products = await fetchProducts({ brand: brand.id });
 
-    if (!isProduction) pageCache.set("products", products);
-
-    const categories = pageCache.has("categories")
-      ? (pageCache.get("categories")! as Category[])
-      : await fetchCategories();
-
-    if (!isProduction) pageCache.set("categories", categories);
+    const categories = await fetchCategories();
 
     return ctx.render({
       categories,

@@ -11,20 +11,6 @@ import { Charity } from "../../components/sections/about/charity.tsx";
 
 type Data = PageData;
 
-// export const handler: Handlers<Data> = {
-//   async GET(_req, ctx) {
-//     const categories = pageCache.has("categories")
-//       ? pageCache.get("categories")!
-//       : await fetchCategories();
-
-//     if (!isProduction) pageCache.set("categories", categories);
-
-//     return ctx.render({
-//       categories,
-//     });
-//   },
-// };
-
 export default function AboutRoute(ctx: PageProps<Data>) {
   return (
     <LayoutCompact pageData={ctx} title="О компании">

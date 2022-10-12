@@ -5,7 +5,7 @@ import { LayoutBase } from "../../components/layout.tsx";
 import { Certificates } from "../../components/sections/catalog/certificates.tsx";
 import { Partners } from "../../components/sections/catalog/partners.tsx";
 import { Popular } from "../../components/sections/catalog/popular.tsx";
-import { PageData, pageCache } from "../../context/page-context.tsx";
+import { PageData } from "../../context/page-context.tsx";
 import { Category, fetchCategories } from "../../data/categories.ts";
 import CatalogList from "../../islands/CatalogList.tsx";
 import { isProduction } from "../../shared/config.ts";
@@ -18,11 +18,7 @@ type Data = PageData & {
 
 export const handler: Handlers<Data> = {
   async GET(_req, ctx) {
-    const categories = pageCache.has("categories")
-      ? (pageCache.get("categories")! as Category[])
-      : await fetchCategories();
-
-    if (!isProduction) pageCache.set("categories", categories);
+    const categories = await fetchCategories();
 
     const category = categories.find(({ url }) => url === ctx.params.url);
 

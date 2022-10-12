@@ -6,20 +6,15 @@ import { CatalogCategories } from "../../components/sections/catalog/categories.
 import { Certificates } from "../../components/sections/catalog/certificates.tsx";
 import { Partners } from "../../components/sections/catalog/partners.tsx";
 import { Popular } from "../../components/sections/catalog/popular.tsx";
-import { PageData, pageCache } from "../../context/page-context.tsx";
-import { Category, fetchCategories } from "../../data/categories.ts";
-import { isProduction } from "../../shared/config.ts";
+import { PageData } from "../../context/page-context.tsx";
+import { fetchCategories } from "../../data/categories.ts";
 import { getNavCategories } from "../../shared/nav-categories.ts";
 
 type Data = PageData;
 
 export const handler: Handlers<Data> = {
   async GET(_req, ctx) {
-    const categories = pageCache.has("categories")
-      ? (pageCache.get("categories")! as Category[])
-      : await fetchCategories();
-
-    if (!isProduction) pageCache.set("categories", categories);
+    const categories = await fetchCategories();
 
     return ctx.render({
       categories,
@@ -28,7 +23,7 @@ export const handler: Handlers<Data> = {
 };
 
 export default function CatalogRoute(ctx: PageProps<Data>) {
-  const { data, url } = ctx;
+  const { data } = ctx;
   const navCategories = getNavCategories(data.categories);
 
   return (
