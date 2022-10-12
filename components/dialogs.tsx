@@ -1,7 +1,11 @@
+import CategoriesNavDialog from "../islands/CategoriesNavDialog.tsx";
 import { Button } from "./button.tsx";
 import { icons } from "./icons.tsx";
+import { useContext } from "preact/hooks";
+import { Page } from "../context/page-context.tsx";
 
 export function Dialogs() {
+  const { url } = useContext(Page);
   return (
     <>
       <dialog
@@ -95,7 +99,6 @@ export function Dialogs() {
           </p>
         </form>
       </dialog>
-
       <dialog
         id="form-31e08410-add4-4eeb-be6d-9375bc7cf349"
         class="form-dialog p-0 rounded-2xl w-[878px] max-w-[90vw]"
@@ -187,7 +190,6 @@ export function Dialogs() {
           </p>
         </form>
       </dialog>
-
       <dialog
         id="form-effb7861-5ab1-469e-8091-fca64e21430b"
         class="form-dialog p-0 rounded-2xl w-[878px] max-w-[90vw]"
@@ -334,127 +336,7 @@ export function Dialogs() {
           </p>
         </form>
       </dialog>
-
-      {/* <dialog id="form-3b57f227-2967-466b-baf7-51d758ec184b" class="nav-dialog p-0 !max-h-full !w-auto !h-auto !ml-0 !mt-0 !mb-0 top-0 bottom-0 right-16 sm:right-20">
-	<button type="button" data-close class="fixed top-3 right-3 rounded-2xl grid place-content-center w-10 h-10 sm:w-16 sm:h-16">
-		<icons.X stroke="#fff" strokeWidth={1} width={40} height={40} />
-	</button>
-	<div class="py-4 pl-8">
-		<div class="mb-4 grid gap-1">
-			{% for item in contacts | contactsForAllPages %}
-				<div class="flex items-center gap-x-1 text-xs sm:text-lg">
-					<div class="flex-shrink-0">
-						{{ "/src/_icons/location-gradient-mini.svg" | svgContents | safe }}
-					</div>
-					<span class="gradient-text">{{ item.city }}</span>
-					<a
-							class="gradient-text whitespace-nowrap"
-							href="tel:{{ item.phone | telLink }}"
-						>
-						{{ item.phone }}
-					</a>
-				</div>
-			{% endfor %}
-		</div>
-		<div class="grid justify-start gap-2 mb-6">
-			{{ button.gradient("Обратная связь", data='data-dialog-for=form-effb7861-5ab1-469e-8091-fca64e21430b') }}
-			{{ button.gradient('Заказать звонок', data='data-dialog-for=a74b73421fe794532bd3f7cb4f430e750') }}
-		</div>
-		<ul class="text-2xl sm:text-4xl font-light text-grey">
-			{% for item in navItems %}
-				{% if item.link === '/catalog' %}
-					<li
-						class="grid items-center hover:text-dark-blue border-b-[1px] border-b-[#DADADA] sm:h-[60px]"
-					>
-						<button class="grid items-center h-full pr-4 nav-item-link text-2xl sm:text-4xl font-light text-grey text-left {% if page.url === item.link + item.link %} gradient-text	{% endif %}" data-dialog-for="form-e3c8b62a-da51-4332-8036-0e1abf5ebcce" data-close-other="true">
-							{{ item.text }}
-						</button>
-					</li>
-				{% else %}
-					<li
-							class="grid items-center hover:text-dark-blue border-b-[1px] border-b-[#DADADA] sm:h-[60px]"
-						>
-						<a href="{{ item.link }}" class="grid items-center h-full pr-4 nav-item-link {% if page.url === item.link + item.link %} gradient-text	{% endif %}">
-							{{ item.text }}
-						</a>
-					</li>
-					{% for item1 in item.items %}
-						{% if item1.link !== '/' %}
-							<li
-									class="grid items-center hover:text-dark-blue border-b-[1px] border-b-[#DADADA] sm:h-[60px]"
-								>
-								<a href="{{ item.link + item1.link }}" class="grid items-center h-full pr-4 nav-item-link {% if page.url === item1.link + item1.link %} gradient-text	{% endif %}">
-									{{ item1.text }}
-								</a>
-							</li>
-						{% endif %}
-					{% endfor %}
-				{% endif %}
-			{% endfor %}
-		</ul>
-	</div>
-</dialog>
-
-<dialog id="form-e3c8b62a-da51-4332-8036-0e1abf5ebcce" class="nav-dialog p-0 !max-h-full !w-auto !h-auto !ml-0 !mt-0 !mb-0 top-0 bottom-0 right-16 sm:right-20" x-data="{catalog: undefined}">
-	<button type="button" data-close class="fixed top-3 right-3 rounded-2xl grid place-content-center w-10 h-10 sm:w-16 sm:h-16">
-		{% icon {
-			icon : "x",
-			stroke: "#fff",
-			strokeWidth: 1,
-			width: 40,
-			height: 40
-		} %}
-    <icons.X stroke="#fff" strokeWidth={1} width={40} height={40} />
-	</button>
-	<div class="min-h-32 bg-light-blue xs:pr-24 grid gap-4 relative pt-8 pl-4 pb-3">
-		<div class="absolute bottom-0 right-0 w-20 grid">
-			{{ "/src/_icons/logo-grey.svg" | svgContents | safe }}
-		</div>
-		<h3 class="uppercase font-light text-xl text-blue1" x-text="catalog ? catalog?.name : 'КАТАЛОГ'"></h3>
-		<div x-show="catalog" class="flex justify-between flex-wrap gap-2 pr-24 xs:pr-0">
-			<button class="font-light text-sm flex flex-wrap items-center gap-x-1 gap-y-2 text-dark-blue" x-on:click="catalog = undefined">
-				{{ "/src/_icons/arrow-left.svg" | svgContents | safe }}
-				Каталог
-			</button>
-			<a class="text-dark-blue underline font-light text-sm" x-bind:href="`/catalog/${catalog?.id}`">Все товары этой категории</a>
-		</div>
-	</div>
-	<ul x-show="!catalog" class="pl-4 pt-4 bg-white max-w-[440px] mb-4">
-		{% for item in products.mainCatalogs %}
-			{% if item.id %}
-				<li class="grid items-center border-b-[1px] border-b-[#DADADA]">
-					<div class="grid items-center grid-cols-[1fr_auto] pr-1 ">
-						<button class="grid items-center h-full pr-4 pt-3 nav-item-link text-lg font-light text-grey hover:text-dark-blue text-left" x-on:click="catalog = {id: '{{item.id}}', name: '{{item.name}}'}">
-							{{ item.name }}
-						</button>
-					</div>
-				</li>
-			{% endif %}
-		{% endfor %}
-	</ul>
-	{% for item in products.mainCatalogs %}
-		{% if item.id %}
-			<div x-show="catalog?.id === '{{item.id}}'" class="grid grid-rows-[200px_auto]">
-				{% image {
-					src : 'src/_images/catalogs/' + item.id + '.jpg',
-					alt: item.name,
-					imgClassName: "object-contain object-left-top w-full h-full"
-				} %}
-				<ul class="pl-4 pt-2 bg-white max-w-[440px] mb-4">
-					{% for child in products.catalogsByParent(item.id) %}
-						<li class="grid items-center text-lg font-light text-grey hover:text-dark-blue border-b-[1px] border-b-[#DADADA]">
-							<div class="grid items-center grid-cols-[1fr_auto] pr-1 ">
-								<a href="/catalog/{{ child.id }}" class="grid items-center h-full pr-4 pt-3 nav-item-link">
-									{{ child.name }}
-								</a>
-							</div>
-						</li>
-					{% endfor %}
-				</ul>
-			</div>
-		{% endif %}
-	{% endfor %}
-</dialog> */}
+      <CategoriesNavDialog pathname={url.pathname} />
     </>
   );
 }

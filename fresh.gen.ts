@@ -29,17 +29,18 @@ import * as $$0 from "./islands/BrandsFooterList.tsx";
 import * as $$1 from "./islands/CatalogItem.tsx";
 import * as $$2 from "./islands/CatalogList.tsx";
 import * as $$3 from "./islands/CatalogSearch.tsx";
-import * as $$4 from "./islands/CategoriesNavDropdown.tsx";
-import * as $$5 from "./islands/CategoryProducts.tsx";
-import * as $$6 from "./islands/CharityDropdown.tsx";
-import * as $$7 from "./islands/Container.tsx";
-import * as $$8 from "./islands/Dropdown.tsx";
-import * as $$9 from "./islands/GeographySalesDropdown.tsx";
-import * as $$10 from "./islands/NavDropdown.tsx";
-import * as $$11 from "./islands/NewsList.tsx";
-import * as $$12 from "./islands/PopularProductsSlider.tsx";
-import * as $$13 from "./islands/PublicLifeMedia.tsx";
-import * as $$14 from "./islands/TopNewSlider.tsx";
+import * as $$4 from "./islands/CategoriesNavDialog.tsx";
+import * as $$5 from "./islands/CategoriesNavDropdown.tsx";
+import * as $$6 from "./islands/CategoryProducts.tsx";
+import * as $$7 from "./islands/CharityDropdown.tsx";
+import * as $$8 from "./islands/Container.tsx";
+import * as $$9 from "./islands/Dropdown.tsx";
+import * as $$10 from "./islands/GeographySalesDropdown.tsx";
+import * as $$11 from "./islands/NavDropdown.tsx";
+import * as $$12 from "./islands/NewsList.tsx";
+import * as $$13 from "./islands/PopularProductsSlider.tsx";
+import * as $$14 from "./islands/PublicLifeMedia.tsx";
+import * as $$15 from "./islands/TopNewSlider.tsx";
 
 const manifest = {
   routes: {
@@ -71,17 +72,18 @@ const manifest = {
     "./islands/CatalogItem.tsx": $$1,
     "./islands/CatalogList.tsx": $$2,
     "./islands/CatalogSearch.tsx": $$3,
-    "./islands/CategoriesNavDropdown.tsx": $$4,
-    "./islands/CategoryProducts.tsx": $$5,
-    "./islands/CharityDropdown.tsx": $$6,
-    "./islands/Container.tsx": $$7,
-    "./islands/Dropdown.tsx": $$8,
-    "./islands/GeographySalesDropdown.tsx": $$9,
-    "./islands/NavDropdown.tsx": $$10,
-    "./islands/NewsList.tsx": $$11,
-    "./islands/PopularProductsSlider.tsx": $$12,
-    "./islands/PublicLifeMedia.tsx": $$13,
-    "./islands/TopNewSlider.tsx": $$14,
+    "./islands/CategoriesNavDialog.tsx": $$4,
+    "./islands/CategoriesNavDropdown.tsx": $$5,
+    "./islands/CategoryProducts.tsx": $$6,
+    "./islands/CharityDropdown.tsx": $$7,
+    "./islands/Container.tsx": $$8,
+    "./islands/Dropdown.tsx": $$9,
+    "./islands/GeographySalesDropdown.tsx": $$10,
+    "./islands/NavDropdown.tsx": $$11,
+    "./islands/NewsList.tsx": $$12,
+    "./islands/PopularProductsSlider.tsx": $$13,
+    "./islands/PublicLifeMedia.tsx": $$14,
+    "./islands/TopNewSlider.tsx": $$15,
   },
   baseUrl: import.meta.url,
   config,
