@@ -1,4 +1,5 @@
 import { Product } from "../data/products.ts";
+import { formatNumber } from "../shared/number.ts";
 import { Button } from "./button.tsx";
 
 export const CatalogItem = ({
@@ -44,7 +45,9 @@ export const CatalogItem = ({
         <span class="text-xs sm:text-sm text-blue font-light">
           {item.isExists ? "В наличии" : "Нет в наличии"}
         </span>
-        {/* <span class="text-xl md:text-3xl text-blue1 font-medium" x-text="`${formatNumber(item.price)} р.`"></span> */}
+        <span class="text-xl md:text-3xl text-blue1 font-medium">
+          {item.price ? `${formatNumber(item.price)} р.` : <>&nbsp;</>}
+        </span>
         <div class="grid grid-rows-1 h-8 md:h-12 w-28 md:w-40 mt-3">
           <Button
             view="gradient"

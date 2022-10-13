@@ -1,7 +1,7 @@
 import { Head } from "$fresh/runtime.ts";
 import { useContext } from "preact/hooks";
 import { Page } from "../context/page-context.tsx";
-import { isProduction } from "../shared/config.ts";
+import { config } from "../site/config.ts";
 
 const Metrika = () => {
   return (
@@ -195,7 +195,7 @@ export function HeadElement({
         content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
       /> */}
 
-      {isProduction && <Metrika />}
+      {config.production && <Metrika />}
 
       {/* Facebook Meta Tags */}
       <meta property="og:url" content={url.href} />
@@ -262,7 +262,7 @@ export function HeadElement({
         ></script>
       )}
       <script type="module" src="/script.js" defer></script>
-      {isProduction && (
+      {config.production && (
         <script
           defer
           dangerouslySetInnerHTML={{

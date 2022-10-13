@@ -1,4 +1,5 @@
 import { Product } from "../../../data/products.ts";
+import { formatNumber } from "../../../shared/number.ts";
 import { Button } from "../../button.tsx";
 import { icons } from "../../icons.tsx";
 
@@ -9,11 +10,14 @@ export const ProductInfo = ({
   brand,
   description,
   image,
+  price,
 }: Product) => {
   return (
     <div class="px-4 md:px-10 lg:px-0">
       <h1 class="gradient-text flex text-2xl">{name}</h1>
-      <span class="text-base text-blue1">{`Код товара: ${articleNumber ?? ""}`}</span>
+      <span class="text-base text-blue1">{`Код товара: ${
+        articleNumber ?? ""
+      }`}</span>
       <div class="grid lg:grid-cols-[440px_344px] gap-5 mt-6">
         <div class="grid grid-rows-1 aspect-square border-[1px] border-blue p-5 max-h-48 sm:max-h-[9999px]">
           <img src={image} alt={name} class="object-contain w-full h-full" />
@@ -24,7 +28,9 @@ export const ProductInfo = ({
             Добавить в смету
             <icons.FileArrowDown />
           </button> */}
-          {/* <span class="text-xl md:text-3xl font-medium">{{price | formatNumber}} р.</span> */}
+          <span class="text-xl md:text-3xl font-medium">
+            {price ? `${formatNumber(price)} р.` : <>&nbsp;</>}
+          </span>
           <div class="grid grid-rows-1 h-8 md:h-12 w-32 md:w-40 mt-3 mb-4 md:mb-8">
             <Button
               view="gradient"

@@ -8,7 +8,6 @@ import { Popular } from "../../components/sections/catalog/popular.tsx";
 import { PageData } from "../../context/page-context.tsx";
 import { Category, fetchCategories } from "../../data/categories.ts";
 import CatalogList from "../../islands/CatalogList.tsx";
-import { isProduction } from "../../shared/config.ts";
 import { getCategoryPath } from "../../shared/path.ts";
 
 type Data = PageData & {

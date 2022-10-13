@@ -72,7 +72,7 @@ export const Contacts = () => {
         style="clip-path: url(#form-01)"
       >
         <span>
-          Свои предложения Вы можете отправить по почте
+          Свои предложения Вы можете отправить по почте&nbsp;
           <a class="gradient-text" href="mailto:snab@tehmet.su">
             snab@tehmet.su
           </a>

@@ -1,3 +1,4 @@
+import { config } from "../site/config.ts";
 import { Category } from "./categories.ts";
 
 export type Product = {
@@ -6,7 +7,7 @@ export type Product = {
   url: string;
   image?: string;
   preview?: string;
-  price?: string;
+  price?: number;
   annotation: string;
   description: string;
   brand: string | null;
@@ -41,5 +42,15 @@ export const fetchProducts = async ({
   const response = await fetch(url.toString());
   const json = await response.json();
   const data = Object.values(json.data ?? {}) as Product[];
-  return data.map((x) => ({ ...x, isExists: true }));
+
+  return data.map((x) => ({
+    ...x,
+    isExists: true,
+    price:
+      x.category &&
+      config.categoriesWithPrice.includes(x.category.url) &&
+      x.price
+        ? Number(x.price)
+        : undefined,
+  }));
 };
