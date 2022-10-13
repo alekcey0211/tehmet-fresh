@@ -15,7 +15,7 @@ export const CatalogWrapper = ({
   const navCategories = getNavCategories(data.categories);
 
   return (
-    <main class="z-10 grid grid-cols-1 lg:grid-cols-[minmax(378px,500px)_minmax(378px,1fr)] lg:gap-4 max-w-fullhd mx-auto w-screen">
+    <main class="z-10 grid grid-cols-1 lg:grid-cols-[minmax(378px,500px)_minmax(378px,1fr)] lg:gap-4 max-w-fullhd mx-auto">
       <aside class="relative hidden lg:block">
         <div class="grid gap-6">
           <div class="border-r-[1px] border-l-[1px] border-b-[1px] border-[#DADADA] pt-1 box-border w-max">

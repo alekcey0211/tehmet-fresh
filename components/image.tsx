@@ -39,7 +39,6 @@ export function Image({
         {...(showBreakpointWidth && {
           media: `(min-width: ${showBreakpointWidth}px)`,
         })}
-        data-fresh-disable-lock
       />
       <source
         type="image/webp"
@@ -48,7 +47,6 @@ export function Image({
         {...(showBreakpointWidth && {
           media: `(min-width: ${showBreakpointWidth}px)`,
         })}
-        data-fresh-disable-lock
       />
       <source
         type={baseFormat === "jpg" ? "image/jpeg" : `image/${baseFormat}`}
@@ -57,7 +55,6 @@ export function Image({
         {...(showBreakpointWidth && {
           media: `(min-width: ${showBreakpointWidth}px)`,
         })}
-        data-fresh-disable-lock
       />
       <img
         src={src}
@@ -67,7 +64,6 @@ export function Image({
           loading: "lazy",
           decoding: "async",
         })}
-        data-fresh-disable-lock
       />
     </picture>
   );
