@@ -2,7 +2,7 @@ import { getContacts } from "../../../data/contacts.ts";
 import { icons } from "../../icons.tsx";
 import { Image } from "../../image.tsx";
 
-export const Slider = () => {
+export const MainSlider = () => {
   return (
     <section class="relative max-w-fullhd h-[237px] sm:h-[600px] md:h-[700px] lg:h-[971px] mx-auto">
       <div

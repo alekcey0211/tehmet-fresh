@@ -2,7 +2,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { PageData } from "../context/page-context.tsx";
 import { fetchCategories } from "../data/categories.ts";
 import { Layout } from "../components/layout.tsx";
-import { Slider } from "../components/sections/index/slider.tsx";
+import { MainSlider } from "../components/sections/index/main-slider.tsx";
 import { Categories } from "../components/sections/index/categories.tsx";
 import { PopularProducts } from "../components/sections/index/popular-products.tsx";
 import { Equipment } from "../components/sections/index/equipment.tsx";
@@ -26,7 +26,7 @@ export const handler: Handlers<Data> = {
 export default function HomeRoute(ctx: PageProps<Data>) {
   return (
     <Layout pageData={ctx} title="Главная">
-      <Slider />
+      <MainSlider />
       <Categories />
       <PopularProducts />
       <Equipment />

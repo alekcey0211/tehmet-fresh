@@ -1,7 +1,18 @@
-import { getCertificates } from "../data/certificates.ts";
 import { Image } from "./image.tsx";
 
-export const CertificatesSlider = () => {
+export const CertificatesSlider = ({
+  certificates,
+}: {
+  certificates: {
+    src: string;
+    view: {
+      jpg: string;
+    };
+    alt: string;
+    width: string;
+    height: string;
+  }[];
+}) => {
   return (
     <>
       <div class="flex items-center gap-3 select-none">
@@ -14,7 +25,7 @@ export const CertificatesSlider = () => {
           class="swiper w-full max-w-[1167px] 2xl:max-w-none h-[100px] sm:h-[200px] 2xl:h-[300px] mx-auto"
         >
           <div class="swiper-wrapper">
-            {getCertificates().map((certificate, index) => (
+            {certificates.map((certificate, index) => (
               <div
                 class="swiper-slide"
                 data-gallery-item-id={`gallery-89fcf8b9d9ab43948151a207a5eba144-item-${index}`}
@@ -38,7 +49,7 @@ export const CertificatesSlider = () => {
         ></div>
       </div>
       <div class="pswp-gallery" id="gallery-89fcf8b9d9ab43948151a207a5eba144">
-        {getCertificates().map((certificate, index) => (
+        {certificates.map((certificate, index) => (
           <a
             id={`gallery-89fcf8b9d9ab43948151a207a5eba144-item-${index}`}
             href={certificate.src}

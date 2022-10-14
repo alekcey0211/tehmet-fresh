@@ -5,7 +5,7 @@ import { Image } from "../../image.tsx";
 export const Advantages = () => {
   return (
     <section class="max-w-fullhd mx-auto pt-4 sm:pt-8 md:pt-20 2xl:pt-10 pb-8 sm:pb-12 md:pb-14 relative overflow-hidden">
-      <div class="absolute inset-0 -z-20 bg-light-grey"></div>
+      <div class="absolute inset-0 -z-20 bg-grey"></div>
       <div class="absolute inset-0 -right-24 md:right-0 -z-10">
         <Image
           {...{

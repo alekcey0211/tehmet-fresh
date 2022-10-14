@@ -3,10 +3,10 @@ import { icons } from "../components/icons.tsx";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { CatalogItem } from "../components/catalog-item.tsx";
 import { Spin } from "../components/spin.tsx";
-import { Brand } from "../data/brands.ts";
 import { fetchProductsPage } from "../data/products-page.ts";
 import { ProductsPageResponse } from "../routes/data/products-page.ts";
 import { Pagination } from "../components/pagination.tsx";
+import { Brand } from "../routes/data/brands.ts";
 
 const getSessionLayout = () => {
   if (!IS_BROWSER) return "grid";

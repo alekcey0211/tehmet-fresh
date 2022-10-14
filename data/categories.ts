@@ -1,24 +1,12 @@
-import { Brand } from "./brands.ts";
-
-export type Category = {
-  id: string;
-  parent_id: string;
-  name: string;
-  url: string;
-  children: Category[];
-  brands: Brand[];
-};
+import { Category } from "../routes/data/categories.ts";
 
 export const fetchCategories = async () => {
-  const url = new URL("https://tehmet.su/ajax/categories.php");
-  const response = await fetch(url.toString());
-  const json = await response.json();
-  const categories = Object.values(json.data ?? {}) as Category[];
-  return categories.map(({ brands, children, ...c }) => ({
-    ...c,
-    brands: Object.values(brands ?? {}),
-    children: Object.values(children ?? {}).filter(
-      (child) => child.parent_id === c.id
-    ),
-  }));
+  try {
+    const response = await fetch("/data/categories");
+    const json = await response.json();
+    return json as Category[];
+  } catch (error) {
+    console.error(error);
+    return;
+  }
 };

@@ -3,9 +3,12 @@ import { Button } from "./button.tsx";
 import { icons } from "./icons.tsx";
 import { useContext } from "preact/hooks";
 import { Page } from "../context/page-context.tsx";
+import { getContacts } from "../data/contacts.ts";
 
 export function Dialogs() {
   const { url } = useContext(Page);
+  const contacts = []//getContacts({ isPage: true });
+  
   return (
     <>
       <dialog
@@ -336,7 +339,7 @@ export function Dialogs() {
           </p>
         </form>
       </dialog>
-      <CategoriesNavDialog pathname={url.pathname} />
+      {/* <CategoriesNavDialog pathname={url.pathname} contacts={contacts} /> */}
     </>
   );
 }

@@ -17,14 +17,17 @@ import * as $10 from "./routes/brands/[url].tsx";
 import * as $11 from "./routes/catalog/[url].tsx";
 import * as $12 from "./routes/catalog/index.tsx";
 import * as $13 from "./routes/contacts.tsx";
-import * as $14 from "./routes/data/popular-products.ts";
-import * as $15 from "./routes/data/product.ts";
-import * as $16 from "./routes/data/products-page.ts";
-import * as $17 from "./routes/data/products-search.ts";
-import * as $18 from "./routes/delivery.tsx";
-import * as $19 from "./routes/index.tsx";
-import * as $20 from "./routes/products/[url].tsx";
-import * as $21 from "./routes/video.tsx";
+import * as $14 from "./routes/data/brands.ts";
+import * as $15 from "./routes/data/categories.ts";
+import * as $16 from "./routes/data/news.ts";
+import * as $17 from "./routes/data/popular-products.ts";
+import * as $18 from "./routes/data/product.ts";
+import * as $19 from "./routes/data/products-page.ts";
+import * as $20 from "./routes/data/products-search.ts";
+import * as $21 from "./routes/delivery.tsx";
+import * as $22 from "./routes/index.tsx";
+import * as $23 from "./routes/products/[url].tsx";
+import * as $24 from "./routes/video.tsx";
 import * as $$0 from "./islands/BrandsFooterList.tsx";
 import * as $$1 from "./islands/CatalogItem.tsx";
 import * as $$2 from "./islands/CatalogList.tsx";
@@ -58,14 +61,17 @@ const manifest = {
     "./routes/catalog/[url].tsx": $11,
     "./routes/catalog/index.tsx": $12,
     "./routes/contacts.tsx": $13,
-    "./routes/data/popular-products.ts": $14,
-    "./routes/data/product.ts": $15,
-    "./routes/data/products-page.ts": $16,
-    "./routes/data/products-search.ts": $17,
-    "./routes/delivery.tsx": $18,
-    "./routes/index.tsx": $19,
-    "./routes/products/[url].tsx": $20,
-    "./routes/video.tsx": $21,
+    "./routes/data/brands.ts": $14,
+    "./routes/data/categories.ts": $15,
+    "./routes/data/news.ts": $16,
+    "./routes/data/popular-products.ts": $17,
+    "./routes/data/product.ts": $18,
+    "./routes/data/products-page.ts": $19,
+    "./routes/data/products-search.ts": $20,
+    "./routes/delivery.tsx": $21,
+    "./routes/index.tsx": $22,
+    "./routes/products/[url].tsx": $23,
+    "./routes/video.tsx": $24,
   },
   islands: {
     "./islands/BrandsFooterList.tsx": $$0,

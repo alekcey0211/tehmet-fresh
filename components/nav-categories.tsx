@@ -1,4 +1,4 @@
-import { Category } from "../data/categories.ts";
+import { Category } from "../routes/data/categories.ts";
 import { icons } from "./icons.tsx";
 
 export const NavCategories = ({

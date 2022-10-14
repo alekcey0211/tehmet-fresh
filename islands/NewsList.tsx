@@ -76,7 +76,6 @@ const NewsItem = ({
     </div>
   );
 };
-
 const getSearchParams = () => {
   if (!IS_BROWSER)
     return {

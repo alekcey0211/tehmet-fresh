@@ -2,8 +2,11 @@ import GeographySalesDropdown from "../../../islands/GeographySalesDropdown.tsx"
 import { getContacts } from "../../../data/contacts.ts";
 import { icons } from "../../icons.tsx";
 import { Image } from "../../image.tsx";
+import { getCities } from "../../../data/cities.ts";
 
 export const GeographySales = () => {
+  const cities = getCities();
+
   return (
     <section class="p-4 md:p-10 relative z-40">
       <div class="max-w-fullhd mx-auto">
@@ -54,6 +57,7 @@ export const GeographySales = () => {
           <GeographySalesDropdown
             containerClassName="relative"
             listClassName="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 lg:gap-x-[100px] font-light text-blue1 text-base md:text-lg md:leading-[35px] mx-auto px-10"
+            cities={cities}
           />
         </div>
       </div>

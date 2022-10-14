@@ -60,7 +60,7 @@ export const Contacts = () => {
             <div
               class="w-full max-w-[832px] aspect-[5/3] mt-5 bg-light-grey"
               data-map
-              data-coords={item.coords}
+              data-coords={item.coords.join(',')}
               data-title={item.title}
             ></div>
           </div>

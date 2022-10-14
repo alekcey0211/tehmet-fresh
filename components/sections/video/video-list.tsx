@@ -2,10 +2,12 @@ import { getVideo } from "../../../data/video.ts";
 import { icons } from "../../icons.tsx";
 
 export const VideoList = () => {
+  const videos = getVideo();
+
   return (
     <section class="pb-4 md:pb-16 max-w-fullhd mx-auto">
       <div class="grid xl:grid-cols-2 gap-7 mx-4 md:mx-10">
-        {getVideo().map((item) => (
+        {videos.map((item) => (
           <div class="grid gap-2">
             <h2 class="text-left text-blue1 text-[28px]">{item.title}</h2>
             <time
@@ -14,11 +16,13 @@ export const VideoList = () => {
             >
               {item.dateString}
             </time>
-            <lite-youtube
-              videoid={item.id}
-              autoload
-              style="background-image: url('https://i.ytimg.com/vi/{{item.videoId}}/hqdefault.jpg'); background-position: center; background-repeat: no-repeat;"
-            ></lite-youtube>
+            <div class="bg-light-grey pb-[62.5%]">
+              <lite-youtube
+                videoid={item.id}
+                autoload
+                style="background-image: url('https://i.ytimg.com/vi/{{item.videoId}}/hqdefault.jpg'); background-position: center; background-repeat: no-repeat;"
+              ></lite-youtube>
+            </div>
           </div>
         ))}
       </div>

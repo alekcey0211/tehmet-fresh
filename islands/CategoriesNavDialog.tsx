@@ -2,19 +2,22 @@ import { icons } from "../components/icons.tsx";
 import { Category, fetchCategories } from "../data/categories.ts";
 import { useState, useEffect } from "preact/hooks";
 import { getNavCategories } from "../shared/nav-categories.ts";
-import { getContacts } from "../data/contacts.ts";
 import { Button } from "../components/button.tsx";
 import { Image } from "../components/image.tsx";
 import { navItems } from "../shared/nav-items.ts";
+import { Contact } from "../data/contacts.ts";
 
 export default function CategoriesNavDialog({
+  contacts,
   pathname,
 }: {
+  contacts: Contact[];
   pathname: string;
 }) {
   const [data, setData] = useState<Category[]>([]);
   const [category, setCategory] = useState<Category>();
 
+  
   useEffect(() => {
     fetchCategories().then((categories) => {
       const navCategories = getNavCategories(categories);
@@ -37,7 +40,7 @@ export default function CategoriesNavDialog({
         </button>
         <div class="py-4 pl-8">
           <div class="mb-4 grid gap-1">
-            {getContacts({ isPage: true }).map((item) => (
+            {contacts.map((item) => (
               <div class="flex items-center gap-x-1 text-xs sm:text-lg">
                 <div class="flex-shrink-0">
                   <icons.LocationGradientMini />

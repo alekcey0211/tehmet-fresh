@@ -1,7 +1,12 @@
 import { Image } from "../components/image.tsx";
 import { icons } from "../components/icons.tsx";
-import { Category } from "../data/categories.ts";
 import { useState } from "preact/hooks";
+
+type Category = {
+  name: string;
+  url: string;
+  children: Category[];
+};
 
 export default function CatalogItem({ name, children, url }: Category) {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,9 +30,9 @@ export default function CatalogItem({ name, children, url }: Category) {
           {name}
         </a>
         {children.length > 0 && (
-          <ul class="border-t-[1px] border-t-blue">
+          <ul class="border-t-[1px] border-blue">
             {children.slice(0, 3).map((item) => (
-              <li class="grid items-center text-xl text-grey hover:text-dark-blue border-b-[1px] border-b-blue">
+              <li class="grid items-center text-xl text-grey hover:text-dark-blue border-b-[1px] border-blue">
                 <a
                   href={`/catalog/${item.url}`}
                   class="grid items-center h-full pr-4 py-1"
@@ -39,9 +44,9 @@ export default function CatalogItem({ name, children, url }: Category) {
           </ul>
         )}
         {isOpen && children.length > 3 && (
-          <ul class="border-t-[1px] border-t-blue">
+          <ul class="border-t-[1px] border-blue">
             {children.slice(3).map((item) => (
-              <li class="grid items-center text-xl text-grey hover:text-dark-blue border-b-[1px] border-b-blue">
+              <li class="grid items-center text-xl text-grey hover:text-dark-blue border-b-[1px] border-blue">
                 <a
                   href={`/catalog/${item.url}`}
                   class="grid items-center h-full pr-4 py-1"

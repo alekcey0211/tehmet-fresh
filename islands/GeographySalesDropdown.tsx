@@ -1,13 +1,14 @@
 import { icons } from "../components/icons.tsx";
 import { Dropdown as DropdownComponent } from "../components/dropdown.tsx";
-import { getCities } from "../data/cities.ts";
 
 export default function GeographySalesDropdown({
   containerClassName,
   listClassName,
+  cities,
 }: {
   containerClassName: string;
   listClassName: string;
+  cities: string[];
 }) {
   return (
     <DropdownComponent
@@ -26,8 +27,8 @@ export default function GeographySalesDropdown({
       panel={
         <>
           <ul class={listClassName}>
-            {getCities().map((city) => (
-              <li class="">{city}</li>
+            {cities.map((city) => (
+              <li>{city}</li>
             ))}
           </ul>
         </>

@@ -1,12 +1,7 @@
-export type Brand = {
-  id: string;
-  name: string;
-  url: string;
-};
+import { Brand } from "../routes/data/brands.ts";
 
 export const fetchBrands = async () => {
-  const url = new URL("https://tehmet.su/ajax/brands.php");
-  const response = await fetch(url.toString());
+  const response = await fetch("/data/brands");
   const json = await response.json();
-  return Object.values(json.data ?? {}) as Brand[];
+  return json as Brand[];
 };

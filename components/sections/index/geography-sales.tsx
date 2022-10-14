@@ -6,6 +6,8 @@ import { icons } from "../../icons.tsx";
 import { Image } from "../../image.tsx";
 
 export const GeographySales = () => {
+  const cities = getCities();
+
   return (
     <section class="py-4 lg:py-20 relative z-40">
       <div class="max-w-fullhd mx-auto">
@@ -65,6 +67,7 @@ export const GeographySales = () => {
             <GeographySalesDropdown
               containerClassName="relative lg:hidden"
               listClassName="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 lg:gap-x-[100px] font-light text-blue1 text-base md:text-lg md:leading-[35px] max-w-[817px] mx-auto"
+              cities={cities}
             />
           </div>
           <div class="lg:hidden row-start-1 w-fit mx-auto sm:mr-0">
@@ -90,7 +93,7 @@ export const GeographySales = () => {
               }}
             />
             <ul class="hidden lg:block columns-4 xl:columns-3 2xl:columns-4 font-light text-blue1 text-lg">
-              {getCities().map((city) => (
+              {cities.map((city) => (
                 <li class="whitespace-nowrap">{city}</li>
               ))}
             </ul>
