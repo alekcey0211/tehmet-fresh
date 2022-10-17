@@ -12,7 +12,7 @@ export const CatalogWrapper = ({
 }) => {
   const { url, data } = useContext(Page);
 
-  const navCategories = getNavCategories(data.categories);
+  const navCategories = getNavCategories(data?.categories);
 
   return (
     <main class="z-10 grid grid-cols-1 lg:grid-cols-[minmax(378px,500px)_minmax(378px,1fr)] lg:gap-4 max-w-fullhd mx-auto">

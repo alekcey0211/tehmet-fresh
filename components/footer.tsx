@@ -9,7 +9,7 @@ export const Footer = () => {
     <footer class="pt-5 pb-28">
       <div class="px-4 sm:px-8 lg:px-10">
         <div class="max-w-fullhd mx-auto">
-          <div class="relative grid gap-y-10 lg:gap-y-16 gap-x-2 xl:gap-5 grid-cols-[1fr_auto] xl:grid-cols-[1fr_322px_326px] pb-16 lg:pb-[140px] mb-5 border-b-[1px] border-grey">
+          <div class="relative grid gap-y-10 lg:gap-y-16 gap-x-2 xl:gap-5 grid-cols-[1fr_auto] xl:grid-cols-[1fr_322px_326px] pb-20 lg:pb-[200px] mb-5 border-b-[1px] border-grey">
             <div class="col-span-2 xl:col-auto">
               <p class="mb-6 lg:mb-12 text-dark-blue text-xs sm:text-[22px]">
                 Свяжитесь с нами

@@ -1,10 +1,16 @@
-import { Page } from "../../../context/page-context.tsx";
-import { useContext } from "preact/hooks";
-import { getNavCategories } from "../../../shared/nav-categories.ts";
+import { useState, useEffect } from "preact/hooks";
+import { fetchNavCategories } from "../data/nav-categories.ts";
+import { Category } from "../routes/data/categories.ts";
 
-export const Categories = () => {
-  const { data } = useContext(Page);
-  const navCategories = getNavCategories(data?.categories);
+export default function HomeCategories() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState<Category[]>([]);
+
+  useEffect(() => {
+    fetchNavCategories().then((categories) => {
+      setData(categories);
+    });
+  }, []);
 
   return (
     <section class="bg-light-blue py-4 sm:py-8 md:py-16 max-w-fullhd mx-auto">
@@ -19,10 +25,10 @@ export const Categories = () => {
             </h2>
           </div>
           <ul>
-            {navCategories?.map(({ url, name }, index) => (
+            {data?.map(({ url, name }, index) => (
               <li class="flex justify-between h-10 sm:h-16 items-center sm:items-end border-b-[1px] border-solid border-dark-blue gap-x-1">
                 <span class="text-base sm:text-5xl sm:leading-[60px] gradient-text">
-                  {index.toString().padStart(2, "0")}
+                  {(index + 1).toString().padStart(2, "0")}
                 </span>
                 <a
                   href={`/catalog/${url}`}
@@ -37,4 +43,4 @@ export const Categories = () => {
       </div>
     </section>
   );
-};
+}

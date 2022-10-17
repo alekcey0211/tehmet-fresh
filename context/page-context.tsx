@@ -4,7 +4,7 @@ import { Category } from "../routes/data/categories.ts";
 
 export type PageData = {
   categories?: Category[];
-};
+} | undefined;
 
 // export const pageCache = new Map<string, unknown>();
 

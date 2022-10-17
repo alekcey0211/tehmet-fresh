@@ -1,9 +1,9 @@
 import { icons } from "../components/icons.tsx";
 import { Dropdown as DropdownComponent } from "../components/dropdown.tsx";
-import { Category, fetchCategories } from "../data/categories.ts";
 import { useState, useEffect } from "preact/hooks";
 import { NavCategories } from "../components/nav-categories.tsx";
-import { getNavCategories } from "../shared/nav-categories.ts";
+import { Category } from "../routes/data/categories.ts";
+import { fetchNavCategories } from "../data/nav-categories.ts";
 
 export default function CategoriesNavDropdown({
   pathname,
@@ -13,9 +13,8 @@ export default function CategoriesNavDropdown({
   const [data, setData] = useState<Category[]>([]);
 
   useEffect(() => {
-    fetchCategories().then((categories) => {
-      const navCategories = getNavCategories(categories);
-      setData(navCategories);
+    fetchNavCategories().then((categories) => {
+      setData(categories);
     });
   }, []);
 

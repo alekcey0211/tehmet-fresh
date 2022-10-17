@@ -19,15 +19,16 @@ import * as $12 from "./routes/catalog/index.tsx";
 import * as $13 from "./routes/contacts.tsx";
 import * as $14 from "./routes/data/brands.ts";
 import * as $15 from "./routes/data/categories.ts";
-import * as $16 from "./routes/data/news.ts";
-import * as $17 from "./routes/data/popular-products.ts";
-import * as $18 from "./routes/data/product.ts";
-import * as $19 from "./routes/data/products-page.ts";
-import * as $20 from "./routes/data/products-search.ts";
-import * as $21 from "./routes/delivery.tsx";
-import * as $22 from "./routes/index.tsx";
-import * as $23 from "./routes/products/[url].tsx";
-import * as $24 from "./routes/video.tsx";
+import * as $16 from "./routes/data/navCategories.ts";
+import * as $17 from "./routes/data/news.ts";
+import * as $18 from "./routes/data/popular-products.ts";
+import * as $19 from "./routes/data/product.ts";
+import * as $20 from "./routes/data/products-page.ts";
+import * as $21 from "./routes/data/products-search.ts";
+import * as $22 from "./routes/delivery.tsx";
+import * as $23 from "./routes/index.tsx";
+import * as $24 from "./routes/products/[url].tsx";
+import * as $25 from "./routes/video.tsx";
 import * as $$0 from "./islands/BrandsFooterList.tsx";
 import * as $$1 from "./islands/CatalogItem.tsx";
 import * as $$2 from "./islands/CatalogList.tsx";
@@ -39,11 +40,12 @@ import * as $$7 from "./islands/CharityDropdown.tsx";
 import * as $$8 from "./islands/Container.tsx";
 import * as $$9 from "./islands/Dropdown.tsx";
 import * as $$10 from "./islands/GeographySalesDropdown.tsx";
-import * as $$11 from "./islands/NavDropdown.tsx";
-import * as $$12 from "./islands/NewsList.tsx";
-import * as $$13 from "./islands/PopularProductsSlider.tsx";
-import * as $$14 from "./islands/PublicLifeMedia.tsx";
-import * as $$15 from "./islands/TopNewSlider.tsx";
+import * as $$11 from "./islands/HomeCategories.tsx";
+import * as $$12 from "./islands/NavDropdown.tsx";
+import * as $$13 from "./islands/NewsList.tsx";
+import * as $$14 from "./islands/PopularProductsSlider.tsx";
+import * as $$15 from "./islands/PublicLifeMedia.tsx";
+import * as $$16 from "./islands/TopNewSlider.tsx";
 
 const manifest = {
   routes: {
@@ -63,15 +65,16 @@ const manifest = {
     "./routes/contacts.tsx": $13,
     "./routes/data/brands.ts": $14,
     "./routes/data/categories.ts": $15,
-    "./routes/data/news.ts": $16,
-    "./routes/data/popular-products.ts": $17,
-    "./routes/data/product.ts": $18,
-    "./routes/data/products-page.ts": $19,
-    "./routes/data/products-search.ts": $20,
-    "./routes/delivery.tsx": $21,
-    "./routes/index.tsx": $22,
-    "./routes/products/[url].tsx": $23,
-    "./routes/video.tsx": $24,
+    "./routes/data/navCategories.ts": $16,
+    "./routes/data/news.ts": $17,
+    "./routes/data/popular-products.ts": $18,
+    "./routes/data/product.ts": $19,
+    "./routes/data/products-page.ts": $20,
+    "./routes/data/products-search.ts": $21,
+    "./routes/delivery.tsx": $22,
+    "./routes/index.tsx": $23,
+    "./routes/products/[url].tsx": $24,
+    "./routes/video.tsx": $25,
   },
   islands: {
     "./islands/BrandsFooterList.tsx": $$0,
@@ -85,11 +88,12 @@ const manifest = {
     "./islands/Container.tsx": $$8,
     "./islands/Dropdown.tsx": $$9,
     "./islands/GeographySalesDropdown.tsx": $$10,
-    "./islands/NavDropdown.tsx": $$11,
-    "./islands/NewsList.tsx": $$12,
-    "./islands/PopularProductsSlider.tsx": $$13,
-    "./islands/PublicLifeMedia.tsx": $$14,
-    "./islands/TopNewSlider.tsx": $$15,
+    "./islands/HomeCategories.tsx": $$11,
+    "./islands/NavDropdown.tsx": $$12,
+    "./islands/NewsList.tsx": $$13,
+    "./islands/PopularProductsSlider.tsx": $$14,
+    "./islands/PublicLifeMedia.tsx": $$15,
+    "./islands/TopNewSlider.tsx": $$16,
   },
   baseUrl: import.meta.url,
   config,

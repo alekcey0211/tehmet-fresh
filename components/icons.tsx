@@ -772,7 +772,7 @@ function Tablet(props: JSX.SVGAttributes<SVGSVGElement>) {
   );
 }
 
-function TitleSeparator(props: JSX.SVGAttributes<SVGSVGElement>) {
+const TitleSeparator = (props: JSX.SVGAttributes<SVGSVGElement>) => {
   const id = useId();
 
   return (
@@ -798,7 +798,7 @@ function TitleSeparator(props: JSX.SVGAttributes<SVGSVGElement>) {
       </defs>
     </svg>
   );
-}
+};
 
 function TriangleRightGradient(props: JSX.SVGAttributes<SVGSVGElement>) {
   const id = useId();

@@ -1,11 +1,11 @@
 import { icons } from "../components/icons.tsx";
-import { Category, fetchCategories } from "../data/categories.ts";
 import { useState, useEffect } from "preact/hooks";
-import { getNavCategories } from "../shared/nav-categories.ts";
 import { Button } from "../components/button.tsx";
 import { Image } from "../components/image.tsx";
 import { navItems } from "../shared/nav-items.ts";
 import { Contact } from "../data/contacts.ts";
+import { Category } from "../routes/data/categories.ts";
+import { fetchNavCategories } from "../data/nav-categories.ts";
 
 export default function CategoriesNavDialog({
   contacts,
@@ -17,11 +17,9 @@ export default function CategoriesNavDialog({
   const [data, setData] = useState<Category[]>([]);
   const [category, setCategory] = useState<Category>();
 
-  
   useEffect(() => {
-    fetchCategories().then((categories) => {
-      const navCategories = getNavCategories(categories);
-      setData(navCategories);
+    fetchNavCategories().then((categories) => {
+      setData(categories);
     });
   }, []);
 
@@ -68,9 +66,9 @@ export default function CategoriesNavDialog({
             />
           </div>
           <ul class="text-2xl sm:text-4xl font-light text-grey">
-            {navItems.map((item) => {
-              const isActive = pathname === item.link;
-              if (item.link === "/catalog") {
+            {navItems.map(({ link, text, items }) => {
+              const isActive = pathname === link;
+              if (link === "/catalog") {
                 return (
                   <li class="grid items-center hover:text-dark-blue border-b-[1px] border-[#DADADA] sm:h-[60px]">
                     <button
@@ -80,7 +78,7 @@ export default function CategoriesNavDialog({
                       data-dialog-for="form-e3c8b62a-da51-4332-8036-0e1abf5ebcce"
                       data-close-other="true"
                     >
-                      {item.text}
+                      {text}
                     </button>
                   </li>
                 );
@@ -89,21 +87,21 @@ export default function CategoriesNavDialog({
                 <>
                   <li class="grid items-center hover:text-dark-blue border-b-[1px] border-[#DADADA] sm:h-[60px]">
                     <a
-                      href={item.link}
+                      href={link}
                       class={`grid items-center h-full pr-4 nav-item-link ${
                         isActive && "gradient-text"
                       }`}
                     >
-                      {item.text}
+                      {text}
                     </a>
                   </li>
-                  {item.items?.map((child) => {
-                    const isChildActive = pathname === item.link + child.link;
+                  {items?.map((child) => {
+                    const isChildActive = pathname === link + child.link;
                     if (child.link === "") return null;
                     return (
                       <li class="grid items-center hover:text-dark-blue border-b-[1px] border-[#DADADA] sm:h-[60px]">
                         <a
-                          href={item.link + child.link}
+                          href={link + child.link}
                           class={`grid items-center h-full pr-4 nav-item-link ${
                             isChildActive && "gradient-text"
                           } `}

@@ -9,7 +9,7 @@ export default function PageNotFound(ctx: PageProps) {
           <h1 class="text-6xl md:text-9xl font-extrabold">404</h1>
 
           <p class="p-4 text-2xl md:text-3xl">
-            К сожалению, страница, которую вы запросили, не была найдена{" "}
+            К сожалению, страница, которую вы запросили, не была найдена
           </p>
 
           <p class="p-4 text-base">

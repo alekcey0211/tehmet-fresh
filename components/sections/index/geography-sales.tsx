@@ -7,6 +7,7 @@ import { Image } from "../../image.tsx";
 
 export const GeographySales = () => {
   const cities = getCities();
+  const contacts = getContacts({ isPage: true });
 
   return (
     <section class="py-4 lg:py-20 relative z-40">
@@ -24,7 +25,7 @@ export const GeographySales = () => {
         <div class="max-w-fullhd mx-auto grid">
           <div class="lg:bg-light-blue lg:pt-8 xl:pt-12 lg:pb-7 lg:pr-16 xl:pr-24 lg:pl-16 xl:pl-32 rounded-2xl grid gap-x-12 gap-y-4 mb-4 lg:mb-12 justify-items-start lg:justify-between w-full max-w-hero mx-auto box-border">
             <span class="col-start-1 text-xs sm:text-xl text-dark-blue">
-              На сегодняшний день в нашем активе три действующих склада:{" "}
+              На сегодняшний день в нашем активе три действующих склада:&nbsp;
               <br class="hidden sm:block" />в Екатеринбурге, Сургуте и Новом
               Уренгое.
             </span>
@@ -38,7 +39,7 @@ export const GeographySales = () => {
               </div>
             </div>
             <div class="lg:col-start-2 lg:row-start-1 lg:row-end-3 grid gap-2 lg:gap-3 place-content-center lg:place-content-end">
-              {getContacts({ isPage: true }).map((item) => (
+              {contacts.map((item) => (
                 <div class="flex items-center gap-1 sm:gap-2 text-xs sm:text-[18px] ">
                   <div class="shrink-0 hidden sm:block text-dark-blue">
                     <icons.Location />

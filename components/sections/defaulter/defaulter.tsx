@@ -39,7 +39,7 @@ export const Defaulter = () => {
           style="clip-path: url(#form-01)"
         >
           Данные проверены нашим опытом, поэтому при возникновении
-          дополнительных вопросов - пишите на почту{" "}
+          дополнительных вопросов - пишите на почту&nbsp;
           <a class="gradient-text" href="mailto:market@tehmet.su">
             market@tehmet.su
           </a>
