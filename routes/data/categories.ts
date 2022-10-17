@@ -30,7 +30,7 @@ export const handler = async (_req: Request, _ctx: HandlerContext) => {
       },
     });
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     return new Response(JSON.stringify([]), {
       headers: {
         "Content-Type": "application/json",

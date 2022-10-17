@@ -4,7 +4,7 @@
     "start": {
       "cmd": "deno run -A main.ts",
       "desc": "run my main.ts file",
-      "log": "info"
+      "inspect": "127.0.0.1:9229"
     }
   }
 }

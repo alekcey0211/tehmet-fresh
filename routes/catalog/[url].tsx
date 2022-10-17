@@ -6,9 +6,10 @@ import { Certificates } from "../../components/sections/catalog/certificates.tsx
 import { Partners } from "../../components/sections/catalog/partners.tsx";
 import { Popular } from "../../components/sections/catalog/popular.tsx";
 import { PageData } from "../../context/page-context.tsx";
-import { Category, fetchCategories } from "../../data/categories.ts";
+import { fetchCategories } from "../../data/categories.ts";
 import CatalogList from "../../islands/CatalogList.tsx";
 import { getCategoryPath } from "../../shared/path.ts";
+import { Category } from "../data/categories.ts";
 
 type Data = PageData & {
   category: Category;
@@ -38,7 +39,11 @@ export const handler: Handlers<Data> = {
 export default function CatalogUrlRoute(ctx: PageProps<Data>) {
   const { data } = ctx;
   return (
-    <LayoutBase pageData={ctx} title={data.category.name} isCompact={true}>
+    <LayoutBase
+      pageData={ctx}
+      title={data.category.name}
+      isCompact={true}
+    >
       <CatalogWrapper>
         <div>
           <section class="py-4 sm:py-8 lg:py-16 max-w-fullhd mx-auto">

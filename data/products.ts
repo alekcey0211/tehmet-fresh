@@ -55,7 +55,7 @@ export const fetchProducts = async ({
           : undefined,
     }));
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     return [];
   }
 };

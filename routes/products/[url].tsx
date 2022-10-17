@@ -4,9 +4,10 @@ import { icons } from "../../components/icons.tsx";
 import { Layout } from "../../components/layout.tsx";
 import { ProductInfo } from "../../components/sections/products/product-info.tsx";
 import { PageData } from "../../context/page-context.tsx";
-import { Category, fetchCategories } from "../../data/categories.ts";
+import { fetchCategories } from "../../data/categories.ts";
 import { fetchProducts, Product } from "../../data/products.ts";
 import { getCategoryPath } from "../../shared/path.ts";
+import { Category } from "../data/categories.ts";
 
 type Data = PageData & {
   product: Product;

@@ -6,10 +6,11 @@ import { Certificates } from "../../components/sections/catalog/certificates.tsx
 import { Partners } from "../../components/sections/catalog/partners.tsx";
 import { Popular } from "../../components/sections/catalog/popular.tsx";
 import { PageData } from "../../context/page-context.tsx";
-import { Brand, fetchBrands } from "../../data/brands.ts";
+import { fetchBrands } from "../../data/brands.ts";
 import { fetchCategories } from "../../data/categories.ts";
 import { fetchProducts, Product } from "../../data/products.ts";
 import CatalogList from "../../islands/CatalogList.tsx";
+import { Brand } from "../data/brands.ts";
 
 type Data = PageData & {
   products: Product[];
@@ -43,7 +44,11 @@ export const handler: Handlers<Data> = {
 export default function BrandsUrlRoute(ctx: PageProps<Data>) {
   const { data } = ctx;
   return (
-    <LayoutBase pageData={ctx} title={data.brand.name} isCompact={true}>
+    <LayoutBase
+      pageData={ctx}
+      title={data.brand.name}
+      isCompact={true}
+    >
       <CatalogWrapper>
         <div>
           <section class="py-4 sm:py-8 lg:py-16 max-w-fullhd mx-auto">

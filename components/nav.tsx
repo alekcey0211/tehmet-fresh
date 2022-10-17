@@ -6,7 +6,6 @@ import NavDropdown from "../islands/NavDropdown.tsx";
 
 export function Nav() {
   const { url } = useContext(Page);
-
   return (
     <nav class="sticky top-0 z-20 bg-white header-nav-shadow">
       <ul class="hidden lg:grid grid-cols-5 max-w-fullhd mx-auto">
