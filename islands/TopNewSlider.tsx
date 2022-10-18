@@ -87,7 +87,7 @@ export default function TopNewSlider() {
     <div class="flex items-center gap-2 sm:gap-4 md:gap-8 select-none">
       <div
         id="swiper-67233994a168456eb9db9ba8c425f2b5-button-prev"
-        class="swiper-button-prev text-grey !left-0 shrink-0 !relative after::text-base after::sm:text-2xl after::md:text-4xl !mt-0 !w-auto !lg:hidden"
+        class="swiper-button-prev text-grey !left-0 shrink-0 !relative !after::text-base !after::sm:text-2xl !after::md:text-4xl !mt-0 !w-auto !lg:hidden"
       ></div>
       <div
         id="swiper-67233994a168456eb9db9ba8c425f2b5"
@@ -97,7 +97,7 @@ export default function TopNewSlider() {
       </div>
       <div
         id="swiper-67233994a168456eb9db9ba8c425f2b5-button-next"
-        class="swiper-button-next text-grey !right-0 shrink-0 !relative after::text-base after::sm:text-2xl after::md:text-4xl !mt-0 !w-auto !lg:hidden"
+        class="swiper-button-next text-grey !right-0 shrink-0 !relative !after::text-base !after::sm:text-2xl !after::md:text-4xl !mt-0 !w-auto !lg:hidden"
       ></div>
     </div>
   );

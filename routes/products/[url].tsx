@@ -5,9 +5,10 @@ import { Layout } from "../../components/layout.tsx";
 import { ProductInfo } from "../../components/sections/products/product-info.tsx";
 import { PageData } from "../../context/page-context.tsx";
 import { fetchCategories } from "../../data/categories.ts";
-import { fetchProducts, Product } from "../../data/products.ts";
+import { fetchProducts } from "../../data/products.ts";
 import { getCategoryPath } from "../../shared/path.ts";
 import { Category } from "../data/categories.ts";
+import { Product } from "../data/products.ts";
 
 type Data = PageData & {
   product: Product;

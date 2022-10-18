@@ -1,6 +1,7 @@
 import { useState, useEffect } from "preact/hooks";
 import { Spin } from "../components/spin.tsx";
-import { fetchProducts, Product } from "../data/products.ts";
+import { fetchProducts } from "../data/products.ts";
+import { Product } from "../routes/data/products.ts";
 
 export default function CategoryProducts({
   categories,

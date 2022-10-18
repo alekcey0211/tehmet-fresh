@@ -1,12 +1,15 @@
-import { Product } from "../data/products.ts";
+import { Product } from "../routes/data/products.ts";
 import { formatNumber } from "../shared/number.ts";
 import { Button } from "./button.tsx";
 
 export const CatalogItem = ({
-  item,
+  item: { image, name, url, articleNumber, isExists, price },
   layout,
 }: {
-  item: Product;
+  item: Pick<
+    Product,
+    "name" | "url" | "image" | "price" | "articleNumber" | "isExists"
+  >;
   layout: "grid" | "list";
 }) => {
   return (
@@ -19,34 +22,36 @@ export const CatalogItem = ({
     >
       <div class="shadow-md! relative p-5 grid grid-rows-1">
         <img
-          src={item.image}
-          alt={item.name}
+          src={image}
+          alt={name}
           class="object-contain w-full h-full"
           loading="lazy"
         />
         <a
-          href={`/products/${item.url}/`}
+          href={`/products/${url}/`}
           class="absolute inset-0"
           aria-hidden="true"
           tabIndex={-1}
         />
       </div>
       <div class="py-2 px-4 flex flex-col">
-        <span class="text-xs text-grey">{`Код товара: ${
-          item.articleNumber ?? ""
-        }`}</span>
+        {articleNumber && (
+          <span class="text-xs text-grey">{`Код товара: ${
+            articleNumber ?? ""
+          }`}</span>
+        )}
         <a
-          href={`/products/${item.url}/`}
+          href={`/products/${url}/`}
           class="block gradient-text font-light text-base my-2"
         >
-          {item.name}
+          {name}
         </a>
         <div class="flex-grow" />
         <span class="text-xs sm:text-sm text-blue font-light">
-          {item.isExists ? "В наличии" : "Нет в наличии"}
+          {isExists ? "В наличии" : "Нет в наличии"}
         </span>
         <span class="text-xl md:text-3xl text-blue1 font-medium">
-          {item.price ? `${formatNumber(item.price)} р.` : <>&nbsp;</>}
+          {price ? `${formatNumber(price)} р.` : <>&nbsp;</>}
         </span>
         <div class="grid grid-rows-1 h-8 md:h-12 w-28 md:w-40 mt-3">
           <Button

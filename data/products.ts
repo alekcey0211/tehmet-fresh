@@ -1,22 +1,5 @@
-import { Category } from "../routes/data/categories.ts";
-import { config } from "../site/config.ts";
-
-export type Product = {
-  // id: string;
-  name: string;
-  url: string;
-  image?: string;
-  preview?: string;
-  price?: number;
-  annotation: string;
-  description: string;
-  brand: string | null;
-  featured: boolean | null;
-  category?: Category;
-  features: { id: number; value: string }[];
-  articleNumber?: string;
-  isExists?: boolean;
-};
+import { IS_BROWSER } from "$fresh/runtime.ts";
+import { Product } from "../routes/data/products.ts";
 
 export const fetchProducts = async ({
   id,
@@ -30,30 +13,22 @@ export const fetchProducts = async ({
   brand?: string;
 } = {}) => {
   try {
-    const url = new URL("https://tehmet.su/ajax/products.php");
+    const path = "/data/products";
+    const url = IS_BROWSER ? path : `http://localhost:8000${path}`;
+
+    const searchParams = new URLSearchParams();
     if (categories) {
       categories.forEach((c) => {
-        url.searchParams.append("category[]", c);
+        searchParams.append("category[]", c);
       });
     }
-    if (id) url.searchParams.set("id", id);
-    if (brand) url.searchParams.set("brand", brand);
-    if (company) url.searchParams.set("brand", company);
+    if (id) searchParams.set("id", id);
+    if (brand) searchParams.set("brand", brand);
+    if (company) searchParams.set("brand", company);
 
-    const response = await fetch(url.toString());
+    const response = await fetch(`${url}?${searchParams.toString()}`);
     const json = await response.json();
-    const data = Object.values(json.data ?? {}) as Product[];
-
-    return data.map((x) => ({
-      ...x,
-      isExists: true,
-      price:
-        x.category &&
-        config.categoriesWithPrice.includes(x.category.url) &&
-        x.price
-          ? Number(x.price)
-          : undefined,
-    }));
+    return json as Product[];
   } catch (error) {
     // console.error(error);
     return [];

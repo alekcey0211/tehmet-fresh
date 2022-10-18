@@ -1,4 +1,4 @@
-import { Product } from "../../../data/products.ts";
+import { Product } from "../../../routes/data/products.ts";
 import { formatNumber } from "../../../shared/number.ts";
 import { Button } from "../../button.tsx";
 import { icons } from "../../icons.tsx";
@@ -15,9 +15,11 @@ export const ProductInfo = ({
   return (
     <div class="px-4 md:px-10 lg:px-0">
       <h1 class="gradient-text flex text-2xl">{name}</h1>
-      <span class="text-base text-blue1">{`Код товара: ${
-        articleNumber ?? ""
-      }`}</span>
+      {articleNumber && (
+        <span class="text-base text-blue1">{`Код товара: ${
+          articleNumber ?? ""
+        }`}</span>
+      )}
       <div class="grid lg:grid-cols-[440px_344px] gap-5 mt-6">
         <div class="grid grid-rows-1 aspect-square border-[1px] border-blue p-5 max-h-48 sm:max-h-[9999px]">
           <img src={image} alt={name} class="object-contain w-full h-full" />

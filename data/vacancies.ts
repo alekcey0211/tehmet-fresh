@@ -1,3 +1,4 @@
+import { getJsonSync } from "../shared/file.ts";
 import { transformTelLink } from "../shared/link.ts";
 
 export type Vacancy = {
@@ -9,40 +10,10 @@ export type Vacancy = {
   contactEmail: string;
 };
 
-const data = [
-  {
-    title: "Бухгалтер",
-    link: "buhgalter",
-    isArchive: true,
-    contactPhone: "+7 (343) 288-26-88 (доб.116)",
-    contactEmail: "personal@tehmet.su",
-  },
-  {
-    title: "Менеджер",
-    link: "menedzher",
-    isArchive: false,
-    contactPhone: "+7 (343) 288-26-88 (доб.116)",
-    contactEmail: "personal@tehmet.su",
-  },
-  {
-    title: "Оператор ПК",
-    link: "operator-pk",
-    isArchive: false,
-    contactPhone: "+7 (343) 288-26-88 (доб.116)",
-    contactEmail: "personal@tehmet.su",
-  },
-  {
-    title: "Менеджер по снабжению",
-    link: "menedzher-po-snabzheniyu",
-    isArchive: false,
-    contactPhone: "+7 (343) 288-26-88 (доб.116)",
-    contactEmail: "personal@tehmet.su",
-  },
-];
-
 export const getVacancies = () => {
+  const data = getJsonSync("./db/vacancies.json") as Vacancy[];
   return data.map((x) => ({
     ...x,
     contactPhoneLink: transformTelLink(x.contactPhone),
-  })) as Vacancy[];
+  }));
 };

@@ -1,5 +1,6 @@
 import { HandlerContext } from "$fresh/server.ts";
-import { fetchProducts, Product } from "../../data/products.ts";
+import { fetchProducts } from "../../data/products.ts";
+import { Product } from "./products.ts";
 
 export type ProductResponse = Product | undefined;
 

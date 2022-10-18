@@ -1,6 +1,16 @@
 import { config } from "../site/config.ts";
 
+const cacheExists = new Map<string, { webp: boolean; avif: boolean }>();
+
 const getBaseFormat = (src: string) => (src.endsWith("png") ? "png" : "jpeg");
+const exists = (file: string) => {
+  try {
+    Deno.readFileSync(file);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
 
 export function Image({
   src,
@@ -27,6 +37,16 @@ export function Image({
 
   const { useModernImageFormat } = config;
 
+  const webp = src.replace(`.${baseFormat}`, ".webp");
+  const avif = src.replace(`.${baseFormat}`, ".avif");
+
+  if (!cacheExists.has(src) && useModernImageFormat) {
+    cacheExists.set(src, {
+      webp: exists(`./static${webp}`),
+      avif: exists(`./static${avif}`),
+    });
+  }
+
   return (
     <picture class={className}>
       {showBreakpointWidth && (
@@ -36,21 +56,19 @@ export function Image({
           srcset="/blank.gif 1w"
         />
       )}
-      {useModernImageFormat && (
+      {cacheExists.get(src)?.avif && (
         <source
           type="image/avif"
-          srcset={src.replace(`.${baseFormat}`, ".avif")}
-          sizes="100vw"
+          srcset={avif}
           {...(showBreakpointWidth && {
             media: `(min-width: ${showBreakpointWidth}px)`,
           })}
         />
       )}
-      {useModernImageFormat && (
+      {cacheExists.get(src)?.webp && (
         <source
           type="image/webp"
-          srcset={src.replace(`.${baseFormat}`, ".webp")}
-          sizes="100vw"
+          srcset={webp}
           {...(showBreakpointWidth && {
             media: `(min-width: ${showBreakpointWidth}px)`,
           })}
@@ -59,7 +77,6 @@ export function Image({
       <source
         type={baseFormat === "jpg" ? "image/jpeg" : `image/${baseFormat}`}
         srcset={src}
-        sizes="100vw"
         {...(showBreakpointWidth && {
           media: `(min-width: ${showBreakpointWidth}px)`,
         })}

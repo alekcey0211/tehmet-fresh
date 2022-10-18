@@ -40,6 +40,20 @@ export const handler = async (req: Request, _ctx: HandlerContext) => {
       dateString: x.date.toLocaleDateString("ru"),
     })) as News[];
 
+  if (url.searchParams.get("page") === "all") {
+    return new Response(
+      JSON.stringify({
+        news,
+        pages: 1,
+      }),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  }
+
   return new Response(
     JSON.stringify({
       news: news.slice((page - 1) * limit, page * limit),

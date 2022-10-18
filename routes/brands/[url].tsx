@@ -8,9 +8,10 @@ import { Popular } from "../../components/sections/catalog/popular.tsx";
 import { PageData } from "../../context/page-context.tsx";
 import { fetchBrands } from "../../data/brands.ts";
 import { fetchCategories } from "../../data/categories.ts";
-import { fetchProducts, Product } from "../../data/products.ts";
+import { fetchProducts } from "../../data/products.ts";
 import CatalogList from "../../islands/CatalogList.tsx";
 import { Brand } from "../data/brands.ts";
+import { Product } from "../data/products.ts";
 
 type Data = PageData & {
   products: Product[];

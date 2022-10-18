@@ -1,13 +1,11 @@
 import { getJsonSync } from "../shared/file.ts";
 
-type Certificate = {
-  src: string;
-  view: {
-    jpg: string;
-  };
-  alt: string;
-  width: string;
-  height: string;
+export type Certificate = {
+  original: string;
+  preview: string;
+  alt?: string;
+  width?: string;
+  height?: string;
 };
 
 export const getCertificates = () => {

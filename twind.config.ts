@@ -51,6 +51,8 @@ export default {
     },
   },
   plugins: {
+    "form-select": {},
+    "checked": {},
     "c-prav": {},
     "nav-dialog": {},
     "header-nav-shadow": {
