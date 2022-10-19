@@ -1,5 +1,6 @@
 import { createRef, JSX } from "preact";
-import { useId, useState } from "preact/hooks";
+import { useId, useRef, useState } from "preact/hooks";
+import { useOnClickOutside } from "../hooks/use-outside-click.ts";
 
 export function Dropdown({
   containerTag: ContainerTag = "div",
@@ -40,8 +41,13 @@ export function Dropdown({
 
   const panelProps = { ref: popoverDropdownRef, id };
 
+  const ref = useRef<HTMLDivElement | HTMLLIElement>(null);
+  useOnClickOutside(ref, () => {
+    setIsOpen(false);
+  });
+
   return (
-    <ContainerTag class={containerClassName ?? "relative"}>
+    <ContainerTag ref={ref as any} class={containerClassName ?? "relative"}>
       <button {...triggerProps} type="button" className={triggerClassName}>
         {trigger}
       </button>

@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from "preact/hooks";
+import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 // @deno-types="https://deno.land/x/fuse@v6.4.1/dist/fuse.d.ts"
 import Fuse from "https://deno.land/x/fuse@v6.4.1/dist/fuse.esm.min.js";
 import { fetchProductsSearch } from "../data/products-search.ts";
+import { useOnClickOutside } from "../hooks/use-outside-click.ts";
 
 type SearchDefinition = {
   preview?: string;
@@ -46,7 +47,9 @@ export default function CatalogSearch() {
     },
   }).map<SearchDefinition>((result) => result.item);
 
-  const filteredListTop = filteredList.slice(0, 20);
+  const filteredListTop = filteredList
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .slice(0, 30);
 
   useEffect(() => {
     fetchProductsSearch().then((data) => {
@@ -55,8 +58,13 @@ export default function CatalogSearch() {
     return;
   }, []);
 
+  const ref = useRef<HTMLDivElement>(null);
+  useOnClickOutside(ref, () => {
+    setFocused(false);
+  });
+
   return (
-    <div class="grid items-center w-full">
+    <div ref={ref} class="grid items-center w-full">
       <input
         type="text"
         autocomplete="off"
@@ -67,9 +75,6 @@ export default function CatalogSearch() {
         }
         onFocus={() => {
           setFocused(true);
-        }}
-        onBlur={() => {
-          setFocused(false);
         }}
       />
       <button
@@ -85,7 +90,7 @@ export default function CatalogSearch() {
           />
         </svg>
       </button>
-      {filteredListTop.length > 0 && (
+      {focused && filteredListTop.length > 0 && (
         <div class="relative col-span-full row-span-full self-end">
           <div class="absolute mt-1 w-full border bg-white shadow-xl! rounded max-h-[400px] overflow-auto">
             <div class="p-3">
@@ -97,7 +102,7 @@ export default function CatalogSearch() {
                     href={"/products/" + result.url}
                   >
                     <img
-                      class="w-10"
+                      class="w-10 h-10 object-contain object-center"
                       src={result.preview}
                       alt={result.name}
                       loading="lazy"
