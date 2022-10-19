@@ -2,8 +2,8 @@
   "tasks": {
     "start": "deno run -A --watch=static/,routes/ --unstable dev.ts",
     "prod": "deno run -A --unstable main.ts",
-    "restart": "fuser -k 8000/tcp && pm2 restart tehmet",
-    "restart:git": "git pull && fuser -k 8000/tcp && pm2 restart tehmet"
+    "restart": "pm2 restart tehmet",
+    "restart:git": "git pull && pm2 restart tehmet"
   },
   "importMap": "./import_map.json",
   "compilerOptions": {
