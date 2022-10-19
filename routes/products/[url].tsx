@@ -1,7 +1,7 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { CatalogWrapper } from "../../components/catalog-wrapper.tsx";
 import { icons } from "../../components/icons.tsx";
-import { Layout } from "../../components/layout.tsx";
+import { LayoutCompact } from "../../components/layout.tsx";
 import { ProductInfo } from "../../components/sections/products/product-info.tsx";
 import { PageData } from "../../context/page-context.tsx";
 import { fetchCategories } from "../../data/categories.ts";
@@ -46,7 +46,7 @@ export const handler: Handlers<Data> = {
 export default function ProductsUrlRoute(ctx: PageProps<Data>) {
   const { data } = ctx;
   return (
-    <Layout pageData={ctx} title={data.product.name}>
+    <LayoutCompact pageData={ctx} title={data.product.name}>
       <CatalogWrapper>
         <div>
           <section class="py-4 sm:py-8 lg:py-16 max-w-fullhd mx-auto">
@@ -118,6 +118,6 @@ export default function ProductsUrlRoute(ctx: PageProps<Data>) {
           </div>
         </div>
       </CatalogWrapper>
-    </Layout>
+    </LayoutCompact>
   );
 }
