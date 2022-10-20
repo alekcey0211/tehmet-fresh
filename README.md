@@ -46,7 +46,7 @@
 
 ```bash
 cd /home/web/tehmet-fresh
-pm2 start tehmet
+pm2 start
 ```
 
 Чтобы перезапустить сайт также нужно зайти в "Терминал" под `root` пользователем
