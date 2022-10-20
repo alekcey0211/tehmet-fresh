@@ -1,8 +1,6 @@
 import { HandlerContext } from "$fresh/server.ts";
-import { config } from "../../site/config.ts";
+import { getJson } from "../../shared/file.ts";
 import { Category } from "./categories.ts";
-import { readCSV } from "https://deno.land/x/csv/mod.ts";
-import { parse } from "https://deno.land/std@0.82.0/encoding/csv.ts";
 
 export type Product = {
   // id: string;
@@ -26,6 +24,11 @@ export const handler = async (req: Request, _ctx: HandlerContext) => {
     const url = new URL("https://tehmet.su/ajax/products.php");
     url.search = reqUrl.search;
 
+    const config = (await getJson("./db/config.json")) as {
+      categoriesWithPrice: string[];
+      showPrice: boolean;
+    };
+
     const response = await fetch(url.toString());
     const json = await response.json();
     const data = (json.data ?? {}) as Record<string, Product>;
@@ -34,8 +37,8 @@ export const handler = async (req: Request, _ctx: HandlerContext) => {
       id: Number(id),
       isExists: true,
       price:
-        p.category &&
-        config.categoriesWithPrice.includes(p.category.url) &&
+        ((p.category && config.categoriesWithPrice.includes(p.category.url)) ||
+          config.showPrice) &&
         p.price
           ? Number(p.price)
           : undefined,

@@ -1,15 +1,15 @@
 import { useState, useEffect } from "preact/hooks";
 import { Spin } from "../components/spin.tsx";
-import { fetchBrands } from "../data/brands.ts";
-import { Brand } from "../routes/data/brands.ts";
+import { fetchCategoriesPopular } from "../data/categories-popular.ts";
+import { Category } from "../routes/data/categories.ts";
 
-export default function BrandsFooterList() {
+export default function PopularCategoriesFooterList() {
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState<Brand[]>([]);
+  const [data, setData] = useState<Category[]>([]);
 
   useEffect(() => {
-    fetchBrands().then((brands) => {
-      setData(brands);
+    fetchCategoriesPopular().then((categories) => {
+      setData(categories);
       setIsLoading(false);
     });
   }, []);
@@ -20,9 +20,9 @@ export default function BrandsFooterList() {
         <Spin />
       ) : (
         <>
-          {data.map((brand) => (
+          {data.map((category) => (
             <li class="whitespace-nowrap">
-              <a href={`/brands/${brand.url}`}>{brand.name}</a>
+              <a href={`/catalog/${category.url}`}>{category.name}</a>
             </li>
           ))}
         </>

@@ -1,8 +1,8 @@
 import BrandsFooterList from "../islands/BrandsFooterList.tsx";
 import { getContacts } from "../data/contacts.ts";
-import { getPopularCategories } from "../data/popular-categories.ts";
 import { Button } from "./button.tsx";
 import { icons } from "./icons.tsx";
+import PopularCategoriesFooterList from "../islands/PopularCategoriesFooterList.tsx";
 
 export const Footer = () => {
   return (
@@ -48,13 +48,14 @@ export const Footer = () => {
               <p class="mb-4 lg:mb-12 text-dark-blue text-xs sm:text-[22px]">
                 Популярные категории:
               </p>
-              <ul class="grid gap-1 sm:gap-2 text-[10px] sm:text-[18px] font-light text-dark-blue">
+              <PopularCategoriesFooterList />
+              {/* <ul class="grid gap-1 sm:gap-2 text-[10px] sm:text-[18px] font-light text-dark-blue">
                 {getPopularCategories().map((category) => (
                   <li class="whitespace-nowrap">
-                    <a href={`/catalog${category.url}`}>{category.name}</a>
+                    <a href={`/catalog/${category.url}`}>{category.name}</a>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
             <div class="absolute bottom-0 right-0 w-32 sm:w-48 lg:w-64 xl:w-[301px] grid">
               <icons.LogoGrey />
@@ -66,12 +67,14 @@ export const Footer = () => {
               text="Подписаться на автоматические поставки"
               dialogId="form-effb7861-5ab1-469e-8091-fca64e21430b"
             />
+            {/* // TODO: сделать pdf файл в /static/files и вставить на него ссылку */}
             <a href="#" class="font-light text-xs sm:text-lg text-grey2">
               Политика о защите персональных данных
             </a>
-            <a href="#" class="font-light text-xs sm:text-lg text-grey2">
+            {/* // TODO: нет понимания куда ведет эта ссылка */}
+            {/* <a href="#" class="font-light text-xs sm:text-lg text-grey2">
               Подписаться на рассылки
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

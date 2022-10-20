@@ -35,12 +35,10 @@ export function Image({
     ? { sm: 640, md: 768, lg: 1024, xl: 1280, "2xl": 1536 }[showBreakpoint]
     : undefined;
 
-  const { useModernImageFormat } = config;
-
   const webp = src.replace(`.${baseFormat}`, ".webp");
   const avif = src.replace(`.${baseFormat}`, ".avif");
 
-  if (!cacheExists.has(src) && useModernImageFormat) {
+  if (!cacheExists.has(src)) {
     cacheExists.set(src, {
       webp: exists(`./static${webp}`),
       avif: exists(`./static${avif}`),

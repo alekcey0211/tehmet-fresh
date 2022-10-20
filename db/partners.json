@@ -1,10 +1,10 @@
 [
-  { "src": "/img/logo/1.png", "alt": "NSSW логотип компани" },
-  { "src": "/img/logo/2.png", "alt": "МЭЦ логотип компани" },
-  { "src": "/img/logo/3.png", "alt": "KOBELCO логотип компани" },
-  { "src": "/img/logo/4.png", "alt": "СЗСМ логотип компани" },
-  { "src": "/img/logo/5.png", "alt": "ESAB логотип компани" },
-  { "src": "/img/logo/6.png", "alt": "bohler логотип компани" },
-  { "src": "/img/logo/7.png", "alt": "СВАРОГ логотип компани" },
-  { "src": "/img/logo/8.png", "alt": "КЕДР логотип компани" }
+  { "src": "/img/logo/1.png", "name": "NSSW логотип компани" },
+  { "src": "/img/logo/2.png", "name": "МЭЦ логотип компани" },
+  { "src": "/img/logo/3.png", "name": "KOBELCO логотип компани" },
+  { "src": "/img/logo/4.png", "name": "СЗСМ логотип компани" },
+  { "src": "/img/logo/5.png", "name": "ESAB логотип компани" },
+  { "src": "/img/logo/6.png", "name": "bohler логотип компани" },
+  { "src": "/img/logo/7.png", "name": "СВАРОГ логотип компани" },
+  { "src": "/img/logo/8.png", "name": "КЕДР логотип компани" }
 ]

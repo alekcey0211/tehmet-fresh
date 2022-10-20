@@ -5,6 +5,4 @@ const env = IS_BROWSER ? {} : dotend();
 
 export const config = {
   production: Boolean(!env.DEVELOPMENT),
-  categoriesWithPrice: ["konvektory"],
-  useModernImageFormat: true,
 };
