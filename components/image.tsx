@@ -3,7 +3,7 @@ const cacheExists = new Map<string, { webp: boolean; avif: boolean }>();
 const getBaseFormat = (src: string) => (src.endsWith("png") ? "png" : "jpeg");
 const exists = (file: string) => {
   try {
-    Deno.readFileSync(file);
+    Deno.statSync(file);
     return true;
   } catch (error) {
     return false;
