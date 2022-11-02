@@ -39,11 +39,7 @@ export const handler: Handlers<Data> = {
 export default function CatalogUrlRoute(ctx: PageProps<Data>) {
   const { data } = ctx;
   return (
-    <LayoutBase
-      pageData={ctx}
-      title={data.category.name}
-      isCompact={true}
-    >
+    <LayoutBase pageData={ctx} title={data.category.name} isCompact={true}>
       <CatalogWrapper>
         <div>
           <section class="py-4 sm:py-8 lg:py-16 max-w-fullhd mx-auto">
@@ -109,6 +105,12 @@ export default function CatalogUrlRoute(ctx: PageProps<Data>) {
               ]}
               brands={data.category.brands}
             />
+            {!!data.category.description && (
+              <div
+                class="bg-[#E8E8E8] px-8 md:px-16 py-4 md:py-10 c-prav"
+                dangerouslySetInnerHTML={{ __html: data.category.description }}
+              />
+            )}
           </section>
         </div>
         <div class="col-span-2">

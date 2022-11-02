@@ -8,6 +8,7 @@ export type Category = {
   url: string;
   children: Category[];
   brands: Brand[];
+  description?: string;
 };
 
 export const handler = async (_req: Request, _ctx: HandlerContext) => {

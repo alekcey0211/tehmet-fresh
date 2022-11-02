@@ -1,5 +1,3 @@
-import { config } from "../site/config.ts";
-
 const cacheExists = new Map<string, { webp: boolean; avif: boolean }>();
 
 const getBaseFormat = (src: string) => (src.endsWith("png") ? "png" : "jpeg");
