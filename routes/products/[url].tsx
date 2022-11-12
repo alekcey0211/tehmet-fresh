@@ -46,7 +46,12 @@ export const handler: Handlers<Data> = {
 export default function ProductsUrlRoute(ctx: PageProps<Data>) {
   const { data } = ctx;
   return (
-    <LayoutCompact pageData={ctx} title={data.product.name}>
+    <LayoutCompact
+      pageData={ctx}
+      title={data.product.metaTitle}
+      description={data.product.metaDescription}
+      keywords={data.product.metaKeywords}
+    >
       <CatalogWrapper>
         <div>
           <section class="py-4 sm:py-8 lg:py-16 max-w-fullhd mx-auto">

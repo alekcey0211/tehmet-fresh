@@ -31,8 +31,9 @@ import * as $24 from "./routes/data/products-search.ts";
 import * as $25 from "./routes/data/products.ts";
 import * as $26 from "./routes/delivery.tsx";
 import * as $27 from "./routes/index.tsx";
-import * as $28 from "./routes/products/[url].tsx";
-import * as $29 from "./routes/video.tsx";
+import * as $28 from "./routes/politika-o-zaschite-personalnyh-dannyh.tsx";
+import * as $29 from "./routes/products/[url].tsx";
+import * as $30 from "./routes/video.tsx";
 import * as $$0 from "./islands/BrandsFooterList.tsx";
 import * as $$1 from "./islands/CatalogItem.tsx";
 import * as $$2 from "./islands/CatalogList.tsx";
@@ -82,8 +83,9 @@ const manifest = {
     "./routes/data/products.ts": $25,
     "./routes/delivery.tsx": $26,
     "./routes/index.tsx": $27,
-    "./routes/products/[url].tsx": $28,
-    "./routes/video.tsx": $29,
+    "./routes/politika-o-zaschite-personalnyh-dannyh.tsx": $28,
+    "./routes/products/[url].tsx": $29,
+    "./routes/video.tsx": $30,
   },
   islands: {
     "./islands/BrandsFooterList.tsx": $$0,

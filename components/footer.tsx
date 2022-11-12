@@ -68,7 +68,7 @@ export const Footer = () => {
               dialogId="form-effb7861-5ab1-469e-8091-fca64e21430b"
             />
             {/* // TODO: сделать pdf файл в /static/files и вставить на него ссылку */}
-            <a href="#" class="font-light text-xs sm:text-lg text-grey2">
+            <a href="/politika-o-zaschite-personalnyh-dannyh" class="font-light text-xs sm:text-lg text-grey2">
               Политика о защите персональных данных
             </a>
             {/* // TODO: нет понимания куда ведет эта ссылка */}
