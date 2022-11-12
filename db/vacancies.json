@@ -9,21 +9,21 @@
   {
     "title": "Менеджер",
     "link": "menedzher",
-    "isArchive": false,
+    "isArchive": true,
     "contactPhone": "+7 (343) 288-26-88 (доб.116)",
     "contactEmail": "personal@tehmet.su"
   },
   {
     "title": "Оператор ПК",
     "link": "operator-pk",
-    "isArchive": false,
+    "isArchive": true,
     "contactPhone": "+7 (343) 288-26-88 (доб.116)",
     "contactEmail": "personal@tehmet.su"
   },
   {
     "title": "Менеджер по снабжению",
     "link": "menedzher-po-snabzheniyu",
-    "isArchive": false,
+    "isArchive": true,
     "contactPhone": "+7 (343) 288-26-88 (доб.116)",
     "contactEmail": "personal@tehmet.su"
   }

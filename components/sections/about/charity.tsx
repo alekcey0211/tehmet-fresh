@@ -4,9 +4,9 @@ import { icons } from "../../icons.tsx";
 export const Charity = () => {
   return (
     <section class="bg-light-blue pt-4 sm:pt-10 md:pt-[84px] mb-4 sm:mb-10 md:mb-[84px] max-w-fullhd mx-auto">
-      <h1 class="font-light text-2xl sm:text-4xl lg:text-5xl text-right text-dark-blue mb-1 sm:mb-4 md:mb-24 pr-4 md:pr-10">
+      <div class="font-light text-2xl sm:text-4xl lg:text-5xl text-right text-dark-blue mb-1 sm:mb-4 md:mb-24 pr-4 md:pr-10">
         БЛАГОТВОРИТЕЛЬНАЯ ДЕЯТЕЛЬНОСТЬ
-      </h1>
+      </div>
       <div class="bg-white p-4 sm:p-8 md:px-10 md:pt-12 md:pb-24 max-w-max">
         <p class="mb-2 md:mb-16 text-lg sm:text-3xl sm:leading-[50px] font-light text-blue1">
           Компания оказывает спонсорскую помощь нескольким организациям

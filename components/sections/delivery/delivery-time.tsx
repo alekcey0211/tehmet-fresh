@@ -1,9 +1,9 @@
 export const DeliveryTime = () => {
   return (
     <section class="py-5 px-4 sm:px-10 pb-12 bg-light-blue max-w-fullhd mx-auto">
-      <h1 class="text-xl sm:text-4xl lg:text-5xl text-dark-blue lg:leading-[80px] font-light text-right mb-5">
+      <div class="text-xl sm:text-4xl lg:text-5xl text-dark-blue lg:leading-[80px] font-light text-right mb-5">
         Сроки доставки
-      </h1>
+      </div>
       <div class="grid grid-cols-[120px_1fr] sm:grid-cols-[200px_1fr] lg:grid-cols-[310px_1fr] bg-white mb-7">
         <div class="flex items-center justify-center lg:justify-start lg:px-16 py-2 border-r-2 border-blue border-b-2 border-blue">
           <span class="text-lg lg:text-2xl lg:leading-[50px] text-dark-blue">

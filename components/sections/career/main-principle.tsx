@@ -4,9 +4,9 @@ export const MainPrinciple = () => {
   return (
     <section class="py-4 md:py-6 px-4 sm:px-10 ">
       <div class="max-w-fullhd mx-auto">
-        <h1 class="text-xl sm:text-4xl lg:text-5xl text-dark-blue lg:leading-[80px] font-light text-right">
+        <div class="text-xl sm:text-4xl lg:text-5xl text-dark-blue lg:leading-[80px] font-light text-right">
           Главный принцип компании
-        </h1>
+        </div>
         <p class="m-0 text-right text-sm sm:text-2xl mb-4 md:mb-6">
           это честность и порядочность к клиентам, сотрудникам и поставщикам
         </p>

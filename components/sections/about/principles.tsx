@@ -25,9 +25,9 @@ export const Principles = () => {
   ];
   return (
     <section class="bg-light-blue py-4 sm:py-10 md:py-[64px] max-w-fullhd mx-auto px-4 md:px-10">
-      <h1 class="text-right text-dark-blue text-lg sm:text-4xl md:text-5xl font-light mb-4 md:mb-10 uppercase px-3 md:px-8">
+      <div class="text-right text-dark-blue text-lg sm:text-4xl md:text-5xl font-light mb-4 md:mb-10 uppercase px-3 md:px-8">
         НАШИ ГЛАВНЫЕ ПРИНЦИПЫ РАБОТЫ
-      </h1>
+      </div>
       <div class="grid justify-center sm:grid-cols-2 xl:grid-cols-3 gap-5 mb-4 md:mb-16">
         {items.map(({ src, alt, icon, title, html }) => (
           <div class="max-w-[270px] md:max-w-none grid grid-rows-[80px_auto_auto] md:grid-rows-[134px_auto_auto] gap-4 md:gap-7 content-start md:min-h-[563px] bg-white rounded-[20px] py-5 sm:py-9 px-4 sm:px-6">

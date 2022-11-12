@@ -20,9 +20,9 @@ export const GeographySales = () => {
             }}
           />
           <div>
-            <h1 class="font-light text-2xl sm:text-4xl lg:text-5xl text-right text-dark-blue sm:mb-4 md:mb-12">
+            <div class="font-light text-2xl sm:text-4xl lg:text-5xl text-right text-dark-blue sm:mb-4 md:mb-12">
               ГЕОГРАФИЯ ПРОДАЖ
-            </h1>
+            </div>
             <p class="text-xs sm:text-xl md:text-2xl sm:leading-10 mb-10 md:mb-20 text-right">
               На сегодняшний день в нашем активе <br class="hidden sm:block" />
               три действующих склада: <br class="hidden sm:block" />в

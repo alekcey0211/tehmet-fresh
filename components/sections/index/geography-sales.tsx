@@ -13,9 +13,9 @@ export const GeographySales = () => {
     <section class="py-4 lg:py-20 relative z-40">
       <div class="max-w-fullhd mx-auto">
         <div class="relative mb-2 lg:mb-16">
-          <h1 class="font-light text-2xl sm:text-4xl lg:text-5xl text-dark-blue lg:leading-[80px] text-right mr-4 sm:mr-8 lg:mr-[410px]">
+          <div class="font-light text-2xl sm:text-4xl lg:text-5xl text-dark-blue lg:leading-[80px] text-right mr-4 sm:mr-8 lg:mr-[410px]">
             ГЕОГРАФИЯ ПРОДАЖ
-          </h1>
+          </div>
           <div class="hidden lg:block absolute bottom-0 right-0">
             <icons.TitleSeparator />
           </div>

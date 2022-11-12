@@ -1,9 +1,9 @@
 export const Cargo = () => {
   return (
     <section class="py-5 px-4 sm:px-10 bg-light-blue max-w-fullhd mx-auto">
-      <h1 class="text-xl sm:text-4xl lg:text-5xl text-dark-blue lg:leading-[80px] font-light text-right mb-5">
+      <div class="text-xl sm:text-4xl lg:text-5xl text-dark-blue lg:leading-[80px] font-light text-right mb-5">
         Грузоперевозки
-      </h1>
+      </div>
       <div class="grid grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-10 justify-evenly">
         <div class="grid justify-items-center py-4 px-2 sm:py-10 text-center rounded-[20px] bg-white grid-rows-[min-content_auto]">
           <img

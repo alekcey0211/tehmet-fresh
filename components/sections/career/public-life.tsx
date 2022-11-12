@@ -8,9 +8,9 @@ export const PublicLife = () => {
   return (
     <section class="py-4 md:py-6 px-4 sm:px-10">
       <div class="max-w-fullhd mx-auto bg-light-blue p-4 md:p-10">
-        <h1 class="text-lg sm:text-4xl text-blue1 font-light text-center mb-4 md:mb-10">
+        <div class="text-lg sm:text-4xl text-blue1 font-light text-center mb-4 md:mb-10">
           Организация общественной жизни и корпоративной культуры “ТЕХМЕТ”
-        </h1>
+        </div>
         <div class="grid lg:grid-cols-2 xl:grid-cols-3 xl:auto-rows-[291px] 2xl:auto-rows-[391px] gap-6">
           {items.map((item) => (
             <Image

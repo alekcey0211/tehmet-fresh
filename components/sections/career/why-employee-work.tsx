@@ -5,9 +5,9 @@ export const WhyEmployeeWork = () => {
   return (
     <section class="py-4 md:py-6 px-4 sm:px-10">
       <div class="max-w-fullhd mx-auto">
-        <h1 class="text-lg sm:text-4xl text-blue1 lg:leading-[80px] font-light text-center mb-4 md:mb-8">
+        <div class="text-lg sm:text-4xl text-blue1 lg:leading-[80px] font-light text-center mb-4 md:mb-8">
           Почему наши сотрудники работают в компании «ТЕХМЕТ»?
-        </h1>
+        </div>
         <div class="grid 2xl:grid-cols-2 gap-6 mb-8 md:mb-16">
           {getEmployeeReviews().map((item, index) => (
             <div
