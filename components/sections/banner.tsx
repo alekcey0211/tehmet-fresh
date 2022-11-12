@@ -13,7 +13,7 @@ export const Banner = () => {
           <div class="swiper-wrapper">
             {getBanner().topSlider.map((item) => (
               <div class="swiper-slide bg-light-grey grid place-content-center">
-                <a href="{{item.link}}" class="block">
+                <a href={item.link} class="block">
                   <Image
                     {...{
                       src: item.img,
@@ -38,7 +38,7 @@ export const Banner = () => {
           <div class="swiper-wrapper">
             {getBanner().bottomSlider.map((item) => (
               <div class="swiper-slide bg-light-grey grid place-content-center">
-                <a href="{{item.link}}" class="block">
+                <a href={item.link} class="block">
                   <Image
                     {...{
                       src: item.img,
