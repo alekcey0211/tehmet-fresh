@@ -9,6 +9,9 @@ export type Category = {
   children: Category[];
   brands: Brand[];
   description?: string;
+  metaTitle: string;
+  metaKeywords: string;
+  metaDescription: string;
 };
 
 export const handler = async (_req: Request, _ctx: HandlerContext) => {

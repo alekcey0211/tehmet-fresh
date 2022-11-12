@@ -17,6 +17,9 @@ export type Product = {
   features: { id: number; value: string }[];
   articleNumber?: string;
   isExists?: boolean;
+  metaTitle: string;
+  metaKeywords: string;
+  metaDescription: string;
 };
 export const handler = async (req: Request, _ctx: HandlerContext) => {
   try {

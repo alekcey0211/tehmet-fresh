@@ -175,11 +175,13 @@ function p(cId) {
 
 export function HeadElement({
   description = "Группа Компаний Техмет - ведущий поставщик в России в области комплексных поставок продукции для монтажа нефтегазопроводов Цель компании создавать уверенность у потребителей в бесперебойности производства",
+  keywords,
   image = "logo-color.png",
   title,
 }: {
   title: string;
   description?: string;
+  keywords?: string;
   image?: string;
 }) {
   const { url } = useContext(Page);
@@ -189,6 +191,8 @@ export function HeadElement({
       <title>{`${title} - Техмет`}</title>
       {/* <link rel="icon" href="/favicon.ico" sizes="32x32" /> */}
       <meta name="description" content={description} />
+      {keywords && <meta name="Keywords" content={keywords} />}
+
       {/* <meta charSet="UTF-8" /> */}
       {/* <meta
         name="viewport"
